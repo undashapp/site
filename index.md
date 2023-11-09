@@ -30,7 +30,7 @@ features:
       height: 32
     }
     title: Fast Query Engine
-    details: "<i><b>un</b>dash</i> uses state-of-the-art technology to serve data with lightning fast analytical queries. For professionals: Run ad-hoc queries right in the browser."
+    details: "<i><b>un</b>dash</i> uses state-of-the-art technology to serve data with lightning fast analytical queries. For Professionals: Run ad-hoc SQL queries right in your browser."
   - icon: {
       dark: /images/dark/network-off.svg,
       light: /images/light/network-off.svg,
@@ -84,6 +84,6 @@ features:
       height: 32
     }
     title: Customizable
-    details: Choose one of several optimized fonts for data visualization. Switch between dark and light mode. Select different primary colors for accentuation.
+    details: Choose one of several fonts optimal for data visualization. Switch between dark and light mode. Select different primary colors for accentuation.
 ---
 
