@@ -11,6 +11,13 @@ hero:
     dark: /images/dark/logo.svg,
     alt: undash-app
   }
+  actions:
+    - theme: brand
+      text: Get Started
+      link: /guide/getting-started
+    - theme: alt
+      text: What is undash?
+      link: /guide/
 
 features:
   - icon: {

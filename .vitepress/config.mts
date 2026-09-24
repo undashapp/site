@@ -25,9 +25,54 @@ export default defineConfig({
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [{ text: 'Home', link: '/' }],
+    nav: [
+      { text: 'Home', link: '/' },
+      { text: 'Guide', link: '/guide/getting-started', activeMatch: '/guide/' },
+    ],
 
-    sidebar: [],
+    sidebar: {
+      '/guide/': [
+        {
+          text: 'Introduction',
+          items: [
+            { text: 'What is undash?', link: '/guide/' },
+            { text: 'First Steps', link: '/guide/getting-started' },
+            { text: 'The Interface', link: '/guide/interface' },
+          ],
+        },
+        {
+          text: 'Data',
+          items: [
+            { text: 'Importing Data', link: '/guide/data' },
+            { text: 'Models & SQL', link: '/guide/models' },
+            { text: 'Fields & Transforms', link: '/guide/fields-transforms' },
+            { text: 'Dimensions & Measures', link: '/guide/dimensions-measures' },
+            { text: 'Filters & Controls', link: '/guide/filters-controls' },
+          ],
+        },
+        {
+          text: 'Visualization',
+          items: [
+            { text: 'Charts', link: '/guide/charts' },
+            { text: 'Chart Types', link: '/guide/chart-types' },
+            { text: 'Dashboards', link: '/guide/dashboards' },
+          ],
+        },
+        {
+          text: 'More',
+          items: [
+            { text: 'AI Assistant', link: '/guide/ai' },
+            { text: 'Settings', link: '/guide/settings' },
+            { text: 'Privacy, Storage & Offline', link: '/guide/privacy-storage' },
+            { text: 'Keyboard Shortcuts', link: '/guide/shortcuts' },
+          ],
+        },
+      ],
+    },
+
+    search: { provider: 'local' },
+
+    outline: { level: [2, 3] },
 
     socialLinks: [{ icon: 'x', link: 'https://twitter.com/undashapp' }],
   },
