@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'undash',
-  description: 'Unthink BI',
+  description: 'Unthink BI. One-click business intelligence dashboards that run privately in your browser.',
   head: [
     ['meta', { name: "apple-mobile-web-app-title", content: "undash"}],
     ['meta', { name: "application-name", content: "undash"}],
