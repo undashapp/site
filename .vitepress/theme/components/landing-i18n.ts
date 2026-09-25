@@ -57,7 +57,7 @@ const en = {
     private: {
       title: 'Private by Design',
       text: `${brand} runs entirely in your browser. No backend, no uploads, no account. Your data is stored locally on your machine and never leaves it.`,
-      orbit: ['Dashboards', 'tables', 'models'],
+      orbit: ['Dashboards', 'Tables', 'Models'],
     },
     engine: {
       title: 'Fast Query Engine',
