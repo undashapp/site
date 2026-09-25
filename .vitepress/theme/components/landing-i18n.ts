@@ -25,7 +25,7 @@ const en = {
     clickToFilter: 'click to filter',
     filter: (name: string) => `Filter ${name}`,
     monthly: 'Monthly revenue',
-    footer: 'Illustrative demo · dashboards in the undash app look different',
+    footer: 'Illustrative demo · Dashboards in the undash app look different',
     money: (k: number) => `$${(k / 1000).toFixed(2)}M`,
     compact: (k: number) => `${(k / 1000).toFixed(1)}M`,
   },
