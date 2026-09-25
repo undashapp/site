@@ -468,7 +468,7 @@ const fontSamples = [
     <section class="flow container">
       <header class="section-head reveal">
         <span class="eyebrow">One-click AI dashboards</span>
-        <h2>From raw table to dashboard. <span class="muted">In one click.</span></h2>
+        <h2>From Raw Table to Dashboard. <span class="muted">In One Click.</span></h2>
         <p>
           Drop in a table and let AI propose a model, dimensions, measures and
           charts. Bring your own OpenAI or Anthropic key.
@@ -488,7 +488,7 @@ const fontSamples = [
             </div>
           </div>
           <span class="step-num">01</span>
-          <h3>Drop a file</h3>
+          <h3>Drop a File</h3>
           <p>Drag and drop files up to 2 GB each. Column types are detected automatically.</p>
         </li>
         <li class="step reveal">
@@ -506,7 +506,7 @@ const fontSamples = [
             </div>
           </div>
           <span class="step-num">02</span>
-          <h3>AI proposes</h3>
+          <h3>AI Proposes</h3>
           <p>Only table statistics are shared, never your rows.</p>
         </li>
         <li class="step reveal">
@@ -519,7 +519,7 @@ const fontSamples = [
             </div>
           </div>
           <span class="step-num">03</span>
-          <h3>Dashboard ready</h3>
+          <h3>Dashboard Ready</h3>
           <p>A whole dashboard, cross-filtered and ready to present.</p>
         </li>
       </ol>
@@ -529,7 +529,7 @@ const fontSamples = [
     <section id="features" class="features container">
       <header class="section-head reveal">
         <span class="eyebrow">Everything you need</span>
-        <h2>Serious analytics. <span class="muted">Zero infrastructure.</span></h2>
+        <h2>Serious Analytics. <span class="muted">Zero Infrastructure.</span></h2>
       </header>
 
       <div class="bento">
@@ -833,7 +833,7 @@ const fontSamples = [
         <div class="cta-glow" aria-hidden="true"></div>
         <img class="cta-logo cta-logo-light" src="/images/light/logo.svg" alt="" />
         <img class="cta-logo cta-logo-dark" src="/images/dark/logo.svg" alt="" />
-        <h2>Business Intelligence, <span class="gradient-text">unthought.</span></h2>
+        <h2>Business Intelligence, <span class="gradient-text">Unthought.</span></h2>
         <p>
           <i><b>un</b>dash</i> is coming soon. Follow along to be the first to
           try it.
