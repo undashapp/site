@@ -1618,7 +1618,7 @@ const fontSamples = [
   background: transparent;
 }
 .console-result td { padding-top: 2px; padding-bottom: 2px; }
-.console-result tbody tr:first-child td { padding-top: 6px; }
+.console-result th { padding-bottom: 3px; }
 .console-result tbody tr:last-child td { padding-bottom: 6px; }
 .console-result th { color: #71717a; font-weight: 600; }
 .console-result tr { background: transparent !important; border: 0; }
