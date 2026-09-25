@@ -297,6 +297,7 @@ const chartGallery = [
   'Line',
   'Area',
   'Scatter',
+  'ConnectedScatter',
   'Balloon',
   'Heatmap',
   'Density',
@@ -665,6 +666,10 @@ const fontSamples = [
                 </template>
                 <template v-else-if="name === 'Scatter'">
                   <circle v-for="(p, i) in [[8,30],[14,26],[18,28],[22,20],[28,22],[32,16],[36,18],[42,12],[46,14],[52,8],[26,30],[40,24]]" :key="i" :cx="p[0]" :cy="p[1]" r="2.2" :class="i % 3 ? 'f1' : 'f3'" />
+                </template>
+                <template v-else-if="name === 'ConnectedScatter'">
+                  <path d="M8 32 L16 24 L26 28 L30 16 L42 20 L38 9 L52 6" class="s1 stem" />
+                  <circle v-for="(p, i) in [[8,32],[16,24],[26,28],[30,16],[42,20],[38,9],[52,6]]" :key="i" :cx="p[0]" :cy="p[1]" r="2.6" :class="i === 6 ? 'f3' : 'f1'" />
                 </template>
                 <template v-else-if="name === 'Heatmap'">
                   <rect
