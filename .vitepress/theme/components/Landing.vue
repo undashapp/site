@@ -2,6 +2,7 @@
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useData } from 'vitepress';
 import { messages } from './landing-i18n';
+import { deBundeslaender, usStates } from './landing-maps';
 
 const { lang, theme } = useData();
 const t = computed(() => messages[lang.value.split('-')[0]] ?? messages.en);
@@ -13,6 +14,10 @@ const hasGuide = computed(() => {
     ? sidebar.length > 0
     : !!sidebar && Object.keys(sidebar).length > 0;
 });
+const mapRegions = computed(() =>
+  lang.value.startsWith('de') ? deBundeslaender : usStates,
+);
+
 const heroActions = computed(() => {
   const { guide, explore, follow } = t.value.hero;
   return hasGuide.value ? [guide, explore] : [explore, follow];
@@ -668,14 +673,18 @@ const fontSamples = [
                   <text x="30" y="27" text-anchor="middle" class="kpi-text">42k</text>
                 </template>
                 <template v-else-if="name === 'Choropleth'">
-                  <path d="M10 8 L26 6 L28 18 L14 22 Z" class="f1 o9" />
-                  <path d="M28 6 L46 8 L48 20 L28 18 Z" class="f1 o5" />
-                  <path d="M14 22 L28 18 L30 34 L12 32 Z" class="f1 o7" />
-                  <path d="M28 18 L48 20 L50 34 L30 34 Z" class="f1 o3" />
+                  <path
+                    v-for="(region, i) in mapRegions"
+                    :key="i"
+                    :d="region.d"
+                    class="f1 region"
+                    :style="{ fillOpacity: region.o }"
+                  />
                 </template>
               </svg>
               <figcaption>{{ t.features.charts.names[name] }}</figcaption>
             </figure>
+            <p v-if="t.features.charts.mapSource" class="map-source">{{ t.features.charts.mapSource }}</p>
           </div>
         </article>
 
@@ -1607,6 +1616,8 @@ const fontSamples = [
 .s2 { fill: none; stroke: var(--u-c2); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
 .f1.s1 { fill: var(--u-c1); }
 .grid-poly { fill: none; stroke: var(--u-border); stroke-width: 1; }
+.region { stroke: var(--u-card-solid); stroke-width: 0.3; stroke-linejoin: round; }
+.gallery .map-source { grid-column: 1 / -1; margin: 0; font-size: 10px; color: var(--vp-c-text-3); text-align: right; }
 .kpi-text { font-size: 17px; font-weight: 800; fill: var(--vp-c-text-1); letter-spacing: -0.03em; }
 
 /* Filters */
