@@ -530,10 +530,33 @@ const fontSamples = [
         <li class="step reveal">
           <div class="step-visual">
             <div class="mini-dash">
-              <span class="md md-a"></span>
-              <span class="md md-b"></span>
-              <span class="md md-c"></span>
-              <span class="md md-d"></span>
+              <span class="md md-a">
+                <svg viewBox="0 0 80 48">
+                  <rect x="4" y="6" width="68" height="8" rx="2" class="f1" />
+                  <rect x="4" y="20" width="50" height="8" rx="2" class="f1 o7" />
+                  <rect x="4" y="34" width="32" height="8" rx="2" class="f1 o5" />
+                </svg>
+              </span>
+              <span class="md md-b">
+                <svg viewBox="0 0 116 48">
+                  <path d="M4 38 L20 30 L36 33 L52 20 L68 24 L84 12 L100 16 L112 6 L112 44 L4 44 Z" class="f2 o3" />
+                  <path d="M4 38 L20 30 L36 33 L52 20 L68 24 L84 12 L100 16 L112 6" class="s2" />
+                  <line x1="4" x2="112" y1="44.5" y2="44.5" class="md-axis" />
+                </svg>
+              </span>
+              <span class="md md-c">
+                <svg viewBox="0 0 80 48">
+                  <circle cx="40" cy="24" r="15" class="md-donut" stroke="var(--u-c1)" stroke-dasharray="37.7 94.2" />
+                  <circle cx="40" cy="24" r="15" class="md-donut" stroke="var(--u-c2)" stroke-dasharray="28.3 94.2" stroke-dashoffset="-37.7" />
+                  <circle cx="40" cy="24" r="15" class="md-donut" stroke="var(--u-c3)" stroke-dasharray="28.3 94.2" stroke-dashoffset="-66" />
+                </svg>
+              </span>
+              <span class="md md-d">
+                <svg viewBox="0 0 116 48">
+                  <rect v-for="(h, i) in [18, 30, 22, 38, 26, 34]" :key="i" :x="8 + i * 18" :y="44 - h" width="12" :height="h" rx="2" class="md-col" />
+                  <line x1="4" x2="112" y1="44.5" y2="44.5" class="md-axis" />
+                </svg>
+              </span>
             </div>
           </div>
           <span class="step-num">03</span>
@@ -1438,11 +1461,10 @@ const fontSamples = [
 .is-visible .md-b { animation-delay: 0.15s; }
 .is-visible .md-c { animation-delay: 0.3s; }
 .is-visible .md-d { animation-delay: 0.45s; }
-.md::after { content: ''; position: absolute; inset: 10px; border-radius: 4px; }
-.md-a::after { background: linear-gradient(90deg, var(--u-c1) 60%, transparent 60%); height: 6px; top: 50%; }
-.md-b::after { background: repeating-linear-gradient(90deg, var(--u-c2) 0 10px, transparent 10px 16px); clip-path: polygon(0 60%, 15% 30%, 30% 50%, 45% 10%, 60% 40%, 75% 20%, 100% 5%, 100% 100%, 0 100%); }
-.md-c::after { background: conic-gradient(var(--u-c1) 0 40%, var(--u-c2) 0 70%, var(--u-c3) 0); border-radius: 50%; inset: 8px auto 8px 50%; aspect-ratio: 1; transform: translateX(-50%); }
-.md-d::after { background: linear-gradient(to top, var(--u-c4) 0 100%); clip-path: polygon(0 100%, 0 70%, 20% 70%, 20% 100%, 27% 100%, 27% 30%, 47% 30%, 47% 100%, 54% 100%, 54% 50%, 74% 50%, 74% 100%, 81% 100%, 81% 10%, 100% 10%, 100% 100%); }
+.md svg { position: absolute; inset: 8px; width: calc(100% - 16px); height: calc(100% - 16px); overflow: visible; }
+.md-axis { stroke: var(--u-border); stroke-width: 1; }
+.md-donut { fill: none; stroke-width: 7; transform: rotate(-90deg); transform-origin: 40px 24px; }
+.md-col { fill: var(--u-c4); }
 
 /* ----------------------------------------------------------------- Bento */
 
