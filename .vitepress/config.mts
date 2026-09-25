@@ -21,15 +21,36 @@ export default defineConfig({
     root: {
       label: 'English',
       lang: 'en',
+      themeConfig: {
+        nav: [{ text: 'Home', link: '/' }],
+      },
+    },
+    de: {
+      label: 'Deutsch',
+      lang: 'de',
+      description: 'BI neu gedacht. Business-Intelligence-Dashboards auf Knopfdruck, privat in Ihrem Browser.',
+      themeConfig: {
+        nav: [{ text: 'Start', link: '/de/' }],
+
+        notFound: {
+          title: 'Seite nicht gefunden',
+          quote: 'Diese Seite existiert nicht.',
+          linkLabel: 'Zur Startseite',
+          linkText: 'Zur Startseite',
+        },
+        langMenuLabel: 'Sprache ändern',
+        returnToTopLabel: 'Zurück nach oben',
+        sidebarMenuLabel: 'Menü',
+        darkModeSwitchLabel: 'Erscheinungsbild',
+        lightModeSwitchTitle: 'Zum hellen Modus wechseln',
+        darkModeSwitchTitle: 'Zum dunklen Modus wechseln',
+        skipToContentLabel: 'Zum Inhalt springen',
+      },
     },
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: { light: '/images/light/logo.svg', dark: '/images/dark/logo.svg', alt: 'undash' },
-
-    nav: [{ text: 'Home', link: '/' }],
-
-    sidebar: [],
 
     socialLinks: [{ icon: 'x', link: 'https://twitter.com/undashapp' }],
   },

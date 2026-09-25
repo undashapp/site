@@ -1,5 +1,22 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
+import { useData } from 'vitepress';
+import { messages } from './landing-i18n';
+
+const { lang, theme } = useData();
+const t = computed(() => messages[lang.value.split('-')[0]] ?? messages.en);
+
+// Link to the guide only on builds that include it (sidebar configured)
+const hasGuide = computed(() => {
+  const sidebar = theme.value.sidebar;
+  return Array.isArray(sidebar)
+    ? sidebar.length > 0
+    : !!sidebar && Object.keys(sidebar).length > 0;
+});
+const heroActions = computed(() => {
+  const { guide, explore, follow } = t.value.hero;
+  return hasGuide.value ? [guide, explore] : [explore, follow];
+});
 
 // Demo data for the hero dashboard. Illustrative only.
 const regions = ['North', 'South', 'East', 'West'];
@@ -121,9 +138,6 @@ function tweenTo(target: number) {
 }
 watch(total, (v) => tweenTo(v));
 
-function money(k: number) {
-  return `$${(k / 1000).toFixed(2)}M`;
-}
 
 // SQL console typing
 const sqlLines = [
@@ -315,28 +329,27 @@ const fontSamples = [
 
       <div class="container hero-inner">
         <div class="hero-copy">
-          <span class="pill"><span class="pulse"></span>Coming soon</span>
+          <span class="pill"><span class="pulse"></span>{{ t.hero.pill }}</span>
           <h1 class="hero-title">
             <span class="brand-word"><b>un</b>dash</span>
             <span class="gradient-text">Unthink BI.</span>
           </h1>
           <p class="hero-tagline">
-            One-click business intelligence dashboards.
-            <strong>Private, fast and right in your browser.</strong>
+            {{ t.hero.tagline }}
+            <strong>{{ t.hero.taglineStrong }}</strong>
           </p>
           <ul class="hero-points">
-            <li>No backend</li>
-            <li>No uploads</li>
-            <li>No account</li>
+            <li v-for="point in t.hero.points" :key="point">{{ point }}</li>
           </ul>
           <div class="hero-actions">
-            <a class="btn btn-brand" href="#features">Explore features</a>
             <a
-              class="btn btn-alt"
-              href="https://twitter.com/undashapp"
-              target="_blank"
-              rel="noopener"
-              >Follow @undashapp</a
+              v-for="(action, i) in heroActions"
+              :key="action.link"
+              class="btn"
+              :class="i === 0 ? 'btn-brand' : 'btn-alt'"
+              :href="action.link"
+              v-bind="action.link.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {}"
+              >{{ action.text }}</a
             >
           </div>
         </div>
@@ -346,10 +359,10 @@ const fontSamples = [
             <div class="window-bar">
               <span class="dot"></span><span class="dot"></span
               ><span class="dot"></span>
-              <span class="window-title">Sales · Dashboard</span>
+              <span class="window-title">{{ t.demo.title }}</span>
               <span class="window-badge">
                 <svg viewBox="0 0 24 24" class="icon-xs"><path :d="shieldPath" fill="currentColor" /></svg>
-                Local
+                {{ t.demo.local }}
               </span>
             </div>
 
@@ -358,11 +371,11 @@ const fontSamples = [
                 <svg viewBox="0 0 24 24" class="icon-xs" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path v-for="d in icons.filter" :key="d" :d="d" />
                 </svg>
-                Region
+                {{ t.demo.region }}
               </span>
               <button
-                v-for="(name, r) in regions"
-                :key="name"
+                v-for="(name, r) in t.demo.regions"
+                :key="r"
                 class="chip"
                 :class="[`c${r + 1}`, { active: selected.has(r) && selected.size < 4 }]"
                 @click="toggleRegion(r)"
@@ -374,19 +387,19 @@ const fontSamples = [
                 :class="{ hidden: selected.size === 4 }"
                 @click="resetRegions"
               >
-                Reset
+                {{ t.demo.reset }}
               </button>
             </div>
 
             <div class="tiles">
               <div class="tile tile-kpi">
-                <span class="tile-label">Revenue</span>
-                <span class="kpi">{{ money(shownTotal) }}</span>
-                <span class="kpi-sub">{{ selected.size }} of 4 regions</span>
+                <span class="tile-label">{{ t.demo.revenue }}</span>
+                <span class="kpi">{{ t.demo.money(shownTotal) }}</span>
+                <span class="kpi-sub">{{ t.demo.ofRegions(selected.size) }}</span>
               </div>
 
               <div class="tile tile-donut">
-                <span class="tile-label">By category</span>
+                <span class="tile-label">{{ t.demo.byCategory }}</span>
                 <div class="donut-wrap">
                   <svg viewBox="0 0 80 80" class="donut">
                     <path
@@ -398,7 +411,7 @@ const fontSamples = [
                     />
                   </svg>
                   <ul class="legend">
-                    <li v-for="(c, i) in categories" :key="c">
+                    <li v-for="(c, i) in t.demo.categories" :key="i">
                       <i :class="`s${i + 1}`"></i>{{ c }}
                       <b>{{ Math.round(categoryShare[i] * 100) }}%</b>
                     </li>
@@ -407,17 +420,17 @@ const fontSamples = [
               </div>
 
               <div class="tile tile-bars">
-                <span class="tile-label">Revenue by region <em>click to filter</em></span>
+                <span class="tile-label">{{ t.demo.byRegion }} <em>{{ t.demo.clickToFilter }}</em></span>
                 <div class="bars">
                   <button
-                    v-for="(name, r) in regions"
-                    :key="name"
+                    v-for="(name, r) in t.demo.regions"
+                    :key="r"
                     class="bar-col"
                     :class="{ dim: !selected.has(r) }"
-                    :aria-label="`Filter ${name}`"
+                    :aria-label="t.demo.filter(name)"
                     @click="toggleRegion(r)"
                   >
-                    <span class="bar-value">{{ (regionTotals[r] / 1000).toFixed(1) }}M</span>
+                    <span class="bar-value">{{ t.demo.compact(regionTotals[r]) }}</span>
                     <span class="bar-track">
                       <span
                         class="bar"
@@ -431,7 +444,7 @@ const fontSamples = [
               </div>
 
               <div class="tile tile-line">
-                <span class="tile-label">Monthly revenue</span>
+                <span class="tile-label">{{ t.demo.monthly }}</span>
                 <svg :viewBox="`0 0 ${lineW} ${lineH}`" class="line">
                   <defs>
                     <linearGradient id="u-area" x1="0" x2="0" y1="0" y2="1">
@@ -454,11 +467,11 @@ const fontSamples = [
                   />
                 </svg>
                 <div class="months">
-                  <span v-for="(m, i) in months" :key="i">{{ m }}</span>
+                  <span v-for="(m, i) in t.demo.months" :key="i">{{ m }}</span>
                 </div>
               </div>
             </div>
-            <div class="window-foot">Illustrative demo data · every chart cross-filters</div>
+            <div class="window-foot">{{ t.demo.footer }}</div>
           </div>
         </div>
       </div>
@@ -467,12 +480,9 @@ const fontSamples = [
     <!-- One click flow -->
     <section class="flow container">
       <header class="section-head reveal">
-        <span class="eyebrow">One-click AI dashboards</span>
-        <h2>From Raw Table to Dashboard. <span class="muted">In One Click.</span></h2>
-        <p>
-          Drop in a table and let AI propose a model, dimensions, measures and
-          charts. Bring your own OpenAI or Anthropic key.
-        </p>
+        <span class="eyebrow">{{ t.flow.eyebrow }}</span>
+        <h2>{{ t.flow.title }} <span class="muted">{{ t.flow.titleMuted }}</span></h2>
+        <p>{{ t.flow.lead }}</p>
       </header>
 
       <ol class="steps">
@@ -488,8 +498,8 @@ const fontSamples = [
             </div>
           </div>
           <span class="step-num">01</span>
-          <h3>Drop a File</h3>
-          <p>Drag and drop files up to 2 GB each. Column types are detected automatically.</p>
+          <h3>{{ t.flow.steps[0].title }}</h3>
+          <p>{{ t.flow.steps[0].text }}</p>
         </li>
         <li class="step reveal">
           <div class="step-visual">
@@ -498,16 +508,13 @@ const fontSamples = [
                 <path v-for="d in icons.sparkles" :key="d" :d="d" />
               </svg>
               <div class="ai-tags">
-                <span class="tag t1">model</span>
-                <span class="tag t2">dimensions</span>
-                <span class="tag t3">measures</span>
-                <span class="tag t4">charts</span>
+                <span v-for="(tag, i) in t.flow.tags" :key="i" class="tag" :class="`t${i + 1}`">{{ tag }}</span>
               </div>
             </div>
           </div>
           <span class="step-num">02</span>
-          <h3>AI Proposes</h3>
-          <p>Only table statistics are shared, never your rows.</p>
+          <h3>{{ t.flow.steps[1].title }}</h3>
+          <p>{{ t.flow.steps[1].text }}</p>
         </li>
         <li class="step reveal">
           <div class="step-visual">
@@ -519,8 +526,8 @@ const fontSamples = [
             </div>
           </div>
           <span class="step-num">03</span>
-          <h3>Dashboard Ready</h3>
-          <p>A whole dashboard, cross-filtered and ready to present.</p>
+          <h3>{{ t.flow.steps[2].title }}</h3>
+          <p>{{ t.flow.steps[2].text }}</p>
         </li>
       </ol>
     </section>
@@ -528,8 +535,8 @@ const fontSamples = [
     <!-- Bento features -->
     <section id="features" class="features container">
       <header class="section-head reveal">
-        <span class="eyebrow">Everything you need</span>
-        <h2>Serious Analytics. <span class="muted">Zero Infrastructure.</span></h2>
+        <span class="eyebrow">{{ t.features.eyebrow }}</span>
+        <h2>{{ t.features.title }} <span class="muted">{{ t.features.titleMuted }}</span></h2>
       </header>
 
       <div class="bento">
@@ -539,12 +546,8 @@ const fontSamples = [
             <div class="card-icon">
               <svg viewBox="0 0 24 24"><path :d="shieldPath" fill="currentColor" /></svg>
             </div>
-            <h3>Private by Design</h3>
-            <p>
-              <i><b>un</b>dash</i> runs entirely in your browser. No backend, no
-              uploads, no account. Your data is stored locally on your machine
-              and never leaves it.
-            </p>
+            <h3>{{ t.features.private.title }}</h3>
+            <p v-html="t.features.private.text"></p>
           </div>
           <div class="private-visual" aria-hidden="true">
             <div class="orbit">
@@ -553,9 +556,7 @@ const fontSamples = [
               <div class="core">
                 <svg viewBox="0 0 24 24"><path :d="shieldPath" fill="currentColor" /></svg>
               </div>
-              <span class="sat s1">rows</span>
-              <span class="sat s2">tables</span>
-              <span class="sat s3">models</span>
+              <span v-for="(label, i) in t.features.private.orbit" :key="i" class="sat" :class="`s${i + 1}`">{{ label }}</span>
             </div>
           </div>
         </article>
@@ -565,11 +566,8 @@ const fontSamples = [
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.rocket" :key="d" :d="d" /></svg>
           </div>
-          <h3>Fast Query Engine</h3>
-          <p>
-            Powered by DuckDB right in your browser. Analytical queries on
-            millions of rows run in no time.
-          </p>
+          <h3>{{ t.features.engine.title }}</h3>
+          <p>{{ t.features.engine.text }}</p>
           <div class="speed" aria-hidden="true">
             <span v-for="i in 14" :key="i" :style="{ animationDelay: `${i * 0.08}s` }"></span>
           </div>
@@ -580,14 +578,10 @@ const fontSamples = [
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.import" :key="d" :d="d" /></svg>
           </div>
-          <h3>Effortless Import</h3>
-          <p>
-            Drag and drop CSV, TSV, JSON or Parquet files, up to 2 GB each.
-            Column types are detected automatically. No manual data wrangling
-            required.
-          </p>
+          <h3>{{ t.features.import.title }}</h3>
+          <p>{{ t.features.import.text }}</p>
           <div class="type-row" aria-hidden="true">
-            <span>ABC</span><span>123</span><span>1.5</span><span>Date</span><span>T/F</span>
+            <span v-for="type in t.features.import.types" :key="type">{{ type }}</span>
           </div>
         </article>
 
@@ -597,13 +591,8 @@ const fontSamples = [
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.code" :key="d" :d="d" /></svg>
             </div>
-            <h3>Built on SQL</h3>
-            <p>
-              Every dataset is a plain SQL query. Refine models with dimensions,
-              measures, bins and date transforms, or peek at the SQL behind any
-              chart. For professionals: an SQL console that shows results as
-              you type.
-            </p>
+            <h3>{{ t.features.sql.title }}</h3>
+            <p>{{ t.features.sql.text }}</p>
           </div>
           <div class="console" aria-hidden="true">
             <pre class="console-code"><code class="ghost">{{ sqlFull }}</code><code class="live">{{ typed }}<span class="caret"></span></code></pre>
@@ -626,12 +615,8 @@ const fontSamples = [
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.pie" :key="d" :d="d" /></svg>
             </div>
-            <h3>21 Chart Types</h3>
-            <p>
-              From bar, line and area charts to scatter, heatmap, density,
-              streamgraph, radar, KPI and choropleth maps. Facet any chart into
-              small multiples.
-            </p>
+            <h3>{{ t.features.charts.title }}</h3>
+            <p>{{ t.features.charts.text }}</p>
           </div>
           <div class="gallery" aria-hidden="true">
             <figure v-for="name in chartGallery" :key="name" class="thumb">
@@ -689,7 +674,7 @@ const fontSamples = [
                   <path d="M28 18 L48 20 L50 34 L30 34 Z" class="f1 o3" />
                 </template>
               </svg>
-              <figcaption>{{ name }}</figcaption>
+              <figcaption>{{ t.features.charts.names[name] }}</figcaption>
             </figure>
           </div>
         </article>
@@ -700,12 +685,8 @@ const fontSamples = [
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.filter" :key="d" :d="d" /></svg>
           </div>
-          <h3>Instant Cross-Filtering</h3>
-          <p>
-            Interactive controls filter every chart of a dashboard at once:
-            category pickers, range sliders for numbers, dates and times, and
-            boolean toggles. Pre-aggregation keeps it snappy.
-          </p>
+          <h3>{{ t.features.filter.title }}</h3>
+          <p>{{ t.features.filter.text }}</p>
           </div>
           <div class="controls-demo" aria-hidden="true">
             <div class="picker"><span class="on">A</span><span>B</span><span class="on">C</span></div>
@@ -720,12 +701,8 @@ const fontSamples = [
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.keyboard" :key="d" :d="d" /></svg>
             </div>
-            <h3>Keyboard First</h3>
-            <p>
-              Navigate, search, switch views and jump to any chart type without
-              leaving the keyboard. Vim-style shortcuts for those who love
-              speed.
-            </p>
+            <h3>{{ t.features.keys.title }}</h3>
+            <p>{{ t.features.keys.text }}</p>
           </div>
           <div class="keys" aria-hidden="true">
             <kbd class="k-h">h</kbd><kbd class="k-j">j</kbd><kbd class="k-k">k</kbd><kbd class="k-l">l</kbd>
@@ -737,15 +714,11 @@ const fontSamples = [
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.offline" :key="d" :d="d" /></svg>
           </div>
-          <h3>Works Offline</h3>
-          <p>
-            Install <i><b>un</b>dash</i> once as an app and it keeps working
-            without an internet connection. Or simply open it in your browser
-            like any other website.
-          </p>
+          <h3>{{ t.features.offline.title }}</h3>
+          <p v-html="t.features.offline.text"></p>
           <div class="status-row" aria-hidden="true">
-            <span class="status"><i class="off"></i>Offline</span>
-            <span class="status"><i class="ok"></i>Still working</span>
+            <span class="status"><i class="off"></i>{{ t.features.offline.offline }}</span>
+            <span class="status"><i class="ok"></i>{{ t.features.offline.working }}</span>
           </div>
         </article>
 
@@ -755,12 +728,8 @@ const fontSamples = [
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.presentation" :key="d" :d="d" /></svg>
           </div>
-          <h3>Present Anywhere</h3>
-          <p>
-            Arrange charts with drag and drop or smart layout templates. Present
-            your insights in full screen or run a dashboard in kiosk mode on a
-            wall display.
-          </p>
+          <h3>{{ t.features.present.title }}</h3>
+          <p>{{ t.features.present.text }}</p>
           </div>
           <div class="screen" aria-hidden="true">
             <div class="layout">
@@ -775,16 +744,12 @@ const fontSamples = [
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.export" :key="d" :d="d" /></svg>
             </div>
-            <h3>Export Everything</h3>
-            <p>
-              Export charts and dashboards as vector graphics in PDF or SVG, or
-              as PNG and JPEG images, on custom or standard paper sizes. Export
-              data as CSV, Excel, JSON or Parquet.
-            </p>
+            <h3>{{ t.features.export.title }}</h3>
+            <p>{{ t.features.export.text }}</p>
           </div>
           <div class="export-grid" aria-hidden="true">
             <div class="export-group">
-              <span class="export-title">Charts &amp; dashboards</span>
+              <span class="export-title">{{ t.features.export.charts }}</span>
               <div class="files">
                 <span class="file f-pdf">PDF</span>
                 <span class="file f-svg">SVG</span>
@@ -793,7 +758,7 @@ const fontSamples = [
               </div>
             </div>
             <div class="export-group">
-              <span class="export-title">Data</span>
+              <span class="export-title">{{ t.features.export.data }}</span>
               <div class="files">
                 <span class="file f-csv">CSV</span>
                 <span class="file f-xls">Excel</span>
@@ -809,12 +774,8 @@ const fontSamples = [
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.adjustments" :key="d" :d="d" /></svg>
           </div>
-          <h3>Make It Yours</h3>
-          <p>
-            Choose from six fonts made for data visualization. Switch between
-            light and dark mode, pick a primary color and go monochromatic or
-            categorical.
-          </p>
+          <h3>{{ t.features.custom.title }}</h3>
+          <p>{{ t.features.custom.text }}</p>
           <div class="custom-demo" aria-hidden="true">
             <div class="swatches">
               <span v-for="c in swatches" :key="c" :style="{ background: c }"></span>
@@ -833,17 +794,14 @@ const fontSamples = [
         <div class="cta-glow" aria-hidden="true"></div>
         <img class="cta-logo cta-logo-light" src="/images/light/logo.svg" alt="" />
         <img class="cta-logo cta-logo-dark" src="/images/dark/logo.svg" alt="" />
-        <h2>Business Intelligence, <span class="gradient-text">Unthought.</span></h2>
-        <p>
-          <i><b>un</b>dash</i> is coming soon. Follow along to be the first to
-          try it.
-        </p>
+        <h2>{{ t.cta.title }} <span class="gradient-text">{{ t.cta.titleAccent }}</span></h2>
+        <p v-html="t.cta.text"></p>
         <a
           class="btn btn-brand"
           href="https://twitter.com/undashapp"
           target="_blank"
           rel="noopener"
-          >Follow @undashapp on X</a
+          >{{ t.cta.button }}</a
         >
       </div>
     </section>
