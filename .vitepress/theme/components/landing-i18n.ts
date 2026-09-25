@@ -57,7 +57,7 @@ const en = {
     private: {
       title: 'Private by Design',
       text: `${brand} runs entirely in your browser. No backend, no uploads, no account. Your data is stored locally on your machine and never leaves it.`,
-      orbit: ['rows', 'tables', 'models'],
+      orbit: ['dashboards', 'tables', 'models'],
     },
     engine: {
       title: 'Fast Query Engine',
@@ -73,7 +73,7 @@ const en = {
       text: 'Every dataset is a plain SQL query. Refine models with dimensions, measures, bins and date transforms, or peek at the SQL behind any chart. For professionals: an SQL console that shows results as you type.',
     },
     charts: {
-      title: '21 Chart Types',
+      title: '20+ Chart Types',
       text: 'From bar, line and area charts to scatter, heatmap, density, streamgraph, radar, KPI and choropleth maps. Facet any chart into small multiples.',
       names: {
         Bar: 'Bar',
@@ -188,7 +188,7 @@ const de: LandingMessages = {
     private: {
       title: 'Privat von Grund auf',
       text: `${brand} läuft komplett im Browser. Kein Backend, keine Uploads, kein Konto. Ihre Daten bleiben lokal auf Ihrem Rechner und verlassen ihn nie.`,
-      orbit: ['Zeilen', 'Tabellen', 'Modelle'],
+      orbit: ['Dashboards', 'Tabellen', 'Modelle'],
     },
     engine: {
       title: 'Blitzschnelle Abfragen',
@@ -204,7 +204,7 @@ const de: LandingMessages = {
       text: 'Jeder Datensatz ist eine gewöhnliche SQL-Abfrage. Verfeinern Sie Modelle mit Dimensionen, Metriken, Partitionen und Datumstransformationen, oder sehen Sie sich das SQL hinter jedem Diagramm an. Für Profis gibt es eine SQL-Konsole, die Ergebnisse schon beim Tippen anzeigt.',
     },
     charts: {
-      title: '21 Diagrammtypen',
+      title: '20+ Diagrammtypen',
       text: 'Von Balken-, Linien- und Flächendiagrammen über Streudiagramme, Heatmaps, Dichtediagramme, Streamgraphs und Netzdiagramme bis hin zu Kennzahlen und Choroplethenkarten. Jedes Diagramm lässt sich zudem in Small Multiples aufteilen.',
       names: {
         Bar: 'Balken',
