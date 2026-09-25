@@ -833,7 +833,7 @@ const fontSamples = [
         <div class="cta-glow" aria-hidden="true"></div>
         <img class="cta-logo cta-logo-light" src="/images/light/logo.svg" alt="" />
         <img class="cta-logo cta-logo-dark" src="/images/dark/logo.svg" alt="" />
-        <h2>Business intelligence, <span class="gradient-text">unthought.</span></h2>
+        <h2>Business Intelligence, <span class="gradient-text">unthought.</span></h2>
         <p>
           <i><b>un</b>dash</i> is coming soon. Follow along to be the first to
           try it.
