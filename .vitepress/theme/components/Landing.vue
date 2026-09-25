@@ -721,7 +721,6 @@ const fontSamples = [
               </svg>
               <figcaption>{{ t.features.charts.names[name] }}</figcaption>
             </figure>
-            <p v-if="t.features.charts.mapSource" class="map-source">{{ t.features.charts.mapSource }}</p>
           </div>
         </article>
 
@@ -1655,7 +1654,6 @@ const fontSamples = [
 .stem { stroke-width: 1.6; }
 .grid-poly { fill: none; stroke: var(--u-border); stroke-width: 1; }
 .region { stroke: var(--u-card-solid); stroke-width: 0.3; stroke-linejoin: round; }
-.gallery .map-source { grid-column: 1 / -1; margin: 0; font-size: 10px; color: var(--vp-c-text-3); text-align: right; }
 .kpi-text { font-size: 17px; font-weight: 800; fill: var(--vp-c-text-1); letter-spacing: -0.03em; }
 
 /* Filters */
