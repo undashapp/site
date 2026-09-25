@@ -87,6 +87,7 @@ const en = {
         KPI: 'KPI',
         Choropleth: 'Choropleth',
       } as Record<string, string>,
+      mapSource: '',
     },
     filter: {
       title: 'Instant Cross-Filtering',
@@ -214,6 +215,7 @@ const de: LandingMessages = {
         KPI: 'Kennzahl',
         Choropleth: 'Karte',
       },
+      mapSource: 'Kartendaten: © GeoBasis-DE / BKG (2024)',
     },
     filter: {
       title: 'Cross-Filtering in Echtzeit',
