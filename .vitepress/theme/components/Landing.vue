@@ -3,8 +3,20 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useData } from 'vitepress';
 import { messages } from './landing-i18n';
 
-const { lang } = useData();
+const { lang, theme } = useData();
 const t = computed(() => messages[lang.value.split('-')[0]] ?? messages.en);
+
+// Link to the guide only on builds that include it (sidebar configured)
+const hasGuide = computed(() => {
+  const sidebar = theme.value.sidebar;
+  return Array.isArray(sidebar)
+    ? sidebar.length > 0
+    : !!sidebar && Object.keys(sidebar).length > 0;
+});
+const heroActions = computed(() => {
+  const { guide, explore, follow } = t.value.hero;
+  return hasGuide.value ? [guide, explore] : [explore, follow];
+});
 
 // Demo data for the hero dashboard. Illustrative only.
 const regions = ['North', 'South', 'East', 'West'];
@@ -330,8 +342,15 @@ const fontSamples = [
             <li v-for="point in t.hero.points" :key="point">{{ point }}</li>
           </ul>
           <div class="hero-actions">
-            <a class="btn btn-brand" :href="t.hero.primary.link">{{ t.hero.primary.text }}</a>
-            <a class="btn btn-alt" :href="t.hero.secondary.link">{{ t.hero.secondary.text }}</a>
+            <a
+              v-for="(action, i) in heroActions"
+              :key="action.link"
+              class="btn"
+              :class="i === 0 ? 'btn-brand' : 'btn-alt'"
+              :href="action.link"
+              v-bind="action.link.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {}"
+              >{{ action.text }}</a
+            >
           </div>
         </div>
 

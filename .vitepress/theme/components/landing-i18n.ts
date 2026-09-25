@@ -6,8 +6,9 @@ const en = {
     tagline: 'One-click business intelligence dashboards.',
     taglineStrong: 'Private, fast and right in your browser.',
     points: ['No backend', 'No uploads', 'No account'],
-    primary: { text: 'Get Started', link: '/guide/getting-started' },
-    secondary: { text: 'Explore Features', link: '#features' },
+    guide: { text: 'Get Started', link: '/guide/getting-started' },
+    explore: { text: 'Explore Features', link: '#features' },
+    follow: { text: 'Follow @undashapp', link: 'https://twitter.com/undashapp' },
   },
   demo: {
     title: 'Sales · Dashboard',
@@ -132,8 +133,9 @@ const de: LandingMessages = {
     tagline: 'Business-Intelligence-Dashboards auf Knopfdruck.',
     taglineStrong: 'Privat, schnell und direkt im Browser.',
     points: ['Kein Backend', 'Keine Uploads', 'Kein Konto'],
-    primary: { text: 'Erste Schritte', link: '/de/guide/getting-started' },
-    secondary: { text: 'Funktionen entdecken', link: '#features' },
+    guide: { text: 'Erste Schritte', link: '/de/guide/getting-started' },
+    explore: { text: 'Funktionen entdecken', link: '#features' },
+    follow: { text: '@undashapp folgen', link: 'https://twitter.com/undashapp' },
   },
   demo: {
     title: 'Vertrieb · Dashboard',
