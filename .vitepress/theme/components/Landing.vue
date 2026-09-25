@@ -1177,10 +1177,12 @@ const fontSamples = [
   margin-left: 6px;
 }
 
-.tile-kpi { display: flex; flex-direction: column; justify-content: center; }
+.tile-kpi { display: flex; flex-direction: column; justify-content: center; container-type: inline-size; }
 .kpi {
   margin-top: 6px;
-  font-size: clamp(26px, 3.4vw, 36px);
+  /* Scale with the tile so long values ("16,40 Mio. €") stay on one line */
+  font-size: min(36px, 16cqi);
+  white-space: nowrap;
   font-weight: 800;
   letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
@@ -1202,7 +1204,11 @@ const fontSamples = [
 .legend i.s3 { background: var(--u-c3); }
 .legend b { margin-left: auto; padding-left: 8px; color: var(--vp-c-text-1); font-variant-numeric: tabular-nums; }
 
-.tile-bars { grid-row: span 1; }
+.tile-bars { grid-row: span 1; container-type: inline-size; }
+.tile-label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@container (max-width: 280px) {
+  .tile-bars .tile-label em { display: none; }
+}
 .bars {
   display: flex;
   align-items: flex-end;
@@ -1226,7 +1232,7 @@ const fontSamples = [
 }
 .bar-col.dim { opacity: 0.22; }
 .bar-col:hover .bar { filter: brightness(1.1); }
-.bar-value { font-size: 11px; font-weight: 600; color: var(--vp-c-text-2); font-variant-numeric: tabular-nums; }
+.bar-value { font-size: min(11px, 7cqi); white-space: nowrap; font-weight: 600; color: var(--vp-c-text-2); font-variant-numeric: tabular-nums; }
 .bar-track { position: relative; flex: 1; width: 100%; }
 .bar {
   position: absolute;
