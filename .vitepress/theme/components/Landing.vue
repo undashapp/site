@@ -293,13 +293,17 @@ const shieldPath =
 
 const chartGallery = [
   'Bar',
+  'Lollipop',
   'Line',
   'Area',
   'Scatter',
+  'Balloon',
   'Heatmap',
   'Density',
+  'Density2D',
   'Streamgraph',
   'Radar',
+  'Donut',
   'KPI',
   'Choropleth',
 ];
@@ -632,6 +636,25 @@ const fontSamples = [
                   <rect x="30" y="14" width="8" height="22" rx="1.5" class="f1" />
                   <rect x="42" y="4" width="8" height="32" rx="1.5" class="f1" />
                 </template>
+                <template v-else-if="name === 'Lollipop'">
+                  <g v-for="([x, y], i) in [[10, 20], [22, 10], [34, 16], [46, 6]]" :key="i">
+                    <line :x1="x + 2" :x2="x + 2" y1="36" :y2="y" class="s1 stem" />
+                    <circle :cx="x + 2" :cy="y" r="3.2" class="f1" />
+                  </g>
+                </template>
+                <template v-else-if="name === 'Balloon'">
+                  <template v-for="(row, j) in [[2, 5, 3], [4, 2.5, 6], [3, 4.5, 2]]" :key="j">
+                    <circle
+                      v-for="(r, i) in row"
+                      :key="i"
+                      :cx="14 + i * 16"
+                      :cy="8 + j * 12"
+                      :r="r"
+                      class="f1"
+                      :style="{ opacity: 0.45 + r / 12 }"
+                    />
+                  </template>
+                </template>
                 <template v-else-if="name === 'Line'">
                   <path d="M4 32 L14 24 L24 27 L34 14 L44 18 L56 6" class="s1" />
                   <path d="M4 36 L14 30 L24 32 L34 26 L44 28 L56 20" class="s2" />
@@ -659,6 +682,20 @@ const fontSamples = [
                 <template v-else-if="name === 'Density'">
                   <path d="M4 36 C14 36 16 8 26 8 C34 8 34 24 40 24 C46 24 48 36 56 36 Z" class="f1 o5" />
                   <path d="M4 36 C14 36 16 8 26 8 C34 8 34 24 40 24 C46 24 48 36 56 36" class="s1" />
+                </template>
+                <template v-else-if="name === 'Density2D'">
+                  <g transform="rotate(-18 28 22)">
+                    <ellipse cx="26" cy="22" rx="21" ry="12" class="f1 o3" />
+                    <ellipse cx="26" cy="22" rx="14" ry="8" class="f1 o5" />
+                    <ellipse cx="26" cy="22" rx="7" ry="4" class="f1 o9" />
+                  </g>
+                  <ellipse cx="46" cy="10" rx="7" ry="5" class="f1 o3" />
+                  <ellipse cx="46" cy="10" rx="3.5" ry="2.5" class="f1 o7" />
+                </template>
+                <template v-else-if="name === 'Donut'">
+                  <path d="M31.0 4.0 A16 16 0 0 1 35.8 34.9 L33.3 28.4 A9 9 0 0 0 30.5 11.0Z" class="f1" />
+                  <path d="M34.0 35.5 A16 16 0 0 1 14.0 21.0 L21.0 20.5 A9 9 0 0 0 32.3 28.7Z" class="f2" />
+                  <path d="M14.0 19.0 A16 16 0 0 1 29.0 4.0 L29.5 11.0 A9 9 0 0 0 21.0 19.5Z" class="f3" />
                 </template>
                 <template v-else-if="name === 'Streamgraph'">
                   <path d="M4 16 C16 10 24 14 32 8 C42 2 50 10 56 8 L56 20 C48 22 40 18 32 22 C24 26 14 20 4 22 Z" class="f1 o7" />
@@ -1615,6 +1652,7 @@ const fontSamples = [
 .s1 { fill: none; stroke: var(--u-c1); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
 .s2 { fill: none; stroke: var(--u-c2); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
 .f1.s1 { fill: var(--u-c1); }
+.stem { stroke-width: 1.6; }
 .grid-poly { fill: none; stroke: var(--u-border); stroke-width: 1; }
 .region { stroke: var(--u-card-solid); stroke-width: 0.3; stroke-linejoin: round; }
 .gallery .map-source { grid-column: 1 / -1; margin: 0; font-size: 10px; color: var(--vp-c-text-3); text-align: right; }
