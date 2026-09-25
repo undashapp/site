@@ -1606,11 +1606,10 @@ const fontSamples = [
   margin: 0;
   border-collapse: collapse;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  opacity: 0.25;
-  transition: opacity 0.4s;
+  opacity: 0;
   font-size: 12px;
 }
-.console-result.show { opacity: 1; }
+.console-result.show { opacity: 1; transition: opacity 0.3s; }
 .console-result th, .console-result td {
   border: 0;
   padding: 6px 18px;
