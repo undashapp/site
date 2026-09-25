@@ -7,12 +7,12 @@ Diese Anleitung führt Sie von einer Datendatei zu einem Dashboard. Jede CSV-, T
 Wenn Sie *undash* zum ersten Mal öffnen, zeigt die Seitenleiste links den Bereich **Dateien**.
 
 - Ziehen Sie Ihre Datei auf den Bereich, oder
-- klicken Sie auf den Bereich (oder drücken Sie `Enter`, während er den Fokus hat), um eine Datei auszuwählen.
+- klicken Sie auf den Bereich (oder drücken Sie `Enter`, wenn er ausgewählt ist), um eine Datei auszuwählen.
 
 *undash* liest die Datei ein, erkennt die Spaltentypen und berechnet Statistiken für jede Spalte. Danach erscheint die Datei in der Liste **Tabellen**, und eine Benachrichtigung bestätigt, dass sie geladen wurde.
 
 ::: tip TIPP
-Ihre Daten werden nur lokal in Ihrem Browser gespeichert. Nichts wird irgendwohin hochgeladen.
+Ihre Daten werden nur lokal in Ihrem Browser gespeichert. Es wird nichts hochgeladen.
 :::
 
 ## 2. Die Tabelle öffnen
@@ -28,11 +28,11 @@ Der Bereich **Spalten** listet alle Spalten der Tabelle mit ihren Typen auf. Neb
 Diagramme werden aus **Dimensionen** (wonach Sie gruppieren) und **Metriken** (was Sie aggregieren) aufgebaut. Fahren Sie mit der Maus über eine Spalte, um ihre Schaltflächen einzublenden:
 
 - Die **Kategorie**-Schaltfläche (oder `d`) fügt die Spalte als Dimension hinzu, zum Beispiel `region`.
-- Die **Summen**-Schaltfläche (oder `m`) fügt eine Metrik auf der Spalte hinzu, zum Beispiel den Mittelwert von `revenue`.
+- Die **Summen**-Schaltfläche (oder `m`) fügt eine Metrik für die Spalte hinzu, zum Beispiel den Mittelwert von `revenue`.
 
 Sie können auch einfach auf eine Spalte klicken. *undash* wählt dann eine sinnvolle Rolle: Dezimalzahlen werden zu Metriken, Kategorien zu Dimensionen.
 
-Klicken Sie im Bereich **Metriken** auf das Badge einer Metrik (zum Beispiel „Mittelwert“), um durch die anderen Aggregationen zu wechseln, etwa „Summe“ oder „Median“.
+Klicken Sie im Bereich **Metriken** auf das Badge einer Metrik (zum Beispiel „Mittelwert“), um zu einer anderen Aggregation wie „Summe“ oder „Median“ zu wechseln.
 
 ## 4. Ein Diagramm erstellen
 
@@ -42,7 +42,7 @@ Sobald das Modell Dimensionen und Metriken hat, bietet der **Diagramm-Konfigurat
 2. Prüfen Sie die Kanäle darunter. Jeder Kanal, etwa `x` oder `y_max`, zeigt die ihm zugewiesene Dimension oder Metrik. Klicken Sie auf ein Badge, um zu einer anderen zu wechseln.
 3. Klicken Sie auf die Speichern-Schaltfläche in der Zeile des Konfigurators, oder drücken Sie `Ctrl+S`.
 
-Das Diagramm erscheint im Bereich **Diagramme** und auf dem Dashboard des Modells. Beim Speichern des Diagramms wird auch das Modell gespeichert, der Punkt wird also grün.
+Das Diagramm erscheint im Bereich **Diagramme** und auf dem Dashboard des Modells. Dabei wird auch das Modell gespeichert, und der Punkt wird grün.
 
 Wiederholen Sie diesen Schritt für ein paar weitere Diagramme: Fügen Sie für eine Datumsspalte eine Transformation **Partition Datum** hinzu (siehe [Spalten & Transformationen](./fields-transforms)) und probieren Sie ein **Liniendiagramm** aus.
 
@@ -61,11 +61,11 @@ Steuerelemente sind Filter, die Betrachter auf dem Dashboard ändern können. Fa
 - Drücken Sie `Ctrl+Shift+P`, um das Dashboard in der Vollansicht zu präsentieren. Drücken Sie `c`, um den Bereich **Filter** mit Ihren Steuerelementen zu öffnen, und `Escape`, um die Präsentation zu beenden.
 - Drücken Sie `Ctrl+Shift+D`, um die fokussierte Ansicht als PDF zu exportieren. Dateityp und Papierformat legen Sie in den [Einstellungen](./settings) fest.
 
-## Abkürzung: Lassen Sie die KI das Dashboard bauen
+## Abkürzung: Dashboard per KI erstellen
 
-Wenn Sie einen API-Schlüssel von OpenAI oder Anthropic haben, kann *undash* mit einem Klick ein vollständiges Modell samt Dashboard für eine Tabelle vorschlagen. Mit dem KI-Anbieter werden nur Spaltenstatistiken geteilt, nie Ihre Datensätze. Siehe [KI-Assistent](./ai).
+Wenn Sie einen API-Schlüssel von OpenAI oder Anthropic haben, kann *undash* mit einem Klick ein vollständiges Modell samt Dashboard für eine Tabelle vorschlagen. Der KI-Anbieter erhält dabei nur Spaltenstatistiken, niemals Ihre Datensätze. Siehe [KI-Assistent](./ai).
 
 ## Nächste Schritte
 
 - [Die Oberfläche](./interface) erklärt die Bereiche des Bildschirms.
-- [Tastenkürzel](./shortcuts) listet jede Taste auf. Fast alles in *undash* lässt sich ohne Maus erledigen.
+- [Tastenkürzel](./shortcuts) listet alle Tastenkürzel auf. Fast alles in *undash* lässt sich ohne Maus erledigen.

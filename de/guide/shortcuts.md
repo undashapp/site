@@ -1,6 +1,6 @@
 # Tastenkürzel
 
-*undash* ist für die Bedienung mit der Tastatur gemacht. Die meisten Listen verwenden Tasten im Vim-Stil: `j`/`k` bewegen nach unten und oben, `h`/`l` ändern einen Wert.
+*undash* ist auf die Bedienung per Tastatur ausgelegt. Die meisten Listen verwenden Tasten im Vim-Stil: `j`/`k` bewegen nach unten und oben, `h`/`l` ändern einen Wert.
 
 ::: info INFO
 `Ctrl` steht auf allen Plattformen für die Control-Taste, auch unter macOS. Für Großbuchstaben wird `Shift+X` geschrieben: `Shift+F` ist dasselbe wie `F`.
@@ -12,7 +12,7 @@ Kürzel aus einzelnen Buchstaben werden nicht ausgelöst, während Sie in ein Te
 
 | Taste | Aktion |
 |---|---|
-| `Ctrl+T` | Tastatur zwischen Seitenleiste und DB-Konsole wechseln |
+| `Ctrl+T` | Tastaturfokus zwischen Seitenleiste und DB-Konsole wechseln |
 | `Ctrl+,` | Einstellungsleiste öffnen oder schließen |
 | `Ctrl+Shift+,` | App-Einstellungen öffnen |
 | `Ctrl+C` | DB-Konsole ein- oder ausblenden |
@@ -28,7 +28,7 @@ Drücken Sie `v`, dann einen Buchstaben:
 | `v` `t` | DB-Konsole ein- oder ausblenden |
 | `v` `c` | Diagrammansicht ein- oder ausblenden |
 | `v` `d` | Dashboard ein- oder ausblenden |
-| `v` `b` | Tastatur an die andere Ansicht übergeben |
+| `v` `b` | Tastaturfokus auf die andere Ansicht legen |
 | `v` `s` | Die beiden Ansichten tauschen |
 | `v` `m` | Anordnung wechseln: oben/unten, links/rechts, schwebend |
 | `v` `p` | Präsentationsmodus starten oder beenden |

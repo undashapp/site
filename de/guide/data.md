@@ -1,6 +1,6 @@
 # Daten importieren
 
-Jede Datei, die Sie importieren, wird zu einer **Tabelle**. Tabellen sind das Ausgangsmaterial für [Modelle](./models).
+Jede Datei, die Sie importieren, wird zu einer **Tabelle**. Tabellen bilden die Grundlage für [Modelle](./models).
 
 ## Unterstützte Formate
 
@@ -74,13 +74,13 @@ Titel können pro Sprache festgelegt werden. Klicken Sie im Bearbeitungsformular
 
 ### Suchen und Sortieren
 
-Sobald mindestens eine Tabelle oder ein Modell vorhanden ist, erscheint über den Listen ein Feld **Suche**. Es filtert Modelle und Tabellen während der Eingabe. Drücken Sie `/`, um in das Suchfeld zu springen, `Enter`, um den ersten Treffer zu öffnen, und `Escape`, um die Suche zu leeren.
+Sobald mindestens eine Tabelle oder ein Modell vorhanden ist, erscheint über den Listen ein Feld **Suche**. Es filtert Modelle und Tabellen schon beim Tippen. Drücken Sie `/`, um in das Suchfeld zu springen, `Enter`, um den ersten Treffer zu öffnen, und `Escape`, um die Suche zu leeren.
 
-Enthält eine Liste mehr als einen Eintrag, sortieren zwei Schaltflächen in ihrer Kopfzeile sie nach Zeit oder Alphabet, auf- oder absteigend.
+Enthält eine Liste mehr als einen Eintrag, können Sie sie über zwei Schaltflächen in der Kopfzeile nach Zeit oder alphabetisch sortieren, jeweils auf- oder absteigend.
 
 ## Daten exportieren
 
-Tabellen und Modelle lassen sich über ⋮-Menü → **Exportieren** oder mit `d` exportieren. Die Datei wird nach der Tabelle bzw. dem Modell benannt, und das Format bestimmt die Einstellung **Daten-Export-Format** (siehe [Einstellungen](./settings)):
+Tabellen und Modelle lassen sich über ⋮-Menü → **Exportieren** oder mit `d` exportieren. Die Datei trägt den Namen der Tabelle bzw. des Modells, das Format legt die Einstellung **Daten-Export-Format** fest (siehe [Einstellungen](./settings)):
 
 | Format | Ergebnis |
 |---|---|
@@ -89,10 +89,10 @@ Tabellen und Modelle lassen sich über ⋮-Menü → **Exportieren** oder mit `d
 | JSON | Ein JSON-Array von Datensätzen |
 | Parquet | Eine Parquet-Datei |
 
-Ein Modell wird mit dem Ergebnis seiner SQL-Abfrage exportiert.
+Bei einem Modell wird das Ergebnis seiner SQL-Abfrage exportiert.
 
 ::: tip TIPP
-Der XLSX-Export ist das langsamste Format. Schlägt ein großer Export mit „Nicht genügend Speicher vorhanden!“ fehl, versuchen Sie es mit CSV oder Parquet.
+XLSX ist das langsamste Exportformat. Schlägt ein großer Export mit „Nicht genügend Speicher vorhanden!“ fehl, versuchen Sie es mit CSV oder Parquet.
 :::
 
 ## Projekt sichern
@@ -115,4 +115,4 @@ Statt Dateien zu importieren, kann *undash* auch Tabellen auf einem DuckDB-Serve
 2. Sobald der Server erreichbar ist, erscheint in der Kopfzeile von **Tabellen** eine Schaltfläche **+** (**Remote-Tabelle hinzufügen**). Alternativ drücken Sie `Ctrl+Shift+N`.
 3. Wählen Sie eine Tabelle des Servers aus, optional mit **Views einbeziehen**, und geben Sie ihr einen Namen.
 
-Remote-Tabellen tragen ein Wolken-Symbol. Drücken Sie `Ctrl+R` auf einer Remote-Tabelle, um ihre Statistiken zu aktualisieren. Die Server-URI kann nicht geändert werden, solange Remote-Tabellen existieren.
+Remote-Tabellen sind mit einem Wolken-Symbol gekennzeichnet. Drücken Sie `Ctrl+R` auf einer Remote-Tabelle, um ihre Statistiken zu aktualisieren. Die Server-URI kann nicht geändert werden, solange Remote-Tabellen existieren.

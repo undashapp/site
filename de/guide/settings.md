@@ -1,12 +1,12 @@
 # Einstellungen
 
-*undash* hat zwei Orte für Einstellungen: die **Einstellungsleiste** für Darstellung und Export und die **App-Einstellungen** für den KI-Assistenten und DuckDB-Server. Alle Einstellungen werden in Ihrem Browser gespeichert.
+Einstellungen finden Sie in *undash* an zwei Stellen: die **Einstellungsleiste** für Darstellung und Export und die **App-Einstellungen** für den KI-Assistenten und DuckDB-Server. Alle Einstellungen werden in Ihrem Browser gespeichert.
 
 ## Einstellungsleiste
 
-Die Einstellungsleiste sitzt oben in der Seitenleiste. Fahren Sie mit der Maus über das Regler-Symbol oder drücken Sie `Ctrl+,`, um sie aufzuklappen.
+Die Einstellungsleiste befindet sich oben in der Seitenleiste. Fahren Sie mit der Maus über das Regler-Symbol oder drücken Sie `Ctrl+,`, um sie aufzuklappen.
 
-Klicken Sie auf eine Einstellung, um zu ihrem nächsten Wert zu wechseln, und `Shift`+Klick, um zurückzugehen. Mit der Tastatur wechseln `h`/`l` oder `←`/`→` zwischen den Einstellungen, `k`/`↑` wählt den nächsten Wert und `j`/`↓` den vorherigen. `Escape` schließt die Leiste.
+Ein Klick auf eine Einstellung wählt den nächsten Wert, `Shift`+Klick den vorherigen. Mit der Tastatur wechseln `h`/`l` oder `←`/`→` zwischen den Einstellungen, `k`/`↑` wählt den nächsten Wert und `j`/`↓` den vorherigen. `Escape` schließt die Leiste.
 
 | Einstellung | Werte | Standard |
 |---|---|---|
@@ -49,6 +49,6 @@ Die URI kann nicht geändert werden, solange Remote-Tabellen oder -Modelle von i
 
 ## Updates
 
-Wenn eine neue Version von *undash* verfügbar ist, zeigt ein Banner oben „Eine neue Version ist verfügbar“. Klicken Sie auf **Aktualisieren**, um die Anwendung mit der neuen Version neu zu laden. *undash* aktualisiert sich nie, während Sie arbeiten.
+Wenn eine neue Version von *undash* verfügbar ist, zeigt ein Banner oben „Eine neue Version ist verfügbar“. Klicken Sie auf **Aktualisieren**, um die Anwendung mit der neuen Version neu zu laden. *undash* aktualisiert sich nie ungefragt, während Sie arbeiten.
 
 Klicken Sie auf die Versionsnummer neben dem App-Titel, um sie zu kopieren.

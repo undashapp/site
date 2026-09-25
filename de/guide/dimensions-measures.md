@@ -1,6 +1,6 @@
 # Dimensionen & Metriken
 
-Diagramme werden aus zwei Arten von Attributen aufgebaut:
+Diagramme setzen sich aus zwei Arten von Attributen zusammen:
 
 - **Dimensionen** teilen die Daten in Gruppen auf: Regionen, Monate, Produktkategorien.
 - **Metriken** fassen jede Gruppe zu einer Zahl zusammen: Summe des Umsatzes, durchschnittlicher Preis, Anzahl der Bestellungen.
@@ -11,11 +11,11 @@ Fügen Sie eine Spalte oder eine transformierte Spalte mit der Kategorie-Schaltf
 
 Eine kategoriale Dimension kann nur dann in einem Diagramm verwendet werden, wenn sie weniger als 100 Kategorien hat. Dimensionen mit mehr Kategorien sind ausgegraut, es sei denn, ein Filter schränkt sie ein. Mit einer [Transformation vom Typ Gruppierung, Top-N oder Bottom-N](./fields-transforms#transformationen) reduzieren Sie die Anzahl der Kategorien.
 
-Eine Dimension kann nicht entfernt werden, solange ein Diagramm sie verwendet. Entfernen Sie sie mit `Backspace` oder ×.
+Entfernen Sie eine Dimension mit `Backspace` oder ×. Solange ein Diagramm sie verwendet, ist das nicht möglich.
 
 ## Metriken
 
-Fügen Sie eine Metrik mit der Summen-Schaltfläche oder `m` auf einer Spalte hinzu. Die erste Zeile im Bereich **Metriken** ist immer `*` mit **Anzahl**: Klicken Sie darauf, um die Zeilen jeder Gruppe zu zählen.
+Eine Metrik fügen Sie mit der Summen-Schaltfläche oder `m` hinzu. Die erste Zeile im Bereich **Metriken** ist immer `*` mit **Anzahl**: Klicken Sie darauf, um die Zeilen jeder Gruppe zu zählen.
 
 ### Aggregationen
 
@@ -33,7 +33,7 @@ Klicken Sie auf das Badge einer Metrik oder drücken Sie `l`/`h`, um ihre Aggreg
 Die Aggregation einer Metrik kann nicht geändert werden, solange ein Diagramm die Metrik verwendet.
 
 ::: tip TIPP
-Kreis-, Donut-Diagramme und Streamgraphs zeigen Teile eines Ganzen. Sie akzeptieren nur **Summe** und **Anzahl** (nicht auf unterschiedliche Werte beschränkt), weil sich nur diese korrekt aufsummieren.
+Kreis-, Donut-Diagramme und Streamgraphs zeigen Teile eines Ganzen. Sie erlauben nur **Summe** und **Anzahl** (ohne Beschränkung auf unterschiedliche Werte), weil sich nur diese sinnvoll zu einem Ganzen addieren.
 :::
 
 ### Bivariate Metriken
@@ -41,15 +41,15 @@ Kreis-, Donut-Diagramme und Streamgraphs zeigen Teile eines Ganzen. Sie akzeptie
 Bivariate Metriken kombinieren zwei Spalten, zum Beispiel die Korrelation von Preis und Menge:
 
 1. Wählen Sie die erste Spalte vor: Klicken Sie auf den kleinen Punkt links in ihrer Zeile oder drücken Sie `Space`.
-2. Drücken Sie auf der zweiten Spalte `m` oder klicken Sie auf die Summen-Schaltfläche.
+2. Drücken Sie bei der zweiten Spalte `m` oder klicken Sie auf die Summen-Schaltfläche.
 
-Die zweite Spalte muss eine Zahl sein. Sind beide Spalten Zahlen, stehen diese Aggregationen zur Verfügung: Korrelation, Kovarianz, Kovarianz Pop sowie die Regressionsfunktionen Regr Mittel X, Regr Mittel Y, Regr Anzahl, Regr Abschnitt, Regr R², Regr Steigung, Regr Summe X², Regr Summe X·Y und Regr Summe Y².
+Die zweite Spalte muss numerisch sein. Sind beide Spalten numerisch, stehen diese Aggregationen zur Verfügung: Korrelation, Kovarianz, Kovarianz Pop sowie die Regressionsfunktionen Regr Mittel X, Regr Mittel Y, Regr Anzahl, Regr Abschnitt, Regr R², Regr Steigung, Regr Summe X², Regr Summe X·Y und Regr Summe Y².
 
 **Arg Minimum** und **Arg Maximum** funktionieren auch, wenn die erste Spalte keine Zahl ist. Sie liefern den Wert der ersten Spalte, bei dem die zweite Spalte am kleinsten bzw. am größten ist, zum Beispiel das Produkt mit dem höchsten Preis.
 
 ## Sortierung
 
-Dimensionen und Metriken können Diagramme sortieren. Klicken Sie auf die Sortier-Schaltfläche links in einer Zeile, um zwischen aufsteigend, absteigend und aus zu wechseln, oder verwenden Sie die Tasten:
+Über Dimensionen und Metriken legen Sie die Sortierung von Diagrammen fest. Klicken Sie auf die Sortier-Schaltfläche links in einer Zeile, um zwischen aufsteigend, absteigend und aus zu wechseln, oder verwenden Sie die Tasten:
 
 | Taste | Aktion |
 |---|---|

@@ -1,10 +1,10 @@
 # Dashboards
 
-Jedes Modell hat genau ein Dashboard. Es zeigt alle gespeicherten Diagramme des Modells auf einer Fläche, mit einem Titel und einer Fußzeile. Öffnen Sie es mit der Dashboard-Schaltfläche in der unteren Leiste oder mit `v` `d`.
+Jedes Modell hat genau ein Dashboard. Es zeigt alle gespeicherten Diagramme des Modells auf einer Fläche, mit einem Titel und einer Fußzeile. Öffnen Sie es mit der Dashboard-Schaltfläche in der Fußleiste oder mit `v` `d`.
 
 ## Diagramme hinzufügen und entfernen
 
-Jedes Diagramm, das Sie speichern, erscheint im Dashboard. Um ein Diagramm im Dashboard auszublenden, ohne es zu löschen, drücken Sie im Bereich **Diagramme** `d` darauf oder klicken Sie auf sein Häkchen. Ausgeblendete Diagramme werden in der Liste abgeblendet dargestellt.
+Jedes Diagramm, das Sie speichern, erscheint im Dashboard. Um ein Diagramm im Dashboard auszublenden, ohne es zu löschen, wählen Sie es im Bereich **Diagramme** aus und drücken `d`, oder klicken Sie auf sein Häkchen. Ausgeblendete Diagramme werden in der Liste abgeblendet dargestellt.
 
 ## Titel und Untertitel
 
@@ -16,7 +16,7 @@ Das Dashboard hat oben einen Titel und einen Untertitel, die Sie direkt im Dashb
 
 Ziehen Sie ein Diagramm an seinem Titel, um es an eine andere Stelle im Layout zu verschieben. Halten Sie ein Diagramm gedrückt, um es zusammen mit der Gruppe von Diagrammen zu verschieben, zu der es gehört. *undash* richtet die Diagramme in Zeilen und Spalten aus, sodass das Layout aufgeräumt bleibt.
 
-Verschieben Sie das Dashboard, indem Sie die leere Fläche ziehen, und zoomen Sie mit dem Mausrad oder mit zwei Fingern.
+Um das Dashboard zu verschieben, ziehen Sie an einer freien Stelle. Zoomen können Sie mit dem Mausrad oder mit zwei Fingern.
 
 ### Layout-Vorlagen
 
@@ -41,7 +41,7 @@ Die meisten Vorlagen ordnen die Diagramme nach Größe. Wechseln Sie zwischen **
 
 ### Proportionen
 
-Die Proportionen-Schaltfläche (`Ctrl+Alt+A`) legt fest, wie das Dashboard seine Diagramme bemisst:
+Die Proportionen-Schaltfläche (`Ctrl+Alt+A`) legt fest, wie das Dashboard die Größe seiner Diagramme bestimmt:
 
 - **Proportionen wie eingestellt**: folgt der Einstellung für das Seitenverhältnis der Ansicht.
 - **Diagrammproportionen behalten**: Jedes Diagramm behält seine eigenen Proportionen.
@@ -66,10 +66,10 @@ Im Präsentationsmodus gilt:
 
 ## Teilen und Kiosk-Modus
 
-**Dashboard teilen**, neben der Schaltfläche **Dashboard präsentieren** und auch im Präsentationsmodus, öffnet den **Kiosk-Link** des Dashboards in einem neuen Tab. Er sieht etwa so aus: `https://…/?model=sales`. Ein Kiosk-Link öffnet das Dashboard direkt im Präsentationsmodus, ohne Weg zurück zum Editor. Verwenden Sie ihn für Wandbildschirme oder um einen Laptop für eine Präsentation zu übergeben.
+Die Schaltfläche **Dashboard teilen** (neben **Dashboard präsentieren** und auch im Präsentationsmodus) öffnet den **Kiosk-Link** des Dashboards in einem neuen Tab. Er sieht etwa so aus: `https://…/?model=sales`. Ein Kiosk-Link öffnet das Dashboard direkt im Präsentationsmodus, ohne Weg zurück zum Editor. Das eignet sich für Wandbildschirme oder wenn Sie einen Laptop für eine Präsentation aus der Hand geben.
 
 ::: warning WARNUNG
-Der Kiosk-Link teilt keine Daten. Da Ihre Daten nur in Ihrem Browser liegen, funktioniert der Link nur im selben Browser auf demselben Computer. Um ein Dashboard an jemand anderen weiterzugeben, senden Sie eine [Projektsicherung](./data#projekt-sichern) oder einen Export.
+Der Kiosk-Link teilt keine Daten. Da Ihre Daten nur in Ihrem Browser liegen, funktioniert der Link nur im selben Browser auf demselben Computer. Um ein Dashboard mit anderen zu teilen, senden Sie eine [Projektsicherung](./data#projekt-sichern) oder einen Export.
 :::
 
 ## Exportieren

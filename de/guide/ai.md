@@ -1,6 +1,6 @@
 # KI-Assistent
 
-Der KI-Assistent schlägt Modelle, Diagramme und Dashboards für Ihre Daten vor. Er arbeitet mit Ihrem eigenen API-Schlüssel von **OpenAI** oder **Anthropic**.
+Der KI-Assistent schlägt Modelle, Diagramme und Dashboards für Ihre Daten vor. Dafür nutzt er Ihren eigenen API-Schlüssel von **OpenAI** oder **Anthropic**.
 
 ## Einrichtung
 
@@ -13,7 +13,7 @@ Ihr Schlüssel wird nur im lokalen Speicher dieses Browsers abgelegt. Anfragen g
 
 ## Was mit der KI geteilt wird
 
-*undash* sendet nie die Datensätze Ihrer Daten. Für jede Spalte erhält die KI:
+*undash* sendet niemals Ihre Datensätze. Für jede Spalte erhält die KI:
 
 - den Namen der Spalte (oder ihren Alias, siehe [Spalten & Transformationen](./fields-transforms#aliase)) und ihren Typ,
 - Statistiken wie die Anzahl unterschiedlicher Werte, fehlende Werte und den Wertebereich, und
@@ -25,7 +25,7 @@ Kategoriewerte können Namen oder andere personenbezogene Daten enthalten. Deakt
 
 ## Ein Dashboard vorschlagen lassen
 
-Öffnen Sie eine Tabelle, sodass ein neues Modell ohne Dimensionen oder Metriken angezeigt wird. Klicken Sie dann auf die Funkeln-Schaltfläche in der Kopfzeile des Bereichs **Diagramme** (**Modell und Dashboard mit KI vorschlagen**) oder drücken Sie `Ctrl+Shift+A`. Die Schaltfläche erscheint, sobald ein API-Schlüssel hinterlegt ist.
+Öffnen Sie eine Tabelle. Es erscheint ein neues Modell, noch ohne Dimensionen und Metriken. Klicken Sie dann auf die Schaltfläche mit dem Funkelsymbol in der Kopfzeile des Bereichs **Diagramme** (**Modell und Dashboard mit KI vorschlagen**) oder drücken Sie `Ctrl+Shift+A`. Die Schaltfläche erscheint, sobald ein API-Schlüssel hinterlegt ist.
 
 Während die KI arbeitet, zeigt *undash* „Analysiere Schema, Bereite Diagramme vor“. Anschließend öffnet sich der **Dashboard-Vorschlag**:
 
@@ -41,7 +41,7 @@ Hat das Modell bereits Dimensionen oder Metriken, fordert dieselbe Schaltfläche
 
 ## Automatische Funktionen
 
-Zwei Optionen in den Einstellungen lassen die KI ohne Nachfrage arbeiten:
+Mit zwei Optionen in den Einstellungen wird die KI von selbst aktiv:
 
 | Option | Was sie bewirkt |
 |---|---|

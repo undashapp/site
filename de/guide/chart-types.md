@@ -1,8 +1,8 @@
 # Diagrammtypen
 
-*undash* bietet 21 Diagrammtypen. Für jeden Typ listet diese Seite seine Kanäle auf. Pflichtkanäle sind wie im Konfigurator mit `*` markiert.
+*undash* bietet 21 Diagrammtypen. Diese Seite zeigt für jeden Typ die verfügbaren Kanäle. Pflichtkanäle sind wie im Konfigurator mit `*` markiert.
 
-Jeder Diagrammtyp akzeptiert außerdem die optionalen Kanäle `row` und `col` für [Small Multiples](./charts#small-multiples). Sie werden in den Tabellen unten nicht wiederholt.
+Zusätzlich unterstützt jeder Diagrammtyp die optionalen Kanäle `row` und `col` für [Small Multiples](./charts#small-multiples). Sie sind in den Tabellen nicht extra aufgeführt.
 
 ::: info Dimensionen oder Metriken?
 Manche Diagramme stellen **Dimensionen** direkt dar, ohne Aggregation: Jeder Datenpunkt wird zu einer Markierung (Streu-, Dichte-, Tick-Diagramm). Andere stellen **Metriken** dar, eine Markierung pro Gruppe (Säulen-, Linien-, Kreisdiagramm). Die Tabellen zeigen, was jeweils gilt.
@@ -14,7 +14,7 @@ Manche Diagramme stellen **Dimensionen** direkt dar, ohne Aggregation: Jeder Dat
 
 Senkrechte Balken, einer pro Kategorie.
 
-| Kanal | Erwartet |
+| Kanal | Inhalt |
 |---|---|
 | `x`* | Eine Dimension: Kategorien, ganze Zahlen oder Datumswerte. Top-N und Bottom-N funktionieren hier. |
 | `y_max`* | Eine Metrik: die Höhe des Balkens. |
@@ -39,7 +39,7 @@ Wie Säulen- und Balkendiagramm, gezeichnet als Linie mit einem Punkt. Mit `y_mi
 
 Ein Raster aus Kreisen für zwei kategoriale Dimensionen, zum Beispiel Produkt nach Region.
 
-| Kanal | Erwartet |
+| Kanal | Inhalt |
 |---|---|
 | `x`*, `y`* | Kategoriale Dimensionen. |
 | `r`* | Eine Metrik: die Größe der Kreise. |
@@ -49,7 +49,7 @@ Ein Raster aus Kreisen für zwei kategoriale Dimensionen, zum Beispiel Produkt n
 
 Eine Speiche pro Kategorie, ein Polygon pro Reihe. Gut geeignet für Profile, etwa Punktzahlen in mehreren Disziplinen.
 
-| Kanal | Erwartet |
+| Kanal | Inhalt |
 |---|---|
 | `angle`* | Eine Dimension: die Speichen. Top-N und Bottom-N funktionieren hier. |
 | `r`* | Eine Metrik: der Abstand zur Mitte. Sortieren Sie sie, um die Speichen nach Wert zu ordnen. |
@@ -59,7 +59,7 @@ Eine Speiche pro Kategorie, ein Polygon pro Reihe. Gut geeignet für Profile, et
 
 Eine einzelne große Zahl, etwa der Gesamtumsatz.
 
-| Kanal | Erwartet |
+| Kanal | Inhalt |
 |---|---|
 | `text`* | Eine Metrik. |
 
@@ -71,7 +71,7 @@ Mit `row` oder `col` zeigen Sie eine Kachel pro Kategorie.
 
 Segmente eines Kreises. Das Donut-Diagramm ist ein Kreisdiagramm mit Loch.
 
-| Kanal | Erwartet |
+| Kanal | Inhalt |
 |---|---|
 | `color`* | Eine Dimension: die Segmente. Top-N und Bottom-N funktionieren hier. |
 | `angle`* | Eine Metrik **Summe** oder **Anzahl**: die Größe der Segmente. |
@@ -82,13 +82,13 @@ Segmente werden beschriftet, wenn genug Platz ist; die Legende wird dann ausgebl
 
 ### Liniendiagramm
 
-| Kanal | Erwartet |
+| Kanal | Inhalt |
 |---|---|
 | `x`* | Eine Dimension: Datumswerte, Uhrzeiten oder Zahlen. Für monatliche oder jährliche Linien verwenden Sie eine Transformation [Partition Datum](./fields-transforms#partition-datum). |
 | `y`* | Eine Metrik. |
 | `color` | Eine Dimension: eine Linie pro Kategorie. |
 
-Linien mit sehr vielen Punkten werden auf das ausgedünnt, was der Bildschirm darstellen kann, ohne Spitzen zu verlieren.
+Bei sehr vielen Punkten wird die Linie auf die darstellbare Auflösung ausgedünnt, ohne dass Spitzen verloren gehen.
 
 ### Flächendiagramm
 
@@ -102,7 +102,7 @@ Dieselben Kanäle wie das Flächendiagramm, aber die Reihen werden um eine flie�
 
 Punkte, die der Reihe nach verbunden sind, zum Beispiel wie sich Preis und Menge über die Jahre entwickelt haben.
 
-| Kanal | Erwartet |
+| Kanal | Inhalt |
 |---|---|
 | `x`*, `y`* | Metriken. |
 | `z`* | Eine geordnete Dimension, etwa Jahre oder eine Partition Datum: die Reihenfolge, in der die Punkte verbunden werden. Die Punkte werden damit beschriftet. |
@@ -114,7 +114,7 @@ Punkte, die der Reihe nach verbunden sind, zum Beispiel wie sich Preis und Menge
 
 Ein Punkt pro Datenpunkt.
 
-| Kanal | Erwartet |
+| Kanal | Inhalt |
 |---|---|
 | `x`*, `y`* | Numerische oder Datums-**Dimensionen** (nicht aggregiert). |
 | `color` | Eine Dimension. |
@@ -125,7 +125,7 @@ Bei sehr vielen Punkten werden Punkte, die auf dasselbe Pixel fallen, zusammenge
 
 Eine Blase pro Kategorie, platziert anhand zweier Metriken.
 
-| Kanal | Erwartet |
+| Kanal | Inhalt |
 |---|---|
 | `x`*, `y`* | Metriken. |
 | `z`* | Eine kategoriale Dimension: eine Blase pro Kategorie, damit beschriftet. |
@@ -136,7 +136,7 @@ Eine Blase pro Kategorie, platziert anhand zweier Metriken.
 
 Eine geglättete Dichte von Punkten in zwei Dimensionen. Nützlich, wenn ein Streudiagramm zu viele Punkte hat, um es zu lesen.
 
-| Kanal | Erwartet |
+| Kanal | Inhalt |
 |---|---|
 | `x`*, `y`* | Numerische oder Datums-Dimensionen. |
 | `color` | Eine Dimension: eine Dichte pro Kategorie. |
@@ -145,7 +145,7 @@ Eine geglättete Dichte von Punkten in zwei Dimensionen. Nützlich, wenn ein Str
 
 ### Histogramm
 
-| Kanal | Erwartet |
+| Kanal | Inhalt |
 |---|---|
 | `x`* | Eine Dimension **Partitionsindex** aus einer Transformation [Partition](./fields-transforms#partition). |
 | `y`* | Eine Metrik, meist **Anzahl**. |
@@ -157,7 +157,7 @@ Die Anzahl der Partitionen ändern Sie am Badge der Transformation Partition.
 
 Eine geglättete Kurve der Verteilung einer Dimension.
 
-| Kanal | Erwartet |
+| Kanal | Inhalt |
 |---|---|
 | `x`* | Eine numerische oder Datums-Dimension. |
 | `color` | Eine Dimension: eine Kurve pro Kategorie. |
@@ -166,7 +166,7 @@ Eine geglättete Kurve der Verteilung einer Dimension.
 
 Ein Strich pro Datenpunkt entlang einer Achse, optional in einer Zeile pro Kategorie.
 
-| Kanal | Erwartet |
+| Kanal | Inhalt |
 |---|---|
 | `x`* | Eine numerische oder Datums-Dimension. |
 | `y` | Eine kategoriale Dimension. |
@@ -175,7 +175,7 @@ Ein Strich pro Datenpunkt entlang einer Achse, optional in einer Zeile pro Kateg
 
 Ein Raster aus Zellen für zwei partitionierte Dimensionen.
 
-| Kanal | Erwartet |
+| Kanal | Inhalt |
 |---|---|
 | `x`*, `y`* | Dimensionen **Partitionsindex** aus Transformationen [Partition](./fields-transforms#partition). |
 | `opacity` | Eine Metrik: die Schattierung jeder Zelle. |
@@ -186,7 +186,7 @@ Ein Raster aus Zellen für zwei partitionierte Dimensionen.
 
 Eine Choroplethenkarte: Regionen, eingefärbt nach einer Metrik.
 
-| Kanal | Erwartet |
+| Kanal | Inhalt |
 |---|---|
 | `region`* | Eine Dimension mit einer Transformation [Geo](./fields-transforms#geo). |
 | `opacity`* | Eine Metrik: die Schattierung jeder Region. |
@@ -205,5 +205,5 @@ Groß-/Kleinschreibung und umgebende Leerzeichen spielen bei der Zuordnung keine
 ## Grenzen
 
 - Eine kategoriale Dimension kann nur dann auf einer Achse, als Farbe oder für Small Multiples verwendet werden, wenn sie nach Anwendung der Filter weniger als **100** Kategorien hat.
-- Ein Diagramm, das für seinen Inhalt zu klein ist, zeigt stattdessen eine schraffierte Fläche. Vergrößern Sie die Ansicht, verringern Sie die [Schriftskalierung](./charts#ansichtssteuerung) oder reduzieren Sie die Anzahl der Kategorien.
+- Ein Diagramm, das für seinen Inhalt zu klein ist, zeigt stattdessen eine schraffierte Fläche. Vergrößern Sie die Ansicht, verringern Sie die [Schriftgröße](./charts#ansichtssteuerung) oder reduzieren Sie die Anzahl der Kategorien.
 - Ein Diagramm ohne Daten zeigt „Keine Daten“.

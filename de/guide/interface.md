@@ -33,12 +33,12 @@ Innerhalb einer Liste navigieren Sie in der Seitenleiste mit `j`/`k` (oder `↓`
 
 Der Hauptbereich zeigt bis zu zwei Ansichten:
 
-- Die **Diagrammansicht** zeigt das Diagramm, das Sie gerade im Diagramm-Konfigurator aufbauen.
+- Die **Diagrammansicht** zeigt das Diagramm, das Sie gerade im Diagramm-Konfigurator erstellen.
 - Das **Dashboard** zeigt alle Diagramme des Modells. Siehe [Dashboards](./dashboards).
 
-Beide können gleichzeitig angezeigt werden. Sie teilen sich den Bereich dann in einer von drei Anordnungen: geteilt oben/unten, geteilt links/rechts oder mit einer Ansicht, die über der anderen schwebt. Ziehen Sie den Trenner zwischen geteilten Ansichten, um ihre Größe zu ändern. Eine schwebende Ansicht lässt sich an ihrem Griff verschieben und an ihrer unteren rechten Ecke in der Größe ändern.
+Beide lassen sich gleichzeitig anzeigen. Dann teilen sie sich den Bereich auf eine von drei Arten: oben/unten, links/rechts oder schwebend, wobei eine Ansicht über der anderen liegt. Ziehen Sie den Trenner zwischen geteilten Ansichten, um ihre Größe zu ändern. Eine schwebende Ansicht lässt sich an ihrem Griff verschieben und an ihrer unteren rechten Ecke in der Größe ändern.
 
-Jede Ansicht hat unten rechts ihre eigene Steuerleiste (siehe [Diagramme](./charts#ansichtssteuerung)). `Ctrl+1` und `Ctrl+2` übergeben die Tastatur an die erste bzw. zweite Ansicht.
+Jede Ansicht hat unten rechts ihre eigene Steuerleiste (siehe [Diagramme](./charts#ansichtssteuerung)). Mit `Ctrl+1` und `Ctrl+2` legen Sie den Tastaturfokus auf die erste bzw. zweite Ansicht.
 
 ## Fußleiste
 
@@ -50,7 +50,7 @@ Die Leiste am unteren Fensterrand, von links nach rechts:
 | DB-Konsole | SQL-Konsole ein- oder ausblenden | `Ctrl+C` oder `v` `t` |
 | Diagrammansicht | Diagrammansicht ein- oder ausblenden | `v` `c` |
 | Dashboard | Dashboard ein- oder ausblenden | `v` `d` |
-| Anordnung | Durch die Anordnungen der beiden Ansichten wechseln (`Shift`+Klick: rückwärts) | `v` `m` |
+| Anordnung | Anordnung der beiden Ansichten wechseln (`Shift`+Klick: rückwärts) | `v` `m` |
 | Tauschen | Die beiden Ansichten vertauschen | `v` `s` |
 
 Die Schaltflächen für Anordnung und Tauschen erscheinen nur, solange beide Ansichten angezeigt werden. Mindestens eine Ansicht ist immer sichtbar.
@@ -61,4 +61,4 @@ Die DB-Konsole ist ein SQL-Editor mit Ergebnistabelle unterhalb der Ansichten. S
 
 ## Benachrichtigungen
 
-Meldungen erscheinen als Benachrichtigungen (Toasts), zum Beispiel wenn eine Datei geladen, ein Modell gespeichert wurde oder etwas schiefgelaufen ist. Fehler, die eine Aktion verhindern, etwa das Löschen einer Tabelle, die noch von einem Modell verwendet wird, werden dort ebenfalls erklärt.
+Meldungen erscheinen als Benachrichtigungen (Toasts), zum Beispiel wenn eine Datei geladen oder ein Modell gespeichert wurde oder wenn etwas schiefgelaufen ist. Fehler, die eine Aktion verhindern, etwa das Löschen einer Tabelle, die noch von einem Modell verwendet wird, werden dort ebenfalls erklärt.

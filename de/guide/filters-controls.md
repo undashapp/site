@@ -14,7 +14,7 @@
 Eine Spalte kann sowohl einen Filter als auch ein Steuerelement haben. Filter und Steuerelemente wirken auf die Spalten des Modells, nicht auf transformierte Spalten.
 
 ::: tip TIPP
-Verwenden Sie Filter, um die Daten einmalig zu formen, zum Beispiel um Testbestellungen auszuschließen. Verwenden Sie Steuerelemente für die Fragen, die Betrachter stellen werden, zum Beispiel „nur Region Nord“.
+Mit Filtern bereinigen Sie die Daten dauerhaft, zum Beispiel indem Sie Testbestellungen ausschließen. Steuerelemente eignen sich für die Fragen, die Betrachter stellen, etwa „nur Region Nord“.
 :::
 
 ## Filter oder Steuerelement bearbeiten
@@ -33,7 +33,7 @@ Klicken Sie auf eine Zeile im Bereich **Filter** oder **Steuerelemente** oder dr
 
 Die Zeile zeigt eine Zusammenfassung der Auswahl, etwa „North, South + 3“ oder „ab 100“.
 
-In einem Formular schließt `Escape` es, `r` setzt es zurück, und `Ctrl+J` / `Ctrl+K` springen zum nächsten bzw. vorherigen Filter. In einer Werteliste tippen Sie, um zu suchen, drücken `Enter`, um alle Treffer auszuwählen, und verwenden `j`/`k` und `Space`, um sich zu bewegen und Werte umzuschalten.
+Im Formular schließt `Escape` das Formular, `r` setzt die Auswahl zurück, und `Ctrl+J` / `Ctrl+K` springen zum nächsten bzw. vorherigen Filter. In einer Werteliste starten Sie die Suche einfach durch Tippen. `Enter` wählt alle Treffer aus, mit `j`/`k` bewegen Sie sich durch die Liste, und `Space` schaltet einen Wert um.
 
 ## Schaltflächen einer Zeile
 
@@ -50,9 +50,9 @@ Die Null-Schaltfläche wird nur angezeigt, wenn die Spalte fehlende Werte enthä
 
 Standardmäßig ist ein Filter oder Steuerelement **global**: Es gilt für jedes Diagramm des Modells. Ein **lokaler** Filter gilt nur für die Diagramme, denen Sie ihn zuweisen.
 
-Um festzulegen, welche Filter für ein Diagramm gelten, fokussieren Sie das Diagramm im Bereich **Diagramme** und drücken `Enter`, um es aufzuklappen. Es zeigt zwei Zeilen, **Filter** und **Steuerelemente**, die **Standard** anzeigen, solange nichts abweicht. Öffnen Sie eine Zeile und markieren Sie einen Filter, um einen globalen Filter für dieses Diagramm auszuschließen oder einen lokalen einzubeziehen. `r` setzt das Diagramm auf die Standardwerte zurück.
+Um festzulegen, welche Filter für ein Diagramm gelten, wählen Sie das Diagramm im Bereich **Diagramme** aus und drücken `Enter`, um es aufzuklappen. Darunter erscheinen die Zeilen **Filter** und **Steuerelemente**. Solange nichts abweicht, zeigen beide **Standard**. Öffnen Sie eine Zeile und markieren Sie einen Filter, um einen globalen Filter für dieses Diagramm auszuschließen oder einen lokalen einzubeziehen. `r` setzt das Diagramm auf die Standardwerte zurück.
 
-So kann ein Dashboard zum Beispiel eine Leistungskennzahl mit dem Gesamtumsatz neben Diagrammen zeigen, die dem Steuerelement für die Region folgen, indem die Leistungskennzahl von diesem Steuerelement ausgeschlossen wird.
+So kann ein Dashboard zum Beispiel eine Leistungskennzahl mit dem Gesamtumsatz zeigen, während die übrigen Diagramme dem Steuerelement für die Region folgen. Dazu schließen Sie die Kennzahl von diesem Steuerelement aus.
 
 ## Steuerelemente im Dashboard
 

@@ -2,7 +2,7 @@
 
 ## Spalten
 
-Der Bereich **Spalten** listet jede Spalte der Abfrage des Modells auf. Jede Spalte zeigt ein Symbol für ihren Typ, ihren Namen und eine Statistik.
+Der Bereich **Spalten** listet alle Spalten der Modellabfrage auf. Zu jeder Spalte sehen Sie ein Typsymbol, den Namen und eine Statistik.
 
 Die Schaltfläche in der Kopfzeile des Bereichs (oder `p`) wechselt die Statistik:
 
@@ -16,7 +16,7 @@ Manche Spalten sind ausgegraut und können nicht verwendet werden: Spalten nicht
 
 ### Schaltflächen einer Spalte
 
-Fahren Sie mit der Maus über eine Spalte oder fokussieren Sie sie, um ihre Schaltflächen anzuzeigen:
+Fahren Sie mit der Maus über eine Spalte oder wählen Sie sie mit der Tastatur aus, um ihre Schaltflächen anzuzeigen:
 
 | Schaltfläche | Aktion | Taste |
 |---|---|---|
@@ -27,15 +27,15 @@ Fahren Sie mit der Maus über eine Spalte oder fokussieren Sie sie, um ihre Scha
 | Kategorie | Dimension hinzufügen oder entfernen | `d` / `Shift+D` |
 | Summe | Metrik hinzufügen | `m` |
 
-Weitere Tasten auf einer Spalte:
+Weitere Tastenkürzel für eine ausgewählte Spalte:
 
 - `Ctrl+D` fügt eine Transformation hinzu und macht sie in einem Schritt zur Dimension.
 - `Shift+T` entfernt alle Transformationen der Spalte, `Shift+M` alle ihre Metriken.
 - `Space` wählt die Spalte für eine [bivariate Metrik](./dimensions-measures#bivariate-metriken) vor.
 
-Eine Schaltfläche ist fett, wenn ihre Rolle aktiv ist, und ausgeblendet, wenn die Rolle für die Spalte nicht möglich ist.
+Ist eine Rolle aktiv, erscheint die zugehörige Schaltfläche fett. Ist sie für die Spalte nicht möglich, wird die Schaltfläche ausgeblendet.
 
-Ein Klick auf eine Spalte (oder `Enter`) wählt eine sinnvolle Aktion: Dezimalzahlen erhalten eine Metrik, kategoriale Spalten werden zu Dimensionen, und Spalten, die zuerst eine Transformation benötigen (etwa Datumswerte), erhalten eine.
+Ein Klick auf eine Spalte (oder `Enter`) führt die naheliegende Aktion aus: Dezimalzahlen erhalten eine Metrik, kategoriale Spalten werden zu Dimensionen, und Spalten, die zuerst eine Transformation benötigen (etwa Datumswerte), erhalten eine.
 
 ### Aliase
 
@@ -45,7 +45,7 @@ Ein Alias gibt einer Spalte einen verständlicheren Namen, ohne die Daten zu ver
 - Er darf nicht der Name einer anderen Spalte sein.
 - Um einen Alias zu entfernen, leeren Sie ihn oder geben Sie den ursprünglichen Namen der Spalte ein.
 
-Der Alias wird überall im Modell angezeigt: in Transformationen, Metriken (`sum_revenue_eur`), Filtern, Diagrammen und Legenden. Fahren Sie mit der Maus über eine Spalte mit Alias, um den ursprünglichen Spaltennamen zu sehen. Aliase gehören zum Modell, sodass zwei Modelle auf derselben Tabelle eine Spalte unterschiedlich benennen können.
+Der Alias wird überall im Modell angezeigt: in Transformationen, Metriken (`sum_revenue_eur`), Filtern, Diagrammen und Legenden. Fahren Sie mit der Maus über eine Spalte mit Alias, um den ursprünglichen Spaltennamen zu sehen. Aliase gelten nur für das jeweilige Modell. Zwei Modelle auf derselben Tabelle können eine Spalte also unterschiedlich benennen.
 
 ::: tip TIPP
 Aliase helfen auch dem [KI-Assistenten](./ai). Eine Spalte namens `c1` sagt ihm nichts, ein Alias `revenue` dagegen schon.
@@ -71,16 +71,16 @@ Transformierte Spalten werden nach der Spalte und der Transformation benannt, zu
 
 Für Spalten vom Typ **Ganze Zahl** und **Gleitkommazahl**. Teilt den Wertebereich in 2 bis 128 gleich große Partitionen. Es gibt zwei Varianten:
 
-- **Partitionsbeginn**: die untere Grenze jeder Partition als Dezimalzahl. Gut geeignet für streudiagrammartige Diagramme.
+- **Partitionsbeginn**: die untere Grenze jeder Partition als Dezimalzahl. Gut geeignet für Streudiagramme und ähnliche Darstellungen.
 - **Partitionsindex**: die Nummer der Partition, von 1 bis n. Erforderlich für **Histogramme** und **Heatmaps**.
 
 Die Optionen bieten „runde“ Partitionsbreiten (das 1-, 2-, 2,5- oder 5-Fache einer Zehnerpotenz) sowie Partitionsanzahlen nach den statistischen Regeln von Sturges, Rice, Scott und Freedman-Diaconis. Das Badge zeigt die Regel und die Anzahl der Partitionen, zum Beispiel „sturges 12“.
 
 ### Partition Datum
 
-Für Spalten vom Typ **Datum**, **Datum mit Uhrzeit** und **Uhrzeit**. Kürzt Werte auf einen Zeitraum: Jahr, Quartal, Monat, Woche, Tag, Stunde, Minute, Sekunde oder Millisekunde. Wochen beginnen am Montag.
+Für Spalten vom Typ **Datum**, **Datum mit Uhrzeit** und **Uhrzeit**. Rundet Werte auf einen Zeitraum ab: Jahr, Quartal, Monat, Woche, Tag, Stunde, Minute, Sekunde oder Millisekunde. Wochen beginnen am Montag.
 
-Angeboten werden nur Zeiträume, die für den Wertebereich der Spalte zwischen 2 und 256 Partitionen ergeben. Datumswerte bieten keine Zeiträume unterhalb eines Tages, Uhrzeiten nur Stunden und kleinere Einheiten.
+Angeboten werden nur Zeiträume, die für den Wertebereich der Spalte zwischen 2 und 256 Partitionen ergeben. Für reine Datumswerte gibt es keine Zeiträume unter einem Tag, für Uhrzeiten nur Stunden und kleinere Einheiten.
 
 ### Extrakt Datum
 
@@ -108,7 +108,7 @@ Für kategoriale Spalten mit mehr als zwei Werten. Drücken Sie `e` oder klicken
 
 ### Top-N und Bottom-N
 
-Für kategoriale Spalten. Behält die N Kategorien mit dem größten (Top-N) oder kleinsten (Bottom-N) Wert der Metrik des Diagramms. N kann 1 bis 20 sein und danach in Stufen bis 100 reichen. Top-N und Bottom-N benötigen mindestens eine Metrik im Modell und funktionieren in Säulen-, Balken-, Kreis-, Donut- und Netzdiagrammen.
+Für kategoriale Spalten. Behält die N Kategorien mit dem größten (Top-N) oder kleinsten (Bottom-N) Wert der Metrik des Diagramms. N reicht von 1 bis 20 und darüber hinaus in Stufen bis 100. Top-N und Bottom-N benötigen mindestens eine Metrik im Modell und funktionieren in Säulen-, Balken-, Kreis-, Donut- und Netzdiagrammen.
 
 ### Geo
 
