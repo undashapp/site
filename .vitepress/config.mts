@@ -25,6 +25,8 @@ export default defineConfig({
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: { light: '/images/light/logo.svg', dark: '/images/dark/logo.svg', alt: 'undash' },
+
     nav: [{ text: 'Home', link: '/' }],
 
     sidebar: [],
