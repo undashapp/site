@@ -146,7 +146,8 @@ watch(total, (v) => tweenTo(v));
 
 // SQL console typing
 const sqlLines = [
-  'SELECT region,',
+  'SELECT',
+  '  region,',
   "  date_trunc('month', date) AS month,",
   '  sum(revenue) AS revenue',
   'FROM sales',
@@ -1616,6 +1617,9 @@ const fontSamples = [
   text-align: left;
   background: transparent;
 }
+.console-result td { padding-top: 2px; padding-bottom: 2px; }
+.console-result tbody tr:first-child td { padding-top: 6px; }
+.console-result tbody tr:last-child td { padding-bottom: 6px; }
 .console-result th { color: #71717a; font-weight: 600; }
 .console-result tr { background: transparent !important; border: 0; }
 .console-result td:last-child, .console-result th:last-child { text-align: right; color: color-mix(in srgb, var(--u-c1) 55%, #fff); }
