@@ -1976,6 +1976,11 @@ kbd {
   border: 1px solid var(--u-border);
   box-shadow: var(--u-shadow);
   backdrop-filter: blur(10px);
+  transition: transform 0.3s, border-color 0.3s;
+}
+.devices-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--u-c1) 35%, var(--u-border));
 }
 @media (min-width: 860px) {
   .devices-card { grid-template-columns: 1fr 1.1fr; padding: 36px 40px; }
