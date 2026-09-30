@@ -124,6 +124,13 @@ const en = {
       text: 'Choose from six fonts made for data visualization. Switch between light and dark mode, pick a primary color and go monochromatic or categorical.',
     },
   },
+  devices: {
+    title: 'Made for Desktop and Tablet',
+    text: `${brand} is built for larger screens. It works best on desktop and on tablets, where a stylus or pencil makes a precise pointer. Phones are not supported.`,
+    items: ['Desktop', 'Tablet + Pencil', 'Phone'],
+    supported: 'Supported',
+    unsupported: 'Not supported',
+  },
   cta: {
     title: 'Business Intelligence,',
     titleAccent: 'Unthought.',
@@ -257,6 +264,13 @@ const de: LandingMessages = {
       title: 'Ganz nach Ihrem Geschmack',
       text: 'Sechs Schriftarten, gemacht für Datenvisualisierung. Heller oder dunkler Modus, eine Primärfarbe Ihrer Wahl und wahlweise monochrome oder kategoriale Farben.',
     },
+  },
+  devices: {
+    title: 'Gemacht für Desktop und Tablet',
+    text: `${brand} ist für große Bildschirme gemacht. Am besten läuft es auf dem Desktop und auf Tablets, wo ein Stift die Bedienung besonders präzise macht. Smartphones werden nicht unterstützt.`,
+    items: ['Desktop', 'Tablet + Stift', 'Smartphone'],
+    supported: 'Unterstützt',
+    unsupported: 'Nicht unterstützt',
   },
   cta: {
     title: 'Business Intelligence,',
