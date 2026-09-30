@@ -218,6 +218,28 @@ onBeforeUnmount(() => {
 
 // Icons (tabler, from /public/images)
 const icons: Record<string, string[]> = {
+  desktop: [
+    'M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z',
+    'M7 20h10',
+    'M9 16v4',
+    'M15 16v4',
+  ],
+  tablet: [
+    'M5 4a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v16a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1v-16z',
+    'M11 17a1 1 0 1 0 2 0a1 1 0 0 0 -2 0',
+  ],
+  pencil: [
+    'M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4',
+    'M13.5 6.5l4 4',
+  ],
+  phoneOff: [
+    'M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14z',
+    'M11 4h2',
+    'M12 17v.01',
+    'M3 3l18 18',
+  ],
+  check: ['M5 12l5 5l10 -10'],
+  x: ['M18 6l-12 12', 'M6 6l12 12'],
   sparkles: [
     'M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6',
   ],
@@ -313,6 +335,8 @@ const chartGallery = [
 const heat = Array.from({ length: 24 }, (_, i) =>
   (0.15 + 0.85 * Math.abs(Math.sin(i * 1.7) * Math.cos(i * 0.6))).toFixed(2),
 );
+
+const deviceIcons = ['desktop', 'tablet', 'phoneOff'];
 
 const swatches = [100, 82, 64, 48, 32, 18].map(
   (p) => `color-mix(in srgb, var(--u-c1) ${p}%, var(--vp-c-bg))`,
@@ -861,6 +885,40 @@ const fontSamples = [
           </div>
         </article>
 </div>
+    </section>
+
+    <!-- Devices -->
+    <section class="devices container reveal">
+      <div class="devices-card">
+        <div class="devices-text">
+          <h3>{{ t.devices.title }}</h3>
+          <p v-html="t.devices.text"></p>
+        </div>
+        <ul class="device-list">
+          <li
+            v-for="(d, i) in deviceIcons"
+            :key="i"
+            class="device"
+            :class="{ off: i === 2 }"
+          >
+            <span class="device-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path v-for="p in icons[d]" :key="p" :d="p" />
+              </svg>
+              <svg v-if="i === 1" class="device-pencil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path v-for="p in icons.pencil" :key="p" :d="p" />
+              </svg>
+            </span>
+            <span class="device-name">{{ t.devices.items[i] }}</span>
+            <span class="device-status" :title="i === 2 ? t.devices.unsupported : t.devices.supported">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path v-for="p in icons[i === 2 ? 'x' : 'check']" :key="p" :d="p" />
+              </svg>
+              <span class="sr-only">{{ i === 2 ? t.devices.unsupported : t.devices.supported }}</span>
+            </span>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- CTA -->
@@ -1902,6 +1960,97 @@ kbd {
 @keyframes press {
   0%, 12%, 100% { transform: none; box-shadow: 0 4px 0 var(--u-border), 0 6px 14px -6px rgba(0, 0, 0, 0.25); color: var(--vp-c-text-1); }
   6% { transform: translateY(3px); box-shadow: 0 1px 0 var(--u-border); color: var(--u-c1); }
+}
+
+/* --------------------------------------------------------------- Devices */
+
+/* Pull up into the features bottom margin, matching the gap to the CTA */
+.devices { margin-top: -88px; margin-bottom: 32px; }
+.devices-card {
+  display: grid;
+  gap: 28px;
+  align-items: center;
+  padding: 32px;
+  border-radius: var(--u-radius);
+  background: var(--u-card);
+  border: 1px solid var(--u-border);
+  box-shadow: var(--u-shadow);
+  backdrop-filter: blur(10px);
+}
+@media (min-width: 860px) {
+  .devices-card { grid-template-columns: 1fr 1.1fr; padding: 36px 40px; }
+}
+.devices-text h3 { margin: 0 0 8px; font-size: 22px; font-weight: 700; letter-spacing: -0.015em; }
+.devices-text p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--u-muted); }
+
+.device-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.device {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 8px 16px;
+  border-radius: 14px;
+  background: var(--u-card-solid);
+  border: 1px solid var(--u-border);
+  text-align: center;
+}
+.device-icon {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  color: var(--u-c1);
+}
+.device-icon > svg { width: 100%; height: 100%; }
+.device-icon .device-pencil {
+  position: absolute;
+  right: -10px;
+  bottom: -4px;
+  width: 22px;
+  height: 22px;
+  color: var(--u-c2);
+}
+.device-name { font-size: 13px; font-weight: 600; color: var(--vp-c-text-1); }
+.device-status {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--vp-c-green-1);
+  background: color-mix(in srgb, var(--vp-c-green-1) 14%, transparent);
+}
+.device-status svg { width: 11px; height: 11px; }
+@media (max-width: 480px) {
+  .devices-card { padding: 24px; }
+  .device-list { gap: 8px; }
+  .device { padding: 18px 4px 14px; }
+  .device-name { font-size: 12px; }
+}
+.device.off .device-icon { color: var(--vp-c-text-3); }
+.device.off .device-name { color: var(--vp-c-text-3); }
+.device.off .device-status {
+  color: var(--vp-c-red-1);
+  background: color-mix(in srgb, var(--vp-c-red-1) 14%, transparent);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 /* ------------------------------------------------------------------- CTA */
