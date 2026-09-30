@@ -121,7 +121,7 @@ const en = {
     },
     custom: {
       title: 'Make It Yours',
-      text: 'Choose from six fonts made for data visualization. Switch between light and dark mode, pick a primary color and go monochromatic or categorical.',
+      text: 'Choose from six fonts made for data visualization. Switch between light and dark mode and between glass and flat styles, pick a primary color and go monochromatic or categorical.',
     },
   },
   devices: {
@@ -262,7 +262,7 @@ const de: LandingMessages = {
     },
     custom: {
       title: 'Ganz nach Ihrem Geschmack',
-      text: 'Sechs Schriftarten, gemacht für Datenvisualisierung. Heller oder dunkler Modus, eine Primärfarbe Ihrer Wahl und wahlweise monochrome oder kategoriale Farben.',
+      text: 'Sechs Schriftarten, gemacht für Datenvisualisierung. Heller oder dunkler Modus, Glas- oder Flat-Stil, eine Primärfarbe Ihrer Wahl und wahlweise monochrome oder kategoriale Farben.',
     },
   },
   devices: {
