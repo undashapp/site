@@ -217,7 +217,7 @@ const de: LandingMessages = {
     },
     charts: {
       title: '20+ Diagrammtypen',
-      text: 'Von Balken-, Linien- und Flächendiagrammen über Streudiagramme, Heatmaps, Dichtediagramme, Streamgraphs und Netzdiagramme bis hin zu Kennzahlen und Choroplethenkarten. Jedes Diagramm lässt sich zudem in Small Multiples aufteilen, für eine nahezu unbegrenzte Vielfalt an Visualisierungen.',
+      text: 'Von Balken-, Linien- und Flächendiagrammen über Streudiagramme, Heatmaps, Dichtediagramme, Streamgraphs und Netzdiagramme bis hin zu Kennzahlen und Choroplethenkarten. Jedes Diagramm lässt sich zudem in Small Multiples aufteilen. So entsteht eine nahezu unbegrenzte Vielfalt an Visualisierungen.',
       names: {
         Bar: 'Balken',
         Lollipop: 'Lollipop',
