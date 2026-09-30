@@ -198,7 +198,7 @@ const de: LandingMessages = {
     title: 'Professionelle Analysen.',
     titleMuted: 'Ganz ohne Infrastruktur.',
     private: {
-      title: 'Privat von Grund auf',
+      title: 'Datenschutz inklusive',
       text: `${brand} läuft komplett im Browser. Kein Backend, keine Uploads, kein Konto. Ihre Daten bleiben lokal auf Ihrem Rechner und verlassen ihn nie.`,
       orbit: ['Dashboards', 'Tabellen', 'Modelle'],
     },
