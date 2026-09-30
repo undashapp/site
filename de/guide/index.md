@@ -13,7 +13,7 @@ Alles in *undash* baut auf vier Arten von Objekten auf:
 | **Tabelle** | Eine importierte Datendatei, etwa eine CSV- oder Parquet-Datei. Tabellen sind schreibgeschützt. |
 | **Modell** | Eine benannte SQL-Abfrage über eine oder mehrere Tabellen (oder andere Modelle). In einem Modell steckt alles, was Sie auf Basis der Daten erstellen. |
 | **Diagramm** | Eine Visualisierung, die aus den Dimensionen und Metriken eines Modells entsteht. |
-| **Dashboard** | Die Anordnung der Diagramme eines Modells auf einer Fläche. Jedes Modell hat genau ein Dashboard. |
+| **Dashboard** | Eine Anordnung von Diagrammen eines Modells auf einer Fläche. Ein Modell kann mehrere Dashboards haben, und jedes Diagramm liegt auf einem davon. |
 
 Innerhalb eines Modells bereiten Sie die Daten auf, bevor Sie sie visualisieren:
 

@@ -61,10 +61,10 @@ Drücken Sie `v`, dann einen Buchstaben:
 | `x` | Stichproben ein- oder ausschalten |
 | `Ctrl+Shift+M` | Modell materialisieren |
 | `Ctrl+Shift+C` | DB-Konsole mit dem Modell verknüpfen |
-| `Ctrl+Shift+A` | Dashboard oder Diagramme mit KI vorschlagen |
+| `Ctrl+Shift+A` | Neues Dashboard mit KI vorschlagen (auf einer Dashboard-Zeile: Diagramme für dieses Dashboard) |
 | `Ctrl+S` | Aktuelles Diagramm speichern |
 | `Ctrl+Shift+S` | Aktuelles Diagramm mit Namen speichern |
-| `g` + Buchstabe | Zu einem Bereich springen: `f` Spalten, `t` Transformationen, `w` Filter, `o` Steuerelemente, `d` Dimensionen, `m` Metriken, `s` Diagrammauswahl, `c` Diagramm-Konfigurator, `l` Diagramme |
+| `g` + Buchstabe | Zu einem Bereich springen: `f` Spalten, `t` Transformationen, `w` Filter, `o` Steuerelemente, `d` Dimensionen, `m` Metriken, `s` Diagrammauswahl, `c` Diagramm-Konfigurator, `l` Dashboards |
 
 ### Spalten
 
@@ -86,7 +86,7 @@ Drücken Sie `v`, dann einen Buchstaben:
 |---|---|
 | `l` / `h` | Nächste / vorherige Option |
 | `Shift+L` / `Shift+H` | Nächster / vorheriger Transformationstyp |
-| `e` | Kategorien bearbeiten (Gruppierung) |
+| `e` | Alias bearbeiten |
 | `d` / `Shift+D` | Dimension hinzufügen / entfernen |
 | `Backspace` | Entfernen |
 
@@ -97,6 +97,8 @@ Drücken Sie `v`, dann einen Buchstaben:
 | `l` / `h` | Nächste / vorherige Aggregation (Metriken) |
 | `d` | Distinct ein oder aus (Metriken) |
 | `c` | Mit der nächsten Aggregation duplizieren (Metriken) |
+| `+` | Eigene Metrik hinzufügen (Metriken) |
+| `Enter` | Eigene Metrik bearbeiten |
 | `<` `[` / `>` `]` | Aufsteigend / absteigend sortieren |
 | `o` / `Shift+O` | Sortierpriorität ändern |
 | `u` | Sortierung entfernen |
@@ -130,11 +132,30 @@ Drücken Sie `v`, dann einen Buchstaben:
 | `Backspace` (Kanal) | Optionalen Kanal leeren |
 | `Escape` | Bearbeitung beenden |
 
+### Formular für eigene Metriken
+
+| Taste | Aktion |
+|---|---|
+| `Tab` | Zu den Metriken des Formulars wechseln |
+| `Shift` (kurz drücken) | Ausgewählte Metrik in den Ausdruck einfügen |
+| `Enter` / `Escape` (beim Umbenennen einer Ad-hoc-Metrik) | Bestätigen / abbrechen |
+
+### Dashboards
+
+| Taste | Aktion |
+|---|---|
+| `+` | Dashboard hinzufügen |
+| `Enter`, `h` / `l` | Diagramme des Dashboards auf- oder zuklappen |
+| `e` | Titel, Untertitel und Referenz bearbeiten |
+| `d` | Aktivieren oder deaktivieren |
+| `Ctrl+Shift+A` | Diagramme mit KI hinzufügen |
+| `Backspace` | Mit seinen Diagrammen löschen |
+
 ### Diagramme
 
 | Taste | Aktion |
 |---|---|
-| `e` | Umbenennen |
+| `e` | Umbenennen oder auf ein anderes Dashboard verschieben |
 | `u` | In den Konfigurator laden |
 | `d` | Auf dem Dashboard ein- oder ausblenden |
 | `Enter` | Zuordnungen von Filtern und Steuerelementen des Diagramms anzeigen |
@@ -163,6 +184,7 @@ Drücken Sie `v`, dann einen Buchstaben:
 | `Ctrl+O` | Reihenfolge der Vorlage wechseln: größte oder kleinste zuerst |
 | `Ctrl+Shift+O` | Vorlage drehen |
 | `Ctrl+Alt+A` | Proportionen des Dashboards wechseln |
+| `Ctrl+N` / `Ctrl+P` | Nächstes / vorheriges Dashboard |
 
 ## DB-Konsole
 
@@ -179,14 +201,16 @@ Drücken Sie `v`, dann einen Buchstaben:
 
 | Taste | Aktion |
 |---|---|
-| `c` | Bereich **Filter** öffnen oder schließen |
+| `n` / `p` | Nächstes / vorheriges Dashboard |
+| `←` / `→` | Vorheriges / nächstes Diagramm, dann weiter zum vorherigen / nächsten Dashboard |
+| `h` / `j` / `k` / `l` | Diagramm links / darunter / darüber / rechts (große Dashboards) |
+| `c` | Modus des Bereichs **Filter** wechseln: auto, aus, an |
 | `1`–`9` | Ein Steuerelement fokussieren |
 | `j` / `k` | Nächstes / vorheriges Steuerelement |
 | `Enter` / `Escape` | Steuerelement öffnen / einklappen |
 | `r` | Alle Steuerelemente zurücksetzen |
 | `f` | Vollbild |
-| `←` / `→` | Vorheriges / nächstes Diagramm (große Dashboards) |
-| `Escape` | Präsentationsmodus beenden |
+| `Escape` | Bereich **Filter** verlassen oder Präsentationsmodus beenden |
 | `q` | Modell schließen |
 
 ## Formulare

@@ -102,7 +102,7 @@ The zip icon in the **Data Files** header (**Download all files**) downloads you
 To restore a backup, drop the `.zip` file onto the **Data Files** box, on its own.
 
 ::: danger
-Importing a backup **replaces your entire project**. All current tables, models, charts and dashboards are deleted first. There is no confirmation.
+Importing a backup **replaces your entire project**. All current tables, models, charts and dashboards are deleted first. There is no confirmation. *undash* checks the file before it deletes anything: if it is not an exported project archive, nothing is imported and your project stays as it is.
 :::
 
 This is also the way to move a project to another browser or computer.

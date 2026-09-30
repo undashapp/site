@@ -102,7 +102,7 @@ Das Zip-Symbol in der Kopfzeile von **Dateien** (**Alle Dateien herunterladen**)
 Um eine Sicherung wiederherzustellen, ziehen Sie die `.zip`-Datei allein auf das Feld **Dateien**.
 
 ::: danger GEFAHR
-Das Importieren einer Sicherung **ersetzt Ihr gesamtes Projekt**. Alle aktuellen Tabellen, Modelle, Diagramme und Dashboards werden zuvor gelöscht. Es gibt keine Rückfrage.
+Das Importieren einer Sicherung **ersetzt Ihr gesamtes Projekt**. Alle aktuellen Tabellen, Modelle, Diagramme und Dashboards werden zuvor gelöscht. Es gibt keine Rückfrage. *undash* prüft die Datei aber, bevor etwas gelöscht wird: Ist sie kein exportiertes Projektarchiv, wird nichts importiert, und Ihr Projekt bleibt unverändert.
 :::
 
 Auf diesem Weg können Sie ein Projekt auch in einen anderen Browser oder auf einen anderen Computer übertragen.

@@ -47,6 +47,32 @@ Die zweite Spalte muss numerisch sein. Sind beide Spalten numerisch, stehen dies
 
 **Arg Minimum** und **Arg Maximum** funktionieren auch, wenn die erste Spalte keine Zahl ist. Sie liefern den Wert der ersten Spalte, bei dem die zweite Spalte am kleinsten bzw. am größten ist, zum Beispiel das Produkt mit dem höchsten Preis.
 
+### Eigene Metriken
+
+Eine eigene Metrik berechnet eine Zahl aus anderen Metriken, zum Beispiel eine Marge `(sum_revenue - sum_cost) / sum_revenue` oder den Umsatz pro Bestellung. Klicken Sie auf **+** in der Kopfzeile des Bereichs **Metriken** (**Eigene Metrik hinzufügen**) oder drücken Sie `+` in der Liste, um das Formular zu öffnen:
+
+1. **Name**: der Name der eigenen Metrik, zum Beispiel `margin`.
+2. **Modell-Metriken**: die Metriken des Modells, auch andere eigene Metriken. Ein Klick fügt eine Metrik in den Ausdruck ein.
+3. **Ad-hoc-Metriken**: Metriken, die nur diese eigene Metrik verwendet. Klicken Sie auf **+** (**Ad-hoc-Metrik hinzufügen**) und wählen Sie eine **Aggregation**, ein **Feld** (oder **\* (Zeilen)**, um Zeilen zu zählen) und je nach Aggregation ein **Zweites Feld** oder **Eindeutig**. Jede erhält automatisch einen Namen. Mit dem Stift benennen Sie sie um.
+4. **Ausdruck**: die Formel aus Metriknamen, Zahlen, den Operatoren `+ - * /` und Klammern. Eine Division durch null ergibt keinen Wert.
+
+Jede Ad-hoc-Metrik muss im Ausdruck vorkommen. Eine eigene Metrik darf andere eigene Metriken verwenden, aber nicht auf sich selbst verweisen, weder direkt noch über andere.
+
+Mit der Tastatur gelangen Sie mit `Tab` zu den Metriken des Formulars. Drücken Sie auf einer ausgewählten Metrik kurz `Shift`, um sie an der Cursorposition einzufügen.
+
+In der Liste trägt eine eigene Metrik das Badge **Eigene**, und beim Darüberfahren erscheint ihr Ausdruck. Mit `Enter`, einem Doppelklick auf die Zeile oder einem Klick auf das Badge bearbeiten Sie sie, mit `Backspace` entfernen Sie sie. Eigene Metriken lassen sich wie andere Metriken sortieren. Eine Metrik, die eine eigene Metrik verwendet, lässt sich nicht entfernen, und ihre Aggregation lässt sich nicht ändern.
+
+#### Ad-hoc-Metriken per Filter eingrenzen
+
+Eine Ad-hoc-Metrik lässt sich auf einen Teil der Daten beschränken, zum Beispiel auf den Umsatz der Region Nord, um ihren Anteil am Gesamtumsatz zu berechnen. So gehen Sie vor:
+
+1. Legen Sie einen [Filter](./filters-controls) auf die Spalte an, zum Beispiel `region`, und machen Sie ihn **lokal** (`Shift+G`), damit er nicht für alle Diagramme gilt.
+2. Klicken Sie im Formular der eigenen Metrik oben rechts an der Ad-hoc-Metrik auf die Filter-Schaltfläche und wählen Sie den Filter aus.
+
+Die Ad-hoc-Metrik zeigt dann „wo region“ und aggregiert nur die Zeilen, die den Filter passieren. Mehrere Filter werden mit *und* verknüpft. Verwendet werden können nur lokale Filter auf den eigenen Spalten des Modells, keine Steuerelemente und keine Filter auf transformierten Spalten. Ändern Sie die Auswahl des Filters im Bereich **Filter**, aktualisieren sich alle Diagramme mit der eigenen Metrik.
+
+Ein Filter, der eine Ad-hoc-Metrik eingrenzt, lässt sich weder entfernen noch global machen.
+
 ## Sortierung
 
 Über Dimensionen und Metriken legen Sie die Sortierung von Diagrammen fest. Klicken Sie auf die Sortier-Schaltfläche links in einer Zeile, um zwischen aufsteigend, absteigend und aus zu wechseln, oder verwenden Sie die Tasten:

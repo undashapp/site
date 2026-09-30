@@ -31,9 +31,9 @@ The channel list is the recipe of the chart: `x` and `y` are the axes, `color` s
 ### 3. Save the chart
 
 - Click the save button in the configurator row, or press `Ctrl+S`. The chart gets a default name, such as "Column Chart 01".
-- `Shift`+click the save button, or press `Ctrl+Shift+S`, to give a new chart a name first. The form also asks for a **Chart Reference**, the chart's internal name.
+- `Shift`+click the save button, or press `Ctrl+Shift+S`, to give a new chart a name first. The form also asks for a **Chart Reference**, the chart's internal name, and the **Dashboard** it goes on.
 
-Saving a chart saves the model as well. If [Auto-labeling](./ai#automatic-features) is on, the AI gives new charts a title.
+A new chart goes on the dashboard that is currently on screen. Saving a chart saves the model as well. If [Auto-labeling](./ai#automatic-features) is on, the AI gives new charts a title.
 
 ## Small multiples
 
@@ -47,21 +47,21 @@ Channels with categories or measures can be sorted. Click the sort button at the
 
 ## Labels, legends and colors
 
-- **Titles:** a chart's title is its name. Rename charts in the **Charts** panel.
+- **Titles:** a chart's title is its name. Rename charts in the **Dashboards** panel.
 - **Axis labels:** axes are labeled with the names of their dimensions and measures, including [aliases](./fields-transforms#aliases). Measures read like `sum_revenue`, and **Count** shows as "Total".
 - **Numbers:** axes use short notation such as `1.2k` or `3M`, and the separators of the current [locale](./settings).
 - **Missing values** appear as "Unknown", and the rest of a [Group transform](./fields-transforms#group) as "Other".
-- **Legend:** a chart with a `color` channel shows a legend in its top-right corner, unless the colors are already explained by an axis. Long legends scroll.
+- **Legend:** a chart with a `color` channel shows a legend in its top-right corner, unless the colors are already explained by an axis. Long legends scroll. Click the legend to move it to another corner; the chart keeps that corner when you change it later, and in exports.
 - **Colors:** the colors come from the **Color** and **Color Palette** [settings](./settings). A [static](./dimensions-measures#static-and-dynamic-attributes) color dimension keeps each category's color when filters change. Sorting the `color` channel descending reverses the palette.
 
 ## Managing charts
 
-The **Charts** panel lists the model's saved charts, newest first. Focusing a chart highlights it on the dashboard.
+The model's saved charts are listed in the **Dashboards** panel, under the dashboard they are on. Expand a dashboard's row to see its charts, newest first. Focusing a chart shows its dashboard and highlights the chart on it. See [Dashboards](./dashboards#the-dashboards-panel).
 
 | Action | Button | Key |
 |---|---|---|
 | Edit in the configurator | ↑ circle | `u` |
-| Rename | Pencil | `e` |
+| Rename, or move to another dashboard | Pencil | `e` |
 | Show on or hide from the dashboard | Check | `d` |
 | Assign filters and controls | Click the row | `Enter` |
 | Delete | × | `Backspace` |
@@ -69,8 +69,6 @@ The **Charts** panel lists the model's saved charts, newest first. Focusing a ch
 To edit a chart, load it into the configurator with `u`, change it and save it again. To stop editing without saving, press `Escape` or the × in the configurator row.
 
 To copy a chart, load it into the configurator, press `Escape` to stop editing, and save it again. The copy is saved as a new chart.
-
-The × in the panel header deletes all charts of the model at once, without confirmation.
 
 ## Viewing the SQL of a chart
 

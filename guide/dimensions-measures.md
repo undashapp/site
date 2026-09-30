@@ -47,6 +47,32 @@ The second field must be a number. If both fields are numbers, these aggregation
 
 **Arg Minimum** and **Arg Maximum** also work when the first field is not a number. They return the value of the first field where the second field is smallest or largest, for example the product with the highest price.
 
+### Custom measures
+
+A custom measure computes a number from other measures, for example a margin `(sum_revenue - sum_cost) / sum_revenue` or revenue per order. Click **+** in the header of the **Measures** panel (**Add custom measure**), or press `+` in the list, to open the form:
+
+1. **Name**: the name of the custom measure, for example `margin`.
+2. **Model Measures**: the model's measures, including other custom measures. Click one to insert it into the expression.
+3. **Ad-hoc Measures**: measures used only by this custom measure. Click **+** (**Add ad-hoc measure**) and pick an **Aggregation**, a **Field** (or **\* (rows)** to count rows) and, depending on the aggregation, a **Second field** or **Distinct**. Each gets a name automatically; click its pencil to rename it.
+4. **Expression**: the formula, from measure names, numbers, the operators `+ - * /` and parentheses. A division by zero gives no value.
+
+Every ad-hoc measure must appear in the expression. A custom measure may use other custom measures, but must not refer to itself, directly or through others.
+
+With the keyboard, `Tab` moves to the measures of the form. Press and release `Shift` on a focused measure to insert it at the cursor.
+
+In the list, a custom measure shows a **Custom** badge, and hovering it shows its expression. Press `Enter`, double-click the row or click the badge to edit it, and `Backspace` to remove it. Custom measures can be sorted like other measures. A measure that a custom measure uses cannot be removed, and its aggregation cannot be changed.
+
+#### Narrowing ad-hoc measures by filters
+
+An ad-hoc measure can be restricted to part of the data, for example revenue in region North only, to compute its share of the total. Use it like this:
+
+1. Add a [filter](./filters-controls) on the field, for example `region`, and make it **local** (`Shift+G`), so it does not apply to all charts.
+2. In the custom measure's form, click the filter button at the top right of the ad-hoc measure and pick the filter.
+
+The ad-hoc measure then reads "where region", and it only aggregates the rows that pass the filter. Several filters are combined with *and*. Only local filters on the model's own fields can be used, not controls and not filters on transformed fields. Change the filter's selection in the **Filters** panel, and all charts with the custom measure update.
+
+A filter that narrows an ad-hoc measure cannot be removed or made global.
+
 ## Sorting
 
 Dimensions and measures can sort charts. Click the sort button on the left of a row to cycle through ascending, descending and off, or use the keys:

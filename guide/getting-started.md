@@ -42,7 +42,7 @@ As soon as the model has dimensions and measures, the **Chart Configurator** off
 2. Check the channels below it. Each channel, such as `x` or `y_max`, shows the dimension or measure assigned to it. Click a badge to cycle to a different one.
 3. Click the save button in the configurator row, or press `Ctrl+S`.
 
-The chart appears in the **Charts** panel and on the model's dashboard. Saving the chart also saves the model, so the dot turns green.
+The chart appears on the model's first dashboard, "Dashboard 01", and in the **Dashboards** panel below it. Saving the chart also saves the model, so the dot turns green.
 
 Repeat this step for a few more charts: for a date field, add a **Date Bin** transform (see [Fields & Transforms](./fields-transforms)) and try a **Line Chart**.
 
@@ -58,7 +58,7 @@ Controls are filters that viewers can change on the dashboard. Hover a field in 
 
 ## 7. Present and export
 
-- Press `Ctrl+Shift+P` to present the dashboard in full view. Press `c` to open the **Filters** panel with your controls, and `Escape` to leave.
+- Press `Ctrl+Shift+P` to present the dashboard in full view. Move the mouse to bring up the **Filters** panel with your controls, and press `Escape` to leave.
 - Press `Ctrl+Shift+D` to export the focused view as PDF. The file type and paper size are set in the [settings](./settings).
 
 ## Shortcut: let AI build the dashboard

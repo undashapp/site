@@ -1,13 +1,13 @@
 # Modelle & SQL
 
-Ein **Modell** ist eine benannte SQL-Abfrage. Es steht im Mittelpunkt von *undash*: Spalten, Transformationen, Filter, Steuerelemente, Dimensionen, Metriken, Diagramme und das Dashboard gehören jeweils zu einem Modell.
+Ein **Modell** ist eine benannte SQL-Abfrage. Es steht im Mittelpunkt von *undash*: Spalten, Transformationen, Filter, Steuerelemente, Dimensionen, Metriken, Diagramme und Dashboards gehören jeweils zu einem Modell.
 
 ## Ein Modell anlegen
 
 Es gibt vier Wege, ein Modell anzulegen:
 
 - **Eine Tabelle öffnen.** Ein Klick auf eine Tabelle öffnet ein neues Modell mit `SELECT * FROM <table>`. Gespeichert wird es, sobald Sie es selbst oder sein erstes Diagramm speichern.
-- **Eine Abfrage schreiben.** Klicken Sie in der Kopfzeile von **Modelle** auf **+** (**Neues Modell**), oder drücken Sie `Ctrl+N`. Geben Sie einen Titel, einen Namen (den „Name der Datenbank-Ansicht“) und eine SQL-Abfrage ein, und klicken Sie dann auf **Speichern**. Dafür ist mindestens eine Tabelle nötig.
+- **Eine Abfrage schreiben.** Klicken Sie in der Kopfzeile von **Modelle** auf **+** (**Neues Modell**), oder drücken Sie `Ctrl+N`. Geben Sie einen Titel, einen Namen (den „Name der Datenbank-Ansicht“) und eine SQL-Abfrage ein, und klicken Sie dann auf **Speichern**. Dafür ist mindestens eine Tabelle nötig. Der Name muss unter allen Tabellen und Modellen eindeutig sein und darf kein SQL-Schlüsselwort wie `select` sein.
 - **Aus der SQL-Konsole.** Schreiben Sie eine Abfrage in der [DB-Konsole](#die-db-konsole), und klicken Sie auf **+**, oder drücken Sie im Editor `Ctrl+N`.
 - **Mit KI.** Siehe [KI-Assistent](./ai).
 
@@ -53,14 +53,14 @@ Beim Schließen eines Modells (Schaltfläche × oder `q`) werden ungespeicherte 
 
 ## Modelle verwalten
 
-Modelle erscheinen in der Liste **Modelle** der Datenübersicht. Ist ein Modell ausgewählt, zeigt seine Karte außerdem, wie viele Transformationen, Filter, Steuerelemente, Dimensionen, Metriken und Diagramme es enthält.
+Modelle erscheinen in der Liste **Modelle** der Datenübersicht. Ist ein Modell ausgewählt, zeigt seine Karte außerdem, wie viele Transformationen, Filter, Steuerelemente, Dimensionen, Metriken und Dashboards es enthält.
 
 | Aktion | So geht's |
 |---|---|
 | **Öffnen** | Klicken Sie auf das Modell, oder drücken Sie `Enter`. |
-| **Bearbeiten** | ⋮-Menü → **Bearbeiten**, oder `e`. Ändert Titel und Namen. Diagramme und Dashboard bleiben beim Umbenennen erhalten. Der Name ist gesperrt, solange ein anderes Modell von diesem abhängt. |
+| **Bearbeiten** | ⋮-Menü → **Bearbeiten**, oder `e`. Ändert Titel und Namen. Diagramme und Dashboards bleiben beim Umbenennen erhalten. Der Name ist gesperrt, solange ein anderes Modell von diesem abhängt. |
 | **Exportieren** | ⋮-Menü → **Exportieren**, oder `d`. Lädt das Abfrageergebnis des Modells herunter. |
-| **Löschen** | ⋮-Menü → **Löschen**, oder `Ctrl+Shift+D`. Löscht das Modell mit all seinen Diagrammen und seinem Dashboard. Nicht möglich, solange ein anderes Modell davon abhängt. |
+| **Löschen** | ⋮-Menü → **Löschen**, oder `Ctrl+Shift+D`. Löscht das Modell mit all seinen Diagrammen und Dashboards. Nicht möglich, solange ein anderes Modell davon abhängt. |
 
 ::: warning WARNUNG
 Ein Modell wird sofort gelöscht. Es gibt keine Rückfrage und kein Rückgängigmachen.
@@ -81,9 +81,9 @@ Ist ein Modell geöffnet, zeigt die Seitenleiste von oben nach unten seine Berei
 | **Dimensionen** | Spalten, nach denen gruppiert wird. Siehe [Dimensionen & Metriken](./dimensions-measures). |
 | **Metriken** | Aggregationen. Siehe [Dimensionen & Metriken](./dimensions-measures). |
 | **Diagramm-Konfigurator** | Erstellt Diagramme. Siehe [Diagramme](./charts). |
-| **Diagramme** | Die gespeicherten Diagramme des Modells. Siehe [Diagramme](./charts). |
+| **Dashboards** | Die Dashboards des Modells und ihre Diagramme. Siehe [Dashboards](./dashboards#der-bereich-dashboards). |
 
-Drücken Sie `g` gefolgt von einem Buchstaben, um zu einem Bereich zu springen: `f` Spalten, `t` Transformationen, `w` Filter, `o` Steuerelemente, `d` Dimensionen, `m` Metriken, `s` Diagrammauswahl, `c` Diagramm-Konfigurator, `l` Diagramme.
+Drücken Sie `g` gefolgt von einem Buchstaben, um zu einem Bereich zu springen: `f` Spalten, `t` Transformationen, `w` Filter, `o` Steuerelemente, `d` Dimensionen, `m` Metriken, `s` Diagrammauswahl, `c` Diagramm-Konfigurator, `l` Dashboards.
 
 ## Der Bereich Abfrage
 
@@ -117,7 +117,7 @@ Im Editor wechselt `Tab` zur Ergebnistabelle und zurück. In der Ergebnistabelle
 
 ### Verknüpfter Modus
 
-Ist die Konsole verknüpft (siehe [Konsolen-Verknüpfung](#konsolen-verknüpfung)), folgt sie Ihren Aktionen in der Seitenleiste:
+Ist die Konsole verknüpft (siehe [Konsolen-Verknüpfung](#konsolen-verknupfung)), folgt sie Ihren Aktionen in der Seitenleiste:
 
 - Bei geöffnetem Modell zeigt die Konsole die Abfrage des Modells.
 - In den Diagrammbereichen zeigt sie die Abfrage hinter dem aktuellen Diagramm und deren Ergebnis. So sehen Sie, welches SQL hinter einem Diagramm steckt.

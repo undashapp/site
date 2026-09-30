@@ -50,9 +50,11 @@ The null button is shown only when the field has missing values. `r` on a row re
 
 By default, a filter or control is **global**: it applies to every chart of the model. A **local** filter applies only to the charts you assign it to.
 
-To change which filters apply to a chart, focus the chart in the **Charts** panel and press `Enter` to expand it. It shows two rows, **Filters** and **Controls**, which read **Default** as long as nothing deviates. Open a row and check a filter to exclude a global filter from this chart, or to include a local one. `r` resets the chart to the defaults.
+To change which filters apply to a chart, focus the chart in the **Dashboards** panel and press `Enter` to expand it. It shows two rows, **Filters** and **Controls**, which read **Default** as long as nothing deviates. Open a row and check a filter to exclude a global filter from this chart, or to include a local one. `r` resets the chart to the defaults.
 
 For example, a dashboard can show a KPI with the total revenue next to charts that follow the region control, by excluding the KPI from that control.
+
+Local filters can also narrow single operands of a [custom measure](./dimensions-measures#narrowing-ad-hoc-measures-by-filters), for example to compare revenue in one region with the total.
 
 ## Controls on the dashboard
 

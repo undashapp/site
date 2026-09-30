@@ -25,19 +25,22 @@ Kategoriewerte können Namen oder andere personenbezogene Daten enthalten. Deakt
 
 ## Ein Dashboard vorschlagen lassen
 
-Öffnen Sie eine Tabelle. Es erscheint ein neues Modell, noch ohne Dimensionen und Metriken. Klicken Sie dann auf die Schaltfläche mit dem Funkelsymbol in der Kopfzeile des Bereichs **Diagramme** (**Modell und Dashboard mit KI vorschlagen**) oder drücken Sie `Ctrl+Shift+A`. Die Schaltfläche erscheint, sobald ein API-Schlüssel hinterlegt ist.
+Öffnen Sie eine Tabelle. Es erscheint ein neues Modell, noch ohne Dimensionen und Metriken. Klicken Sie dann auf die Schaltfläche mit dem Funkelsymbol in der Kopfzeile des Bereichs **Dashboards** (**Modell und Dashboard mit KI vorschlagen**) oder drücken Sie `Ctrl+Shift+A`. Die Schaltfläche erscheint, sobald ein API-Schlüssel hinterlegt ist.
 
 Während die KI arbeitet, zeigt *undash* „Analysiere Schema, Bereite Diagramme vor“. Anschließend öffnet sich der **Dashboard-Vorschlag**:
 
 - **Name des Modells**: der Name des zu erstellenden Modells.
 - Eine Zusammenfassung der vorgeschlagenen Dimensionen, Metriken und Transformationen.
+- **Titel**, **Untertitel** und **Referenz zum Dashboard** des neuen Dashboards, von der KI vorgeschlagen. Passen Sie sie nach Belieben an.
 - **Diagramme**: die vorgeschlagenen Diagramme, jeweils mit Typ und Kanälen. Entfernen Sie das Häkchen bei den Diagrammen, die Sie nicht möchten.
 
-Klicken Sie auf **Speichern**, um das Modell mit seinen Diagrammen und seinem Dashboard zu erstellen, oder auf **Abbrechen**, um den Vorschlag zu verwerfen. Vor Ihrer Bestätigung wird nichts gespeichert.
+Klicken Sie auf **Speichern**, um das Modell mit seinem Dashboard und seinen Diagrammen zu erstellen, oder auf **Abbrechen**, um den Vorschlag zu verwerfen. Vor Ihrer Bestätigung wird nichts gespeichert.
+
+Hat das Modell bereits Dimensionen oder Metriken, schlägt dieselbe Schaltfläche (**Neues Dashboard mit KI vorschlagen**, `Ctrl+Shift+A`) ein weiteres Dashboard vor. Die vorhandenen Dashboards bleiben unverändert.
 
 ## Diagramme vorschlagen lassen
 
-Hat das Modell bereits Dimensionen oder Metriken, fordert dieselbe Schaltfläche (**Diagramme mit KI vorschlagen**, `Ctrl+Shift+A`) stattdessen zusätzliche Diagramme an. Der **Diagramm-Vorschlag** funktioniert wie der Dashboard-Vorschlag. Die neuen Diagramme werden zu den vorhandenen hinzugefügt.
+Um einem vorhandenen Dashboard Diagramme hinzuzufügen, wählen Sie seine Zeile im Bereich **Dashboards** aus und klicken auf ihr Funkelsymbol (**Diagramme mit KI hinzufügen**) oder drücken `Ctrl+Shift+A` auf der Zeile. Der **Diagramm-Vorschlag** listet nur die Diagramme und funktioniert sonst wie der Dashboard-Vorschlag. Die neuen Diagramme werden diesem Dashboard hinzugefügt.
 
 ## Automatische Funktionen
 
@@ -46,7 +49,7 @@ Mit zwei Optionen in den Einstellungen wird die KI von selbst aktiv:
 | Option | Was sie bewirkt |
 |---|---|
 | **Auto-Modellierung** | Nach dem Import einer Tabelle schlägt die KI ein Modell und ein Dashboard dafür vor. Sie prüfen den Vorschlag wie oben beschrieben. |
-| **Auto-Benennung** | Nach dem Speichern eines Diagramms gibt die KI ihm einen Titel. |
+| **Auto-Benennung** | Nach dem Speichern eines Diagramms gibt die KI ihm einen Titel. Ein von Hand hinzugefügtes Dashboard erhält auf dieselbe Weise Titel und Untertitel. |
 
 Beide sind standardmäßig deaktiviert.
 

@@ -45,7 +45,7 @@ Ein Alias gibt einer Spalte einen verständlicheren Namen, ohne die Daten zu ver
 - Er darf nicht der Name einer anderen Spalte sein.
 - Um einen Alias zu entfernen, leeren Sie ihn oder geben Sie den ursprünglichen Namen der Spalte ein.
 
-Der Alias wird überall im Modell angezeigt: in Transformationen, Metriken (`sum_revenue_eur`), Filtern, Diagrammen und Legenden. Fahren Sie mit der Maus über eine Spalte mit Alias, um den ursprünglichen Spaltennamen zu sehen. Aliase gelten nur für das jeweilige Modell. Zwei Modelle auf derselben Tabelle können eine Spalte also unterschiedlich benennen.
+Der Alias wird überall im Modell angezeigt: in Transformationen, Metriken (`sum_revenue_eur`), Filtern, Diagrammen und Legenden. Ist eine Spalte mit Alias ausgewählt, folgt der ursprüngliche Spaltenname in Klammern, zum Beispiel `revenue_eur (umsatz)`. Aliase gelten nur für das jeweilige Modell. Zwei Modelle auf derselben Tabelle können eine Spalte also unterschiedlich benennen.
 
 ::: tip TIPP
 Aliase helfen auch dem [KI-Assistenten](./ai). Eine Spalte namens `c1` sagt ihm nichts, ein Alias `revenue` dagegen schon.
@@ -63,9 +63,12 @@ Fügen Sie eine Transformation mit der Spalten-Schaltfläche einer Spalte oder m
 | Nächster / vorheriger Transformationstyp | `Shift+L` und `Shift+H`, oder Klick auf das Symbol (`Shift`+Klick: vorheriger) |
 | Als Dimension hinzufügen / Dimension entfernen | `d` / `Shift+D` |
 | Weitere Transformation auf derselben Spalte hinzufügen | `t` |
+| Alias bearbeiten | `e` oder Stift |
 | Transformation entfernen | `Backspace` oder × |
 
-Transformierte Spalten werden nach der Spalte und der Transformation benannt, zum Beispiel `order_date_date_bin` oder `revenue_bin_index`.
+Transformierte Spalten werden nach der Spalte und der Transformation benannt, zum Beispiel `order_date_date_bin` oder `revenue_bin_index`. Hat die Spalte einen Alias, verwendet der Name der transformierten Spalte diesen.
+
+Wie Spalten können auch transformierte Spalten einen [Alias](#aliase) haben, zum Beispiel `order_month` statt `order_date_date_bin`. Drücken Sie `e` oder klicken Sie auf den Stift, geben Sie den Alias ein und drücken Sie `Enter`. Es gelten dieselben Regeln, und der Alias wird überall im Modell anstelle des Namens angezeigt.
 
 ### Partition
 
@@ -104,7 +107,7 @@ Verwenden Sie Extrakt Datum, um Zeiträume zu vergleichen, zum Beispiel den Umsa
 
 ### Gruppierung
 
-Für kategoriale Spalten mit mehr als zwei Werten. Drücken Sie `e` oder klicken Sie auf die Zeile, um die Kategorienliste zu öffnen, und wählen Sie dann die Kategorien aus, die erhalten bleiben sollen. Alle anderen Kategorien werden zu **Sonstige** zusammengefasst. Mindestens eine Kategorie muss ausgewählt bleiben.
+Für kategoriale Spalten mit mehr als zwei Werten. Klicken Sie auf die Zeile oder ihr Badge oder drücken Sie `l`, um die Kategorienliste zu öffnen, und wählen Sie dann die Kategorien aus, die erhalten bleiben sollen. Alle anderen Kategorien werden zu **Sonstige** zusammengefasst. Mindestens eine Kategorie muss ausgewählt bleiben.
 
 ### Top-N und Bottom-N
 

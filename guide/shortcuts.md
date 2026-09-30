@@ -61,10 +61,10 @@ Press `v`, then a letter:
 | `x` | Turn sampling on or off |
 | `Ctrl+Shift+M` | Materialize the model |
 | `Ctrl+Shift+C` | Link the DB console to the model |
-| `Ctrl+Shift+A` | Propose a dashboard or charts with AI |
+| `Ctrl+Shift+A` | Propose a new dashboard with AI (on a dashboard row: charts for that dashboard) |
 | `Ctrl+S` | Save the current chart |
 | `Ctrl+Shift+S` | Save the current chart with a name |
-| `g` + letter | Jump to a panel: `f` Fields, `t` Transforms, `w` Filters, `o` Controls, `d` Dimensions, `m` Measures, `s` chart selector, `c` Chart Configurator, `l` Charts |
+| `g` + letter | Jump to a panel: `f` Fields, `t` Transforms, `w` Filters, `o` Controls, `d` Dimensions, `m` Measures, `s` chart selector, `c` Chart Configurator, `l` Dashboards |
 
 ### Fields
 
@@ -86,7 +86,7 @@ Press `v`, then a letter:
 |---|---|
 | `l` / `h` | Next / previous option |
 | `Shift+L` / `Shift+H` | Next / previous transform type |
-| `e` | Edit categories (Group) |
+| `e` | Edit the alias |
 | `d` / `Shift+D` | Add / remove dimension |
 | `Backspace` | Remove |
 
@@ -97,6 +97,8 @@ Press `v`, then a letter:
 | `l` / `h` | Next / previous aggregation (measures) |
 | `d` | Distinct on or off (measures) |
 | `c` | Duplicate with the next aggregation (measures) |
+| `+` | Add a custom measure (measures) |
+| `Enter` | Edit a custom measure |
 | `<` `[` / `>` `]` | Sort ascending / descending |
 | `o` / `Shift+O` | Change sort priority |
 | `u` | Remove sort |
@@ -130,11 +132,30 @@ Press `v`, then a letter:
 | `Backspace` (channel) | Clear an optional channel |
 | `Escape` | Stop editing |
 
+### Custom measure form
+
+| Key | Action |
+|---|---|
+| `Tab` | Move to the measures of the form |
+| `Shift` (press and release) | Insert the focused measure into the expression |
+| `Enter` / `Escape` (renaming an ad-hoc measure) | Confirm / cancel |
+
+### Dashboards
+
+| Key | Action |
+|---|---|
+| `+` | Add a dashboard |
+| `Enter`, `h` / `l` | Expand or collapse the dashboard's charts |
+| `e` | Edit title, subtitle and reference |
+| `d` | Activate or deactivate |
+| `Ctrl+Shift+A` | Add charts with AI |
+| `Backspace` | Delete with its charts |
+
 ### Charts
 
 | Key | Action |
 |---|---|
-| `e` | Rename |
+| `e` | Rename, or move to another dashboard |
 | `u` | Load into the configurator |
 | `d` | Show on or hide from the dashboard |
 | `Enter` | Show the chart's filter and control assignments |
@@ -163,6 +184,7 @@ Press `v`, then a letter:
 | `Ctrl+O` | Switch the template's order: largest or smallest first |
 | `Ctrl+Shift+O` | Rotate the template |
 | `Ctrl+Alt+A` | Cycle the dashboard's proportions |
+| `Ctrl+N` / `Ctrl+P` | Next / previous dashboard |
 
 ## DB console
 
@@ -179,14 +201,16 @@ Press `v`, then a letter:
 
 | Key | Action |
 |---|---|
-| `c` | Open or close the Filters panel |
+| `n` / `p` | Next / previous dashboard |
+| `←` / `→` | Previous / next chart, then on to the previous / next dashboard |
+| `h` / `j` / `k` / `l` | Chart to the left / below / above / right (large dashboards) |
+| `c` | Cycle the Filters panel: auto, off, on |
 | `1`–`9` | Focus a control |
 | `j` / `k` | Next / previous control |
 | `Enter` / `Escape` | Open / collapse a control |
 | `r` | Reset all controls |
 | `f` | Full screen |
-| `←` / `→` | Previous / next chart (large dashboards) |
-| `Escape` | Leave presentation mode |
+| `Escape` | Leave the Filters panel, or leave presentation mode |
 | `q` | Close the model |
 
 ## Forms

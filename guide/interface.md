@@ -34,7 +34,7 @@ Navigate the sidebar with `j`/`k` (or `↓`/`↑`) within a list and `Tab` betwe
 The main area shows up to two views:
 
 - The **chart view** shows the chart you are building in the chart configurator.
-- The **dashboard** shows all charts of the model. See [Dashboards](./dashboards).
+- The **dashboard** shows one of the model's dashboards with its charts. `Ctrl+N` / `Ctrl+P` switch to the next or previous one. See [Dashboards](./dashboards).
 
 Both can be shown at once. They then share the area in one of three arrangements: split top/bottom, split left/right, or with one view floating on top of the other. Drag the divider between split views to resize them. A floating view can be moved with its grip and resized from its bottom-right corner.
 

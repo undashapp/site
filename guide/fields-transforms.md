@@ -45,7 +45,7 @@ An alias gives a field a friendlier name without changing the data. Click the pe
 - It must not be the name of another field.
 - To remove an alias, clear it or type the column's own name.
 
-The alias is shown everywhere in the model: in transforms, measures (`sum_revenue_eur`), filters, charts and legends. Hover an aliased field to see the original column name. Aliases belong to the model, so two models on the same table can name a column differently.
+The alias is shown everywhere in the model: in transforms, measures (`sum_revenue_eur`), filters, charts and legends. When an aliased field has the focus, the original column name follows in parentheses, for example `revenue_eur (umsatz)`. Aliases belong to the model, so two models on the same table can name a column differently.
 
 ::: tip
 Aliases also help the [AI assistant](./ai). A column named `c1` tells it nothing, an alias `revenue` does.
@@ -63,9 +63,12 @@ Add a transform with the column button on a field or with `t`. *undash* picks th
 | Next / previous transform type | `Shift+L` and `Shift+H`, or click the icon (`Shift`+click: previous) |
 | Add as dimension / remove dimension | `d` / `Shift+D` |
 | Add another transform on the same field | `t` |
+| Edit the alias | `e` or pencil |
 | Remove the transform | `Backspace` or × |
 
-Transformed fields are named after the field and the transform, for example `order_date_date_bin` or `revenue_bin_index`.
+Transformed fields are named after the field and the transform, for example `order_date_date_bin` or `revenue_bin_index`. If the field has an alias, the transformed field's name uses it.
+
+Like fields, transformed fields can have an [alias](#aliases), for example `order_month` instead of `order_date_date_bin`. Press `e` or click the pencil, type the alias and press `Enter`. The same rules apply, and the alias is shown in place of the name everywhere in the model.
 
 ### Bin
 
@@ -104,7 +107,7 @@ Use Date Extract to compare periods, for example revenue by month across several
 
 ### Group
 
-For categorical fields with more than two values. Press `e` or click the row to open the category list, then pick the categories to keep. All other categories are combined into **Other**. At least one category must stay selected.
+For categorical fields with more than two values. Click the row or its badge, or press `l`, to open the category list, then pick the categories to keep. All other categories are combined into **Other**. At least one category must stay selected.
 
 ### Top N and Bottom N
 

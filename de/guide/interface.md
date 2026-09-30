@@ -34,7 +34,7 @@ Innerhalb einer Liste navigieren Sie in der Seitenleiste mit `j`/`k` (oder `↓`
 Der Hauptbereich zeigt bis zu zwei Ansichten:
 
 - Die **Diagrammansicht** zeigt das Diagramm, das Sie gerade im Diagramm-Konfigurator erstellen.
-- Das **Dashboard** zeigt alle Diagramme des Modells. Siehe [Dashboards](./dashboards).
+- Das **Dashboard** zeigt eines der Dashboards des Modells mit seinen Diagrammen. `Ctrl+N` / `Ctrl+P` wechseln zum nächsten oder vorherigen. Siehe [Dashboards](./dashboards).
 
 Beide lassen sich gleichzeitig anzeigen. Dann teilen sie sich den Bereich auf eine von drei Arten: oben/unten, links/rechts oder schwebend, wobei eine Ansicht über der anderen liegt. Ziehen Sie den Trenner zwischen geteilten Ansichten, um ihre Größe zu ändern. Eine schwebende Ansicht lässt sich an ihrem Griff verschieben und an ihrer unteren rechten Ecke in der Größe ändern.
 

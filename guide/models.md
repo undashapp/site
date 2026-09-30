@@ -1,13 +1,13 @@
 # Models & SQL
 
-A **model** is a named SQL query. It is the center of *undash*: fields, transforms, filters, controls, dimensions, measures, charts and the dashboard all belong to a model.
+A **model** is a named SQL query. It is the center of *undash*: fields, transforms, filters, controls, dimensions, measures, charts and dashboards all belong to a model.
 
 ## Creating a model
 
 There are four ways to create a model:
 
 - **Open a table.** Clicking a table opens a new model with `SELECT * FROM <table>`. It is saved when you save it or when you save its first chart.
-- **Write a query.** Click **+** (**New Model**) in the **Models** header, or press `Ctrl+N`. Enter a title, a name (the "Name of Database View") and a SQL query, then click **Save**. This needs at least one table.
+- **Write a query.** Click **+** (**New Model**) in the **Models** header, or press `Ctrl+N`. Enter a title, a name (the "Name of Database View") and a SQL query, then click **Save**. This needs at least one table. The name must be unique among tables and models, and must not be an SQL keyword such as `select`.
 - **From the SQL console.** Write a query in the [DB console](#the-db-console) and click **+**, or press `Ctrl+N` in the editor.
 - **With AI.** See [AI Assistant](./ai).
 
@@ -53,14 +53,14 @@ Closing a model (the × button or `q`) discards unsaved changes without asking.
 
 ## Managing models
 
-Models are listed in the **Models** list of the data overview. When a model has the focus, its card also shows how many transforms, filters, controls, dimensions, measures and charts it has.
+Models are listed in the **Models** list of the data overview. When a model has the focus, its card also shows how many transforms, filters, controls, dimensions, measures and dashboards it has.
 
 | Action | How |
 |---|---|
 | **Open** | Click the model, or press `Enter`. |
-| **Edit** | ⋮ menu → **Edit**, or `e`. Changes the title and the name. Charts and dashboard move along with the name. The name is locked while another model depends on this one. |
+| **Edit** | ⋮ menu → **Edit**, or `e`. Changes the title and the name. Charts and dashboards move along with the name. The name is locked while another model depends on this one. |
 | **Export** | ⋮ menu → **Export**, or `d`. Downloads the result of the model's query. |
-| **Delete** | ⋮ menu → **Delete**, or `Ctrl+Shift+D`. Deletes the model with all its charts and its dashboard. Not possible while another model depends on it. |
+| **Delete** | ⋮ menu → **Delete**, or `Ctrl+Shift+D`. Deletes the model with all its charts and dashboards. Not possible while another model depends on it. |
 
 ::: warning
 Deleting a model happens immediately. There is no confirmation and no undo.
@@ -81,9 +81,9 @@ When a model is open, the sidebar shows its panels from top to bottom:
 | **Dimensions** | Fields to group by. See [Dimensions & Measures](./dimensions-measures). |
 | **Measures** | Aggregations. See [Dimensions & Measures](./dimensions-measures). |
 | **Chart Configurator** | Builds charts. See [Charts](./charts). |
-| **Charts** | The model's saved charts. See [Charts](./charts). |
+| **Dashboards** | The model's dashboards and their charts. See [Dashboards](./dashboards#the-dashboards-panel). |
 
-Press `g` followed by a letter to jump to a panel: `f` Fields, `t` Transforms, `w` Filters, `o` Controls, `d` Dimensions, `m` Measures, `s` chart selector, `c` Chart Configurator, `l` Charts.
+Press `g` followed by a letter to jump to a panel: `f` Fields, `t` Transforms, `w` Filters, `o` Controls, `d` Dimensions, `m` Measures, `s` chart selector, `c` Chart Configurator, `l` Dashboards.
 
 ## The Query panel
 

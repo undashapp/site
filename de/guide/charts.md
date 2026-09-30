@@ -31,9 +31,9 @@ Die Kanalliste ist sozusagen das Rezept des Diagramms: `x` und `y` sind die Achs
 ### 3. Das Diagramm speichern
 
 - Klicken Sie auf die Speichern-Schaltfläche in der Zeile des Konfigurators oder drücken Sie `Ctrl+S`. Das Diagramm erhält einen Standardnamen, etwa „Säulendiagramm 01“.
-- `Shift`+Klick auf die Speichern-Schaltfläche oder `Ctrl+Shift+S` fragt bei einem neuen Diagramm zuerst nach einem Namen. Das Formular fragt außerdem nach einer **Referenz zum Diagramm**, dem internen Namen des Diagramms.
+- `Shift`+Klick auf die Speichern-Schaltfläche oder `Ctrl+Shift+S` fragt bei einem neuen Diagramm zuerst nach einem Namen. Das Formular fragt außerdem nach einer **Referenz zum Diagramm**, dem internen Namen des Diagramms, und nach dem **Dashboard**, auf dem es liegen soll.
 
-Beim Speichern eines Diagramms wird auch das Modell gespeichert. Ist die [Auto-Benennung](./ai#automatische-funktionen) aktiviert, gibt die KI neuen Diagrammen einen Titel.
+Ein neues Diagramm kommt auf das gerade angezeigte Dashboard. Beim Speichern eines Diagramms wird auch das Modell gespeichert. Ist die [Auto-Benennung](./ai#automatische-funktionen) aktiviert, gibt die KI neuen Diagrammen einen Titel.
 
 ## Small Multiples
 
@@ -47,21 +47,21 @@ Kanäle mit Kategorien oder Metriken lassen sich sortieren. Klicken Sie auf die 
 
 ## Beschriftungen, Legenden und Farben
 
-- **Titel:** Der Titel eines Diagramms ist sein Name. Benennen Sie Diagramme im Bereich **Diagramme** um.
+- **Titel:** Der Titel eines Diagramms ist sein Name. Benennen Sie Diagramme im Bereich **Dashboards** um.
 - **Achsenbeschriftungen:** Achsen werden mit den Namen ihrer Dimensionen und Metriken beschriftet, einschließlich [Aliasen](./fields-transforms#aliase). Metriken heißen etwa `sum_revenue`.
 - **Zahlen:** Achsen verwenden eine Kurzschreibweise wie `1.2k` oder `3M` und die Trennzeichen der aktuellen [Sprache](./settings).
 - **Fehlende Werte** erscheinen als „Unbekannt“, der Rest einer [Gruppierung](./fields-transforms#gruppierung) als „Sonstige“.
-- **Legende:** Ein Diagramm mit einem `color`-Kanal zeigt oben rechts eine Legende, sofern die Farben nicht bereits durch eine Achse erklärt werden. Lange Legenden lassen sich scrollen.
+- **Legende:** Ein Diagramm mit einem `color`-Kanal zeigt oben rechts eine Legende, sofern die Farben nicht bereits durch eine Achse erklärt werden. Lange Legenden lassen sich scrollen. Ein Klick auf die Legende verschiebt sie in eine andere Ecke. Diese Ecke behält das Diagramm auch bei späteren Änderungen und in Exporten.
 - **Farben:** Die Farben stammen aus den [Einstellungen](./settings) **Farbe** und **Farbpalette**. Eine [statische](./dimensions-measures#statische-und-dynamische-attribute) Farbdimension behält die Farbe jeder Kategorie bei, wenn sich Filter ändern. Absteigendes Sortieren des `color`-Kanals kehrt die Palette um.
 
 ## Diagramme verwalten
 
-Der Bereich **Diagramme** listet die gespeicherten Diagramme des Modells auf, die neuesten zuerst. Ein ausgewähltes Diagramm wird im Dashboard hervorgehoben.
+Die gespeicherten Diagramme des Modells stehen im Bereich **Dashboards**, jeweils unter dem Dashboard, auf dem sie liegen. Klappen Sie die Zeile eines Dashboards auf, um seine Diagramme zu sehen, die neuesten zuerst. Ein ausgewähltes Diagramm zeigt sein Dashboard an und wird darin hervorgehoben. Siehe [Dashboards](./dashboards#der-bereich-dashboards).
 
 | Aktion | Schaltfläche | Taste |
 |---|---|---|
 | Im Konfigurator bearbeiten | ↑ Kreis | `u` |
-| Umbenennen | Stift | `e` |
+| Umbenennen oder auf ein anderes Dashboard verschieben | Stift | `e` |
 | Im Dashboard ein- oder ausblenden | Häkchen | `d` |
 | Filter und Steuerelemente zuweisen | Klick auf die Zeile | `Enter` |
 | Löschen | × | `Backspace` |
@@ -70,11 +70,9 @@ Um ein Diagramm zu bearbeiten, laden Sie es mit `u` in den Konfigurator, ändern
 
 Um ein Diagramm zu kopieren, laden Sie es in den Konfigurator, drücken `Escape`, um die Bearbeitung zu beenden, und speichern es erneut. Die Kopie wird als neues Diagramm gespeichert.
 
-Das × in der Kopfzeile des Bereichs löscht alle Diagramme des Modells auf einmal, ohne Rückfrage.
-
 ## Das SQL eines Diagramms ansehen
 
-Ist die [DB-Konsole verknüpft](./models#verknüpfter-modus), zeigt die Konsole die Abfrage hinter dem aktuellen Diagramm und die zurückgegebenen Daten, sobald sich der Tastaturfokus in einem der Diagrammbereiche befindet. So können Sie nachvollziehen, was ein Diagramm berechnet, oder die Abfrage wiederverwenden.
+Ist die [DB-Konsole verknüpft](./models#verknupfter-modus), zeigt die Konsole die Abfrage hinter dem aktuellen Diagramm und die zurückgegebenen Daten, sobald sich der Tastaturfokus in einem der Diagrammbereiche befindet. So können Sie nachvollziehen, was ein Diagramm berechnet, oder die Abfrage wiederverwenden.
 
 ## Ansichtssteuerung
 

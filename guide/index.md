@@ -13,7 +13,7 @@ Everything in *undash* builds on four kinds of objects:
 | **Table** | A data file you imported, such as a CSV or Parquet file. Tables are read-only. |
 | **Model** | A named SQL query over one or more tables (or other models). A model holds everything you build on top of the data. |
 | **Chart** | A visualization of a model, built from the model's dimensions and measures. |
-| **Dashboard** | The arrangement of a model's charts on one canvas. Every model has exactly one dashboard. |
+| **Dashboard** | An arrangement of a model's charts on one canvas. A model can have several dashboards, and every chart is on one of them. |
 
 Inside a model, you shape the data before you chart it:
 

@@ -50,13 +50,15 @@ Die Null-Schaltfläche wird nur angezeigt, wenn die Spalte fehlende Werte enthä
 
 Standardmäßig ist ein Filter oder Steuerelement **global**: Es gilt für jedes Diagramm des Modells. Ein **lokaler** Filter gilt nur für die Diagramme, denen Sie ihn zuweisen.
 
-Um festzulegen, welche Filter für ein Diagramm gelten, wählen Sie das Diagramm im Bereich **Diagramme** aus und drücken `Enter`, um es aufzuklappen. Darunter erscheinen die Zeilen **Filter** und **Steuerelemente**. Solange nichts abweicht, zeigen beide **Standard**. Öffnen Sie eine Zeile und markieren Sie einen Filter, um einen globalen Filter für dieses Diagramm auszuschließen oder einen lokalen einzubeziehen. `r` setzt das Diagramm auf die Standardwerte zurück.
+Um festzulegen, welche Filter für ein Diagramm gelten, wählen Sie das Diagramm im Bereich **Dashboards** aus und drücken `Enter`, um es aufzuklappen. Darunter erscheinen die Zeilen **Filter** und **Steuerelemente**. Solange nichts abweicht, zeigen beide **Standard**. Öffnen Sie eine Zeile und markieren Sie einen Filter, um einen globalen Filter für dieses Diagramm auszuschließen oder einen lokalen einzubeziehen. `r` setzt das Diagramm auf die Standardwerte zurück.
 
 So kann ein Dashboard zum Beispiel eine Leistungskennzahl mit dem Gesamtumsatz zeigen, während die übrigen Diagramme dem Steuerelement für die Region folgen. Dazu schließen Sie die Kennzahl von diesem Steuerelement aus.
 
+Lokale Filter können außerdem einzelne Operanden einer [eigenen Metrik](./dimensions-measures#ad-hoc-metriken-per-filter-eingrenzen) eingrenzen, etwa um den Umsatz einer Region mit dem Gesamtumsatz zu vergleichen.
+
 ## Steuerelemente im Dashboard
 
-Jede Änderung an einem Steuerelement aktualisiert sofort alle Diagramme, für die es gilt. Im [Präsentationsmodus](./dashboards#präsentationsmodus) erscheinen die aktivierten Steuerelemente in einem schwebenden Bereich **Filter**, sodass Betrachter sie ohne die Seitenleiste bedienen können.
+Jede Änderung an einem Steuerelement aktualisiert sofort alle Diagramme, für die es gilt. Im [Präsentationsmodus](./dashboards#prasentationsmodus) erscheinen die aktivierten Steuerelemente in einem schwebenden Bereich **Filter**, sodass Betrachter sie ohne die Seitenleiste bedienen können.
 
 ## Performance
 

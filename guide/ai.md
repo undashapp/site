@@ -25,19 +25,22 @@ Category values may contain names or other personal data. Turn off **Share categ
 
 ## Proposing a dashboard
 
-Open a table, so that a new model without dimensions or measures is shown. Then click the sparkles button in the header of the **Charts** panel (**Propose model and dashboard with AI**), or press `Ctrl+Shift+A`. The button appears once an API key is set.
+Open a table, so that a new model without dimensions or measures is shown. Then click the sparkles button in the header of the **Dashboards** panel (**Propose model and dashboard with AI**), or press `Ctrl+Shift+A`. The button appears once an API key is set.
 
 While the AI works, *undash* shows "Analyzing Schema, Preparing Charts". Then the **Dashboard Proposal** opens:
 
 - **Name of Model**: the name of the model to create.
 - A summary of the proposed dimensions, measures and transforms.
+- **Title**, **Subtitle** and **Dashboard Reference** of the new dashboard, proposed by the AI. Change them as you like.
 - **Charts**: the proposed charts, each with its type and channels. Uncheck the charts you don't want.
 
-Click **Save** to create the model with its charts and dashboard, or **Cancel** to discard the proposal. Nothing is saved before you confirm.
+Click **Save** to create the model with its dashboard and charts, or **Cancel** to discard the proposal. Nothing is saved before you confirm.
+
+When the model already has dimensions or measures, the same button (**Propose a new dashboard with AI**, `Ctrl+Shift+A`) proposes another dashboard for it. The existing dashboards stay as they are.
 
 ## Proposing charts
 
-When the model already has dimensions or measures, the same button (**Propose charts with AI**, `Ctrl+Shift+A`) asks for additional charts instead. The **Chart Proposal** works like the dashboard proposal. The new charts are added to the existing ones.
+To add charts to an existing dashboard, focus its row in the **Dashboards** panel and click its sparkles button (**Add charts with AI**), or press `Ctrl+Shift+A` on the row. The **Chart Proposal** lists only the charts, and works like the dashboard proposal. The new charts are added to that dashboard.
 
 ## Automatic features
 
@@ -46,7 +49,7 @@ Two options in the settings run the AI without asking:
 | Option | What it does |
 |---|---|
 | **Auto-modeling** | After a table is imported, the AI proposes a model and dashboard for it. You review the proposal as above. |
-| **Auto-labeling** | After a chart is saved, the AI gives it a title. |
+| **Auto-labeling** | After a chart is saved, the AI gives it a title. A dashboard you add by hand gets a title and subtitle the same way. |
 
 Both are off by default.
 

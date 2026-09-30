@@ -42,7 +42,7 @@ Sobald das Modell Dimensionen und Metriken hat, bietet der **Diagramm-Konfigurat
 2. Prüfen Sie die Kanäle darunter. Jeder Kanal, etwa `x` oder `y_max`, zeigt die ihm zugewiesene Dimension oder Metrik. Klicken Sie auf ein Badge, um zu einer anderen zu wechseln.
 3. Klicken Sie auf die Speichern-Schaltfläche in der Zeile des Konfigurators, oder drücken Sie `Ctrl+S`.
 
-Das Diagramm erscheint im Bereich **Diagramme** und auf dem Dashboard des Modells. Dabei wird auch das Modell gespeichert, und der Punkt wird grün.
+Das Diagramm erscheint auf dem ersten Dashboard des Modells, „Dashboard 01“, und darunter im Bereich **Dashboards**. Dabei wird auch das Modell gespeichert, und der Punkt wird grün.
 
 Wiederholen Sie diesen Schritt für ein paar weitere Diagramme: Fügen Sie für eine Datumsspalte eine Transformation **Partition Datum** hinzu (siehe [Spalten & Transformationen](./fields-transforms)) und probieren Sie ein **Liniendiagramm** aus.
 
@@ -58,7 +58,7 @@ Steuerelemente sind Filter, die Betrachter auf dem Dashboard ändern können. Fa
 
 ## 7. Präsentieren und exportieren
 
-- Drücken Sie `Ctrl+Shift+P`, um das Dashboard in der Vollansicht zu präsentieren. Drücken Sie `c`, um den Bereich **Filter** mit Ihren Steuerelementen zu öffnen, und `Escape`, um die Präsentation zu beenden.
+- Drücken Sie `Ctrl+Shift+P`, um das Dashboard in der Vollansicht zu präsentieren. Bewegen Sie die Maus, um den Bereich **Filter** mit Ihren Steuerelementen einzublenden, und drücken Sie `Escape`, um die Präsentation zu beenden.
 - Drücken Sie `Ctrl+Shift+D`, um die fokussierte Ansicht als PDF zu exportieren. Dateityp und Papierformat legen Sie in den [Einstellungen](./settings) fest.
 
 ## Abkürzung: Dashboard per KI erstellen
