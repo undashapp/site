@@ -24,7 +24,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'Home', link: '/' },
-          { text: 'Guide', link: '/guide/getting-started', activeMatch: '/guide/' },
+          { text: 'Documentation', link: '/guide/getting-started', activeMatch: '/guide/' },
         ],
 
         sidebar: {
@@ -75,7 +75,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'Start', link: '/de/' },
-          { text: 'Handbuch', link: '/de/guide/getting-started', activeMatch: '/de/guide/' },
+          { text: 'Dokumentation', link: '/de/guide/getting-started', activeMatch: '/de/guide/' },
         ],
 
         sidebar: {
