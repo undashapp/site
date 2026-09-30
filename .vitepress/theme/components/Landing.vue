@@ -525,7 +525,7 @@ const fontSamples = [
           </div>
           <span class="step-num">02</span>
           <h3>{{ t.flow.steps[1].title }}</h3>
-          <p>{{ t.flow.steps[1].text }}</p>
+          <p>{{ t.flow.steps[1].text }}<sup class="fn-mark">{{ t.flow.steps[1].mark }}</sup></p>
         </li>
         <li class="step reveal">
           <div class="step-visual">
@@ -564,6 +564,7 @@ const fontSamples = [
           <p>{{ t.flow.steps[2].text }}</p>
         </li>
       </ol>
+      <p class="flow-footnote reveal">{{ t.flow.footnote }}</p>
     </section>
 
     <!-- Bento features -->
@@ -1388,6 +1389,15 @@ const fontSamples = [
 }
 .step h3 { margin: 4px 0 6px; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
 .step p { margin: 0; color: var(--u-muted); font-size: 15px; line-height: 1.55; }
+.fn-mark { margin-left: 1px; color: var(--vp-c-text-3); }
+.flow-footnote {
+  margin: 32px auto 0;
+  max-width: 640px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--vp-c-text-3);
+}
 
 .icon-lg { width: 40px; height: 40px; }
 
