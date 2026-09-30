@@ -43,12 +43,14 @@ const en = {
       {
         title: 'AI Proposes',
         text: 'Only table statistics are shared, never your rows.',
+        mark: '*',
       },
       {
         title: 'Dashboard Ready',
         text: 'A whole dashboard, cross-filtered and ready to present.',
       },
     ],
+    footnote: '* AI features require your own OpenAI or Anthropic API key. Usage is billed by the provider and may incur additional costs.',
   },
   features: {
     eyebrow: 'Everything you need',
@@ -175,12 +177,14 @@ const de: LandingMessages = {
       {
         title: 'KI macht Vorschläge',
         text: 'Die KI sieht nur Tabellenstatistiken, niemals Ihre Daten.',
+        mark: '*',
       },
       {
         title: 'Dashboard steht',
         text: 'Ein vollständiges Dashboard mit Cross-Filtering, bereit für die Präsentation.',
       },
     ],
+    footnote: '* KI-Funktionen erfordern einen eigenen API-Schlüssel von OpenAI oder Anthropic. Die Nutzung wird vom Anbieter abgerechnet und kann zusätzliche Kosten verursachen.',
   },
   features: {
     eyebrow: 'Alles, was Sie brauchen',
