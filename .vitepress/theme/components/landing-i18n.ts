@@ -76,7 +76,7 @@ const en = {
     },
     charts: {
       title: '20+ Chart Types',
-      text: 'From bar, line and area charts to scatter, heatmap, density, streamgraph, radar, KPI and choropleth maps. Facet any chart into small multiples.',
+      text: 'From bar, line and area charts to scatter, heatmap, density, streamgraph, radar, KPI and choropleth maps. Facet any chart into small multiples for a virtually endless range of visualizations.',
       names: {
         Bar: 'Bar',
         Lollipop: 'Lollipop',
@@ -100,8 +100,8 @@ const en = {
       text: 'Interactive controls filter every chart of a dashboard at once: category pickers, range sliders for numbers, dates and times, and boolean toggles. Pre-aggregation keeps it snappy.',
     },
     keys: {
-      title: 'Keyboard First',
-      text: 'Navigate, search, switch views and jump to any chart type without leaving the keyboard. Vim-style shortcuts for those who love speed.',
+      title: 'Mouse, Touch or Keyboard',
+      text: 'Everything works with just a mouse on desktop or with taps and gestures on tablet. Pros can go keyboard-only instead: navigate, search, switch views and jump to any chart type with Vim-style shortcuts.',
     },
     offline: {
       title: 'Works Offline',
@@ -217,7 +217,7 @@ const de: LandingMessages = {
     },
     charts: {
       title: '20+ Diagrammtypen',
-      text: 'Von Balken-, Linien- und Flächendiagrammen über Streudiagramme, Heatmaps, Dichtediagramme, Streamgraphs und Netzdiagramme bis hin zu Kennzahlen und Choroplethenkarten. Jedes Diagramm lässt sich zudem in Small Multiples aufteilen.',
+      text: 'Von Balken-, Linien- und Flächendiagrammen über Streudiagramme, Heatmaps, Dichtediagramme, Streamgraphs und Netzdiagramme bis hin zu Kennzahlen und Choroplethenkarten. Jedes Diagramm lässt sich zudem in Small Multiples aufteilen, für eine nahezu unbegrenzte Vielfalt an Visualisierungen.',
       names: {
         Bar: 'Balken',
         Lollipop: 'Lollipop',
@@ -241,8 +241,8 @@ const de: LandingMessages = {
       text: 'Interaktive Steuerelemente filtern alle Diagramme eines Dashboards gleichzeitig: Kategorieauswahl, Schieberegler für Zahlen, Datum und Uhrzeit sowie Ja/Nein-Schalter. Dank Voraggregation reagiert alles ohne Verzögerung.',
     },
     keys: {
-      title: 'Alles per Tastatur',
-      text: 'Navigieren, suchen, Ansichten wechseln oder direkt zu jedem Diagrammtyp springen, ganz ohne Maus. Mit Tastenkürzeln im Vim-Stil für alle, die es eilig haben.',
+      title: 'Maus, Touch oder Tastatur',
+      text: 'Alles funktioniert allein mit der Maus am Desktop oder per Tippen und Gesten auf dem Tablet. Profis steuern alternativ nur per Tastatur: Navigieren, Suchen, Ansichten wechseln und zu jedem Diagrammtyp springen, mit Tastenkürzeln im Vim-Stil.',
     },
     offline: {
       title: 'Auch offline nutzbar',
