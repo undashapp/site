@@ -76,7 +76,7 @@ const en = {
     },
     charts: {
       title: '20+ Chart Types',
-      text: 'From bar, line and area charts to scatter, heatmap, density, streamgraph, radar, KPI and choropleth maps. Facet any chart into small multiples.',
+      text: 'From bar, line and area charts to scatter, heatmap, density, streamgraph, radar, KPI and choropleth maps. Facet any chart into small multiples for a virtually endless range of visualizations.',
       names: {
         Bar: 'Bar',
         Lollipop: 'Lollipop',
@@ -217,7 +217,7 @@ const de: LandingMessages = {
     },
     charts: {
       title: '20+ Diagrammtypen',
-      text: 'Von Balken-, Linien- und Flächendiagrammen über Streudiagramme, Heatmaps, Dichtediagramme, Streamgraphs und Netzdiagramme bis hin zu Kennzahlen und Choroplethenkarten. Jedes Diagramm lässt sich zudem in Small Multiples aufteilen.',
+      text: 'Von Balken-, Linien- und Flächendiagrammen über Streudiagramme, Heatmaps, Dichtediagramme, Streamgraphs und Netzdiagramme bis hin zu Kennzahlen und Choroplethenkarten. Jedes Diagramm lässt sich zudem in Small Multiples aufteilen, für eine nahezu unbegrenzte Vielfalt an Visualisierungen.',
       names: {
         Bar: 'Balken',
         Lollipop: 'Lollipop',
