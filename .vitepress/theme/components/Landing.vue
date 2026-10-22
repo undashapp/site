@@ -305,6 +305,13 @@ const icons: Record<string, string[]> = {
     'M18 14l0 .01',
     'M10 14l4 .01',
   ],
+  world: [
+    'M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0',
+    'M3.6 9h16.8',
+    'M3.6 15h16.8',
+    'M11.5 3a17 17 0 0 0 0 18',
+    'M12.5 3a17 17 0 0 1 0 18',
+  ],
   code: [
     'M14.5 4h2.5a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-10a3 3 0 0 1 -3 -3v-5',
     'M6 5l-2 2l2 2',
@@ -344,7 +351,6 @@ const palettes = [
   ['#c6dbef', '#9ecae1', '#6baed6', '#4292c6', '#2171b5', '#08519c'],
   ['#b2182b', '#ef8a62', '#fddbc7', '#d1e5f0', '#67a9cf', '#2166ac'],
 ];
-const locales = ['EN', 'DE', 'FR', 'ES', 'IT', 'PT'];
 const fontSamples = [
   'ui-sans-serif, system-ui, sans-serif',
   'Georgia, serif',
@@ -889,10 +895,23 @@ const fontSamples = [
             <div class="fonts">
               <span v-for="f in fontSamples" :key="f" :style="{ fontFamily: f }">Aa</span>
             </div>
-            <div class="locales">
-              <span v-for="l in locales" :key="l">{{ l }}</span>
-            </div>
           </div>
+        </article>
+
+        <!-- Locales -->
+        <article class="card card-locales span-3 reveal">
+          <div class="card-text">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.world" :key="d" :d="d" /></svg>
+            </div>
+            <h3>{{ t.features.locales.title }}</h3>
+            <p>{{ t.features.locales.text }}</p>
+          </div>
+          <ul class="locale-list" aria-hidden="true">
+            <li v-for="[code, name] in t.features.locales.items" :key="code">
+              <b>{{ code }}</b><span>{{ name }}</span>
+            </li>
+          </ul>
         </article>
 </div>
     </section>
@@ -1931,6 +1950,7 @@ const fontSamples = [
 .palette { display: flex; align-items: center; gap: 12px; }
 .palette-label {
   flex: 0 0 76px;
+  text-align: right;
   font-size: 11px;
   font-weight: 600;
   color: var(--vp-c-text-2);
@@ -1946,18 +1966,46 @@ const fontSamples = [
 }
 .swatches span:hover { transform: scale(1.2); }
 .fonts { display: flex; gap: 6px; margin-top: 4px; }
-.locales { display: flex; gap: 6px; }
-.locales span {
-  flex: 1;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  padding: 4px 0;
-  border-radius: 999px;
-  color: var(--vp-c-text-2);
+
+/* Locales: a slim full-width panel, text beside the language chips */
+.card-locales { display: grid; gap: 20px; align-items: center; }
+@media (min-width: 860px) {
+  .card-locales { grid-template-columns: 1fr 1.1fr; gap: 32px; }
+}
+.card-locales .card-icon { margin-bottom: 12px; }
+.locale-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.locale-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
   background: var(--u-card-solid);
   border: 1px solid var(--u-border);
+  font-size: 13px;
+  color: var(--vp-c-text-1);
+  white-space: nowrap;
+  min-width: 0;
+}
+.locale-list b {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 6px;
+  border-radius: 6px;
+  color: var(--u-c1);
+  background: color-mix(in srgb, var(--u-c1) 12%, transparent);
+}
+.locale-list span { overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 420px) {
+  .locale-list { grid-template-columns: repeat(2, 1fr); }
 }
 .fonts span {
   flex: 1;

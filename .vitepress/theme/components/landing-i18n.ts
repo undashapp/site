@@ -121,8 +121,20 @@ const en = {
     },
     custom: {
       title: 'Make It Yours',
-      text: 'Pick from dozens of dashboard themes, from light and dark to Dracula, Nord and Solarized, in glass, flat or paper style, or create your own. Choose from dozens of color palettes, categorical, sequential and diverging, and six fonts made for data visualization. Available in six languages: English, German, French, Spanish, Italian and Portuguese.',
+      text: 'Pick from dozens of dashboard themes, from light and dark to Dracula, Nord and Solarized, in glass, flat or paper style, or create your own. Choose from dozens of color palettes, categorical, sequential and diverging, and six fonts made for data visualization.',
       palettes: ['Categorical', 'Sequential', 'Diverging'],
+    },
+    locales: {
+      title: 'Speaks Your Language',
+      text: 'Interface, number and date formats in six languages. Dashboard and chart titles can be kept in several of them at once.',
+      items: [
+        ['EN', 'English'],
+        ['DE', 'Deutsch'],
+        ['FR', 'Français'],
+        ['ES', 'Español'],
+        ['IT', 'Italiano'],
+        ['PT', 'Português'],
+      ],
     },
   },
   devices: {
@@ -263,8 +275,20 @@ const de: LandingMessages = {
     },
     custom: {
       title: 'Ganz nach Ihrem Geschmack',
-      text: 'Dutzende Dashboard-Themes, von Hell und Dunkel bis Dracula, Nord und Solarized, im Glas-, Flat- oder Papier-Stil, oder Sie gestalten Ihr eigenes. Dazu Dutzende Farbpaletten, kategorial, sequenziell und divergierend, sowie sechs Schriftarten, gemacht für Datenvisualisierung. In sechs Sprachen: Deutsch, Englisch, Französisch, Spanisch, Italienisch und Portugiesisch.',
+      text: 'Dutzende Dashboard-Themes, von Hell und Dunkel bis Dracula, Nord und Solarized, im Glas-, Flat- oder Papier-Stil, oder Sie gestalten Ihr eigenes. Dazu Dutzende Farbpaletten, kategorial, sequenziell und divergierend, sowie sechs Schriftarten, gemacht für Datenvisualisierung.',
       palettes: ['Kategorial', 'Sequenziell', 'Divergierend'],
+    },
+    locales: {
+      title: 'Spricht Ihre Sprache',
+      text: 'Oberfläche, Zahlen- und Datumsformate in sechs Sprachen. Dashboard- und Diagrammtitel lassen sich in mehreren davon gleichzeitig pflegen.',
+      items: [
+        ['EN', 'English'],
+        ['DE', 'Deutsch'],
+        ['FR', 'Français'],
+        ['ES', 'Español'],
+        ['IT', 'Italiano'],
+        ['PT', 'Português'],
+      ],
     },
   },
   devices: {
