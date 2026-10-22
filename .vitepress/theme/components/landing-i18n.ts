@@ -121,7 +121,8 @@ const en = {
     },
     custom: {
       title: 'Make It Yours',
-      text: 'Choose from six fonts made for data visualization. Switch between light and dark mode and between glass and flat styles, pick a primary color and go monochromatic or categorical.',
+      text: 'Pick from dozens of dashboard themes, from light and dark to Dracula, Nord and Solarized, in glass, flat or paper style, or create your own. Choose from dozens of color palettes, categorical, sequential and diverging, and six fonts made for data visualization. Available in six languages: English, German, French, Spanish, Italian and Portuguese.',
+      palettes: ['Categorical', 'Sequential', 'Diverging'],
     },
   },
   devices: {
@@ -262,7 +263,8 @@ const de: LandingMessages = {
     },
     custom: {
       title: 'Ganz nach Ihrem Geschmack',
-      text: 'Sechs Schriftarten, gemacht für Datenvisualisierung. Heller oder dunkler Modus, Glas- oder Flat-Stil, eine Primärfarbe Ihrer Wahl und wahlweise monochrome oder kategoriale Farben.',
+      text: 'Dutzende Dashboard-Themes, von Hell und Dunkel bis Dracula, Nord und Solarized, im Glas-, Flat- oder Papier-Stil, oder Sie gestalten Ihr eigenes. Dazu Dutzende Farbpaletten, kategorial, sequenziell und divergierend, sowie sechs Schriftarten, gemacht für Datenvisualisierung. In sechs Sprachen: Deutsch, Englisch, Französisch, Spanisch, Italienisch und Portugiesisch.',
+      palettes: ['Kategorial', 'Sequenziell', 'Divergierend'],
     },
   },
   devices: {
