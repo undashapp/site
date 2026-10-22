@@ -275,12 +275,12 @@ const de: LandingMessages = {
     },
     custom: {
       title: 'Ganz nach Ihrem Geschmack',
-      text: 'Drei unabhängige Einstellungen, frei kombinierbar: heller oder dunkler Modus, eines von Dutzenden Dashboard-Themes, von Dracula und Nord bis Solarized oder Ihrem eigenen, und ein Glas-, Flat- oder Papier-Stil. Dazu Dutzende Farbpaletten, kategorial, sequenziell und divergierend, sowie sechs Schriftarten, gemacht für Datenvisualisierung.',
+      text: 'Hell oder dunkel, ein Theme Ihrer Wahl und Glas-, Flat- oder Papier-Optik: drei Einstellungen, die sich beliebig kombinieren lassen. Zur Auswahl stehen Dutzende Dashboard-Themes, von Dracula über Nord bis Solarized, oder Sie gestalten Ihr eigenes. Dazu kommen Dutzende Farbpaletten, kategorial, sequenziell und divergierend, sowie sechs Schriftarten, die für Datenvisualisierung gemacht sind.',
       palettes: ['Kategorial', 'Sequenziell', 'Divergierend'],
     },
     locales: {
       title: 'Spricht Ihre Sprache',
-      text: 'Oberfläche, Zahlen- und Datumsformate in sechs Sprachen. Dashboard- und Diagrammtitel lassen sich in mehreren davon gleichzeitig pflegen.',
+      text: 'Oberfläche sowie Zahlen- und Datumsformate in sechs Sprachen. Dashboard- und Diagrammtitel lassen sich in mehreren Sprachen gleichzeitig pflegen.',
       items: [
         ['EN', 'English'],
         ['DE', 'Deutsch'],
