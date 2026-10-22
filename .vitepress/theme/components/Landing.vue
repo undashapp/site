@@ -878,6 +878,22 @@ const fontSamples = [
           </div>
         </article>
 
+        <!-- Locales -->
+        <article class="card card-locales span-2 reveal">
+          <div class="card-text">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.world" :key="d" :d="d" /></svg>
+            </div>
+            <h3>{{ t.features.locales.title }}</h3>
+            <p>{{ t.features.locales.text }}</p>
+          </div>
+          <ul class="locale-list" aria-hidden="true">
+            <li v-for="[code, name] in t.features.locales.items" :key="code">
+              <b>{{ code }}</b><span>{{ name }}</span>
+            </li>
+          </ul>
+        </article>
+
         <!-- Customize -->
         <article class="card card-custom reveal">
           <div class="card-icon">
@@ -896,22 +912,6 @@ const fontSamples = [
               <span v-for="f in fontSamples" :key="f" :style="{ fontFamily: f }">Aa</span>
             </div>
           </div>
-        </article>
-
-        <!-- Locales -->
-        <article class="card card-locales span-3 reveal">
-          <div class="card-text">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.world" :key="d" :d="d" /></svg>
-            </div>
-            <h3>{{ t.features.locales.title }}</h3>
-            <p>{{ t.features.locales.text }}</p>
-          </div>
-          <ul class="locale-list" aria-hidden="true">
-            <li v-for="[code, name] in t.features.locales.items" :key="code">
-              <b>{{ code }}</b><span>{{ name }}</span>
-            </li>
-          </ul>
         </article>
 </div>
     </section>
@@ -1585,6 +1585,8 @@ const fontSamples = [
   .bento { grid-template-columns: repeat(3, 1fr); }
   .span-2 { grid-column: span 2; }
   .span-3 { grid-column: span 3; }
+  /* Make It Yours stands beside Export and Locales, over both their rows */
+  .card-custom { grid-row: span 2; }
 }
 
 /* VitePress focuses the hash target of an in-page link (Explore Features
@@ -1967,10 +1969,10 @@ const fontSamples = [
 .swatches span:hover { transform: scale(1.2); }
 .fonts { display: flex; gap: 6px; margin-top: 4px; }
 
-/* Locales: a slim full-width panel, text beside the language chips */
+/* Locales: a slim panel under Export, text beside the language chips */
 .card-locales { display: grid; gap: 20px; align-items: center; }
-@media (min-width: 860px) {
-  .card-locales { grid-template-columns: 1fr 1.1fr; gap: 32px; }
+@media (min-width: 700px) {
+  .card-locales { grid-template-columns: 1fr 1fr; gap: 28px; }
 }
 .card-locales .card-icon { margin-bottom: 12px; }
 .locale-list {
@@ -1978,7 +1980,7 @@ const fontSamples = [
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px;
 }
 .locale-list li {
@@ -2004,9 +2006,6 @@ const fontSamples = [
   background: color-mix(in srgb, var(--u-c1) 12%, transparent);
 }
 .locale-list span { overflow: hidden; text-overflow: ellipsis; }
-@media (max-width: 420px) {
-  .locale-list { grid-template-columns: repeat(2, 1fr); }
-}
 .fonts span {
   flex: 1;
   text-align: center;
