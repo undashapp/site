@@ -1949,7 +1949,7 @@ const fontSamples = [
 
 /* Customize */
 .custom-demo { margin-top: 22px; display: flex; flex-direction: column; gap: 10px; }
-.palette { display: flex; align-items: center; gap: 12px; }
+.palette { display: flex; align-items: center; justify-content: center; gap: 12px; }
 .palette-label {
   flex: 0 0 76px;
   text-align: right;
