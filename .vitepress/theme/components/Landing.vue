@@ -305,6 +305,13 @@ const icons: Record<string, string[]> = {
     'M18 14l0 .01',
     'M10 14l4 .01',
   ],
+  world: [
+    'M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0',
+    'M3.6 9h16.8',
+    'M3.6 15h16.8',
+    'M11.5 3a17 17 0 0 0 0 18',
+    'M12.5 3a17 17 0 0 1 0 18',
+  ],
   code: [
     'M14.5 4h2.5a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-10a3 3 0 0 1 -3 -3v-5',
     'M6 5l-2 2l2 2',
@@ -338,9 +345,12 @@ const heat = Array.from({ length: 24 }, (_, i) =>
 
 const deviceIcons = ['desktop', 'tablet', 'phoneOff'];
 
-const swatches = [100, 82, 64, 48, 32, 18].map(
-  (p) => `color-mix(in srgb, var(--u-c1) ${p}%, var(--vp-c-bg))`,
-);
+// One palette of each kind: Tableau 10, Blues and RdBu, six colors each
+const palettes = [
+  ['#4e79a7', '#f28e2b', '#e15759', '#76b7b2', '#59a14f', '#edc948'],
+  ['#c6dbef', '#9ecae1', '#6baed6', '#4292c6', '#2171b5', '#08519c'],
+  ['#b2182b', '#ef8a62', '#fddbc7', '#d1e5f0', '#67a9cf', '#2166ac'],
+];
 const fontSamples = [
   'ui-sans-serif, system-ui, sans-serif',
   'Georgia, serif',
@@ -868,6 +878,22 @@ const fontSamples = [
           </div>
         </article>
 
+        <!-- Locales -->
+        <article class="card card-locales span-2 reveal">
+          <div class="card-text">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.world" :key="d" :d="d" /></svg>
+            </div>
+            <h3>{{ t.features.locales.title }}</h3>
+            <p>{{ t.features.locales.text }}</p>
+          </div>
+          <ul class="locale-list" aria-hidden="true">
+            <li v-for="[code, name] in t.features.locales.items" :key="code">
+              <b>{{ code }}</b><span>{{ name }}</span>
+            </li>
+          </ul>
+        </article>
+
         <!-- Customize -->
         <article class="card card-custom reveal">
           <div class="card-icon">
@@ -876,8 +902,11 @@ const fontSamples = [
           <h3>{{ t.features.custom.title }}</h3>
           <p>{{ t.features.custom.text }}</p>
           <div class="custom-demo" aria-hidden="true">
-            <div class="swatches">
-              <span v-for="c in swatches" :key="c" :style="{ background: c }"></span>
+            <div v-for="(colors, i) in palettes" :key="i" class="palette">
+              <span class="palette-label">{{ t.features.custom.palettes[i] }}</span>
+              <div class="swatches">
+                <span v-for="c in colors" :key="c" :style="{ background: c }"></span>
+              </div>
             </div>
             <div class="fonts">
               <span v-for="f in fontSamples" :key="f" :style="{ fontFamily: f }">Aa</span>
@@ -943,6 +972,7 @@ const fontSamples = [
 
 <style scoped>
 .landing {
+  -webkit-tap-highlight-color: transparent;
   --u-c1: #4f46e5;
   /* Monochromatic tints and shades of the primary color */
   --u-c2: color-mix(in srgb, var(--u-c1) 72%, var(--vp-c-bg));
@@ -1555,7 +1585,13 @@ const fontSamples = [
   .bento { grid-template-columns: repeat(3, 1fr); }
   .span-2 { grid-column: span 2; }
   .span-3 { grid-column: span 3; }
+  /* Make It Yours stands beside Export and Locales, over both their rows */
+  .card-custom { grid-row: span 2; }
 }
+
+/* VitePress focuses the hash target of an in-page link (Explore Features
+   scrolls to #features). Touch browsers draw a focus ring around it. */
+.landing section:focus { outline: none; }
 
 .card {
   position: relative;
@@ -1912,17 +1948,64 @@ const fontSamples = [
 .export-group + .export-group .file { background: var(--u-c1-deep); }
 
 /* Customize */
-.custom-demo { margin-top: 22px; display: flex; flex-direction: column; gap: 12px; }
-.swatches { display: flex; gap: 8px; }
+.custom-demo { margin-top: 22px; display: flex; flex-direction: column; gap: 10px; }
+.palette { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.palette-label {
+  flex: 0 0 76px;
+  text-align: right;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--vp-c-text-2);
+  white-space: nowrap;
+}
+.swatches { display: flex; gap: 6px; }
 .swatches span {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
   transition: transform 0.2s;
 }
 .swatches span:hover { transform: scale(1.2); }
-.fonts { display: flex; gap: 6px; }
+.fonts { display: flex; gap: 6px; margin-top: 4px; }
+
+/* Locales: a slim panel under Export, text beside the language chips */
+.card-locales { display: grid; gap: 20px; align-items: center; }
+@media (min-width: 700px) {
+  .card-locales { grid-template-columns: 1fr 1fr; gap: 28px; }
+}
+.card-locales .card-icon { margin-bottom: 12px; }
+.locale-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.locale-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--u-card-solid);
+  border: 1px solid var(--u-border);
+  font-size: 13px;
+  color: var(--vp-c-text-1);
+  white-space: nowrap;
+  min-width: 0;
+}
+.locale-list b {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 6px;
+  border-radius: 6px;
+  color: var(--u-c1);
+  background: color-mix(in srgb, var(--u-c1) 12%, transparent);
+}
+.locale-list span { overflow: hidden; text-overflow: ellipsis; }
 .fonts span {
   flex: 1;
   text-align: center;

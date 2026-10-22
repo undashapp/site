@@ -121,7 +121,20 @@ const en = {
     },
     custom: {
       title: 'Make It Yours',
-      text: 'Choose from six fonts made for data visualization. Switch between light and dark mode and between glass and flat styles, pick a primary color and go monochromatic or categorical.',
+      text: 'Three independent choices, freely combined: light or dark mode, one of dozens of dashboard themes, from Dracula and Nord to Solarized or your own, and a glass, flat or paper finish. On top, dozens of color palettes, categorical, sequential and diverging, and six fonts made for data visualization.',
+      palettes: ['Categorical', 'Sequential', 'Diverging'],
+    },
+    locales: {
+      title: 'Speaks Your Language',
+      text: 'Interface, number and date formats in six languages. Dashboard and chart titles can be kept in several of them at once.',
+      items: [
+        ['EN', 'English'],
+        ['DE', 'Deutsch'],
+        ['FR', 'Français'],
+        ['ES', 'Español'],
+        ['IT', 'Italiano'],
+        ['PT', 'Português'],
+      ],
     },
   },
   devices: {
@@ -262,7 +275,20 @@ const de: LandingMessages = {
     },
     custom: {
       title: 'Ganz nach Ihrem Geschmack',
-      text: 'Sechs Schriftarten, gemacht für Datenvisualisierung. Heller oder dunkler Modus, Glas- oder Flat-Stil, eine Primärfarbe Ihrer Wahl und wahlweise monochrome oder kategoriale Farben.',
+      text: 'Hell oder dunkel, ein Theme Ihrer Wahl und Glas-, Flat- oder Papier-Optik: drei Einstellungen, die sich beliebig kombinieren lassen. Zur Auswahl stehen Dutzende Dashboard-Themes, von Dracula über Nord bis Solarized, oder Sie gestalten Ihr eigenes. Dazu kommen Dutzende Farbpaletten, kategorial, sequenziell und divergierend, sowie sechs Schriftarten, die für Datenvisualisierung gemacht sind.',
+      palettes: ['Kategorial', 'Sequenziell', 'Divergierend'],
+    },
+    locales: {
+      title: 'Spricht Ihre Sprache',
+      text: 'Oberfläche sowie Zahlen- und Datumsformate in sechs Sprachen. Dashboard- und Diagrammtitel lassen sich in mehreren Sprachen gleichzeitig pflegen.',
+      items: [
+        ['EN', 'English'],
+        ['DE', 'Deutsch'],
+        ['FR', 'Français'],
+        ['ES', 'Español'],
+        ['IT', 'Italiano'],
+        ['PT', 'Português'],
+      ],
     },
   },
   devices: {
