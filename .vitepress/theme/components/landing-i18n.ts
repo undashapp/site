@@ -121,7 +121,7 @@ const en = {
     },
     custom: {
       title: 'Make It Yours',
-      text: 'Three independent choices, freely combined: light or dark mode, one of dozens of dashboard themes, from Dracula and Nord to Solarized or your own, and a glass, flat or paper finish. On top, dozens of color palettes, categorical, sequential and diverging, and six fonts made for data visualization.',
+      text: 'Three independent choices, freely combined: light or dark mode, one of dozens of dashboard themes, from Dracula and Nord to Solarized or your own, and a glass, flat or paper finish. On top, dozens of color palettes, categorical, sequential and diverging, and six fonts that work beautifully for data visualization.',
       palettes: ['Categorical', 'Sequential', 'Diverging'],
     },
     locales: {
@@ -275,7 +275,7 @@ const de: LandingMessages = {
     },
     custom: {
       title: 'Ganz nach Ihrem Geschmack',
-      text: 'Hell oder dunkel, ein Theme Ihrer Wahl und Glas-, Flat- oder Papier-Optik: drei Einstellungen, die sich beliebig kombinieren lassen. Zur Auswahl stehen Dutzende Dashboard-Themes, von Dracula über Nord bis Solarized, oder Sie gestalten Ihr eigenes. Dazu kommen Dutzende Farbpaletten, kategorial, sequenziell und divergierend, sowie sechs Schriftarten, die für Datenvisualisierung gemacht sind.',
+      text: 'Hell oder dunkel, ein Theme Ihrer Wahl und Glas-, Flat- oder Papier-Optik: drei Einstellungen, die sich beliebig kombinieren lassen. Zur Auswahl stehen Dutzende Dashboard-Themes, von Dracula über Nord bis Solarized, oder Sie gestalten Ihr eigenes. Dazu kommen Dutzende Farbpaletten, kategorial, sequenziell und divergierend, sowie sechs Schriftarten, die sich hervorragend für Datenvisualisierung eignen.',
       palettes: ['Kategorial', 'Sequenziell', 'Divergierend'],
     },
     locales: {
