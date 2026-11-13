@@ -232,14 +232,12 @@ const icons: Record<string, string[]> = {
     'M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4',
     'M13.5 6.5l4 4',
   ],
-  phoneOff: [
+  phone: [
     'M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14z',
     'M11 4h2',
     'M12 17v.01',
-    'M3 3l18 18',
   ],
   check: ['M5 12l5 5l10 -10'],
-  x: ['M18 6l-12 12', 'M6 6l12 12'],
   sparkles: [
     'M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6',
   ],
@@ -343,7 +341,7 @@ const heat = Array.from({ length: 24 }, (_, i) =>
   (0.15 + 0.85 * Math.abs(Math.sin(i * 1.7) * Math.cos(i * 0.6))).toFixed(2),
 );
 
-const deviceIcons = ['desktop', 'tablet', 'phoneOff'];
+const deviceIcons = ['desktop', 'tablet', 'phone'];
 
 // One palette of each kind: Tableau 10, Blues and RdBu, six colors each
 const palettes = [
@@ -928,7 +926,6 @@ const fontSamples = [
             v-for="(d, i) in deviceIcons"
             :key="i"
             class="device"
-            :class="{ off: i === 2 }"
           >
             <span class="device-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -939,11 +936,11 @@ const fontSamples = [
               </svg>
             </span>
             <span class="device-name">{{ t.devices.items[i] }}</span>
-            <span class="device-status" :title="i === 2 ? t.devices.unsupported : t.devices.supported">
+            <span class="device-status" :title="t.devices.supported">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <path v-for="p in icons[i === 2 ? 'x' : 'check']" :key="p" :d="p" />
+                <path v-for="p in icons.check" :key="p" :d="p" />
               </svg>
-              <span class="sr-only">{{ i === 2 ? t.devices.unsupported : t.devices.supported }}</span>
+              <span class="sr-only">{{ t.devices.supported }}</span>
             </span>
           </li>
         </ul>
@@ -2125,12 +2122,6 @@ kbd {
   .device-list { gap: 8px; }
   .device { padding: 18px 4px 14px; }
   .device-name { font-size: 12px; }
-}
-.device.off .device-icon { color: var(--vp-c-text-3); }
-.device.off .device-name { color: var(--vp-c-text-3); }
-.device.off .device-status {
-  color: var(--vp-c-red-1);
-  background: color-mix(in srgb, var(--vp-c-red-1) 14%, transparent);
 }
 .sr-only {
   position: absolute;
