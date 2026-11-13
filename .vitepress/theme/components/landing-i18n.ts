@@ -101,7 +101,7 @@ const en = {
     },
     keys: {
       title: 'Mouse, Touch or Keyboard',
-      text: 'Everything works with just a mouse on desktop or with taps and gestures on tablet. Pros can go keyboard-only instead: navigate, search, switch views and jump to any chart type with Vim-style shortcuts.',
+      text: 'Everything works with just a mouse on desktop or with taps and gestures on tablet and phone. Pros can go keyboard-only instead: navigate, search, switch views and jump to any chart type with Vim-style shortcuts.',
     },
     offline: {
       title: 'Works Offline',
@@ -138,11 +138,10 @@ const en = {
     },
   },
   devices: {
-    title: 'Made for Desktop and Tablet',
-    text: `${brand} is built for larger screens. It works best on desktop and on tablets, where a stylus or pencil makes a precise pointer. Phones are not supported.`,
+    title: 'Desktop, Tablet and Phone',
+    text: `${brand} is built for larger screens. It works best on desktop and on tablets, where a stylus or pencil makes a precise pointer. On phones, a layout of its own puts a chart or dashboard above the controls, so you can explore and build on the go.`,
     items: ['Desktop', 'Tablet + Pencil', 'Phone'],
     supported: 'Supported',
-    unsupported: 'Not supported',
   },
   cta: {
     title: 'Business Intelligence,',
@@ -255,7 +254,7 @@ const de: LandingMessages = {
     },
     keys: {
       title: 'Maus, Touch oder Tastatur',
-      text: 'Alles funktioniert allein mit der Maus am Desktop oder per Tippen und Gesten auf dem Tablet. Profis steuern alternativ nur per Tastatur: Navigieren, Suchen, Ansichten wechseln und zu jedem Diagrammtyp springen, mit Tastenkürzeln im Vim-Stil.',
+      text: 'Alles funktioniert allein mit der Maus am Desktop oder per Tippen und Gesten auf Tablet und Smartphone. Profis steuern alternativ nur per Tastatur: Navigieren, Suchen, Ansichten wechseln und zu jedem Diagrammtyp springen, mit Tastenkürzeln im Vim-Stil.',
     },
     offline: {
       title: 'Auch offline nutzbar',
@@ -292,11 +291,10 @@ const de: LandingMessages = {
     },
   },
   devices: {
-    title: 'Gemacht für Desktop und Tablet',
-    text: `${brand} ist für große Bildschirme gemacht. Am besten läuft es auf dem Desktop und auf Tablets, wo ein Stift die Bedienung besonders präzise macht. Smartphones werden nicht unterstützt.`,
+    title: 'Desktop, Tablet und Smartphone',
+    text: `${brand} ist für große Bildschirme gemacht. Am besten läuft es auf dem Desktop und auf Tablets, wo ein Stift die Bedienung besonders präzise macht. Auf dem Smartphone zeigt ein eigenes Layout Diagramm oder Dashboard über den Bedienelementen, sodass Sie auch unterwegs auswerten und gestalten können.`,
     items: ['Desktop', 'Tablet + Stift', 'Smartphone'],
     supported: 'Unterstützt',
-    unsupported: 'Nicht unterstützt',
   },
   cta: {
     title: 'Business Intelligence,',
