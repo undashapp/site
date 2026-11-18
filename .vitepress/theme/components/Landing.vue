@@ -943,11 +943,13 @@ const fontSamples = [
           <h3>{{ t.features.custom.title }}</h3>
           <p>{{ t.features.custom.text }}</p>
           <div class="custom-demo" aria-hidden="true">
-            <div v-for="(colors, i) in palettes" :key="i" class="palette">
-              <span class="palette-label">{{ t.features.custom.palettes[i] }}</span>
-              <div class="swatches">
-                <span v-for="c in colors" :key="c" :style="{ background: c }"></span>
-              </div>
+            <div class="palettes">
+              <template v-for="(colors, i) in palettes" :key="i">
+                <span class="palette-label">{{ t.features.custom.palettes[i] }}</span>
+                <div class="swatches">
+                  <span v-for="c in colors" :key="c" :style="{ background: c }"></span>
+                </div>
+              </template>
             </div>
             <div class="fonts">
               <span v-for="f in fontSamples" :key="f" :style="{ fontFamily: f }">Aa</span>
@@ -1015,30 +1017,30 @@ const fontSamples = [
 <style scoped>
 .landing {
   -webkit-tap-highlight-color: transparent;
-  --u-c1: #34557f;
+  --u-c1: #7a5b42;
   /* Monochromatic tints and shades of the primary color */
   --u-c2: color-mix(in srgb, var(--u-c1) 72%, var(--vp-c-bg));
   --u-c3: color-mix(in srgb, var(--u-c1) 50%, var(--vp-c-bg));
   --u-c4: color-mix(in srgb, var(--u-c1) 32%, var(--vp-c-bg));
   --u-c1-deep: color-mix(in srgb, var(--u-c1) 72%, #000);
   --u-c1-light: color-mix(in srgb, var(--u-c1) 55%, #fff);
-  --u-signal: #f0643c;
-  --u-signal-soft: #ffb59e;
+  --u-signal: #e3a54c;
+  --u-signal-soft: #f2cb92;
   --u-ink: var(--vp-c-text-1);
-  --u-panel: #eceff3;
-  --u-card: #ffffff;
-  --u-card-solid: #f7f8fa;
-  --u-border: #e1e5eb;
-  --u-shadow: 0 1px 0 rgba(20, 23, 28, 0.03);
-  --u-lift: 0 1px 0 rgba(20, 23, 28, 0.04), 0 18px 36px -24px rgba(20, 23, 28, 0.35);
-  --u-grid: rgba(20, 23, 28, 0.06);
+  --u-panel: #eeece5;
+  --u-card: #fefdf9;
+  --u-card-solid: #faf9f5;
+  --u-border: #e3e0d7;
+  --u-shadow: 0 1px 0 rgba(37, 36, 31, 0.03);
+  --u-lift: 0 1px 0 rgba(37, 36, 31, 0.04), 0 18px 36px -24px rgba(37, 36, 31, 0.35);
+  --u-grid: rgba(37, 36, 31, 0.06);
   --u-muted: var(--vp-c-text-2);
   --u-radius: 12px;
   --u-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --u-mono: 'Geist Mono', ui-monospace, Menlo, monospace;
-  --u-dark: #14171c;
-  --u-dark-2: #1d2128;
-  --u-dark-line: #2c323c;
+  --u-dark: #262320;
+  --u-dark-2: #312d28;
+  --u-dark-line: #3d3832;
   overflow: hidden;
   color: var(--vp-c-text-1);
 }
@@ -1147,11 +1149,11 @@ const fontSamples = [
 }
 .brand-word b { font-weight: 600; color: var(--vp-c-text-1); }
 
-/* The accent words: hairline weight in the data ink */
+/* The accent words: hairline weight in the text ink */
 .gradient-text {
   font-weight: 300;
   letter-spacing: -0.05em;
-  color: var(--u-c1);
+  color: var(--u-ink);
 }
 
 .hero-tagline {
@@ -1260,7 +1262,7 @@ const fontSamples = [
   mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 40%, transparent 100%);
   pointer-events: none;
 }
-/* A slate-blue horizon line under the window */
+/* A brown horizon line under the window */
 .hero-demo::after {
   content: '';
   position: absolute;
@@ -1285,7 +1287,7 @@ const fontSamples = [
   border-radius: 12px;
   box-shadow:
     0 0 0 4px color-mix(in srgb, var(--u-card) 60%, transparent),
-    0 30px 60px -30px rgba(20, 23, 28, 0.35);
+    0 30px 60px -30px rgba(37, 36, 31, 0.35);
   overflow: hidden;
 }
 
@@ -1385,7 +1387,9 @@ const fontSamples = [
   color: var(--vp-c-text-3);
 }
 
-.tile-kpi { display: flex; flex-direction: column; justify-content: center; container-type: inline-size; }
+/* KPI and donut content centered, their titles stay left */
+.tile-kpi { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; container-type: inline-size; }
+.tile-kpi .tile-label { align-self: stretch; text-align: left; }
 .kpi {
   margin-top: 6px;
   /* Scale with the tile so long values ("16,40 Mio. €") stay on one line */
@@ -1397,7 +1401,7 @@ const fontSamples = [
 }
 .kpi-sub { font-size: 12px; color: var(--vp-c-text-2); }
 
-.donut-wrap { display: flex; align-items: center; gap: 12px; margin-top: 6px; }
+.donut-wrap { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 6px; }
 .donut { width: 76px; height: 76px; flex: none; }
 .donut-seg { transition: d 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .donut-seg.s1 { fill: var(--u-c1); }
@@ -1686,7 +1690,7 @@ const fontSamples = [
   background: color-mix(in srgb, var(--u-c1) 10%, transparent);
 }
 .ai-chip.k1 { color: var(--vp-c-bg); background: var(--u-ink); }
-.ai-chip.k3 { color: var(--u-signal); background: color-mix(in srgb, var(--u-signal) 12%, transparent); }
+.ai-chip.k3 { color: color-mix(in srgb, var(--u-signal) 55%, var(--u-ink)); background: color-mix(in srgb, var(--u-signal) 12%, transparent); }
 .is-visible .ai-skel { animation: ai-skel var(--cycle) infinite backwards, ai-shimmer 1.2s linear infinite; }
 .is-visible .ai-chips { animation: ai-chips var(--cycle) var(--u-ease) infinite backwards; }
 @keyframes ai-skel { 0%, 12% { opacity: 1; } 16%, 86% { opacity: 0; } 92%, 100% { opacity: 1; } }
@@ -1798,17 +1802,17 @@ const fontSamples = [
 .card h3 { margin: 0 0 10px; font-size: 20px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.25; }
 .card p { margin: 0; font-size: 14px; line-height: 1.75; color: var(--u-muted); }
 
-/* Private: the one graphite panel, the strongest promise */
+/* Private: the one dark panel, the strongest promise */
 .card-private {
   background:
     radial-gradient(circle at 78% 50%, color-mix(in srgb, var(--u-signal) 16%, transparent), transparent 45%),
     var(--u-dark);
   border-color: var(--u-dark);
-  color: #f3f4f6;
+  color: #f6f3ec;
 }
 .card-private:hover { border-color: var(--u-dark-line); }
 .card-private h3 { color: #ffffff; }
-.card-private p { color: #a9b0bc; }
+.card-private p { color: #b3aca0; }
 .card-private :deep(a) { color: var(--u-signal-soft); }
 .card-private .card-icon { background: rgba(255, 255, 255, 0.08); color: var(--u-signal-soft); }
 /* Private */
@@ -1818,10 +1822,10 @@ const fontSamples = [
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1px dashed #3a414d;
+  border: 1px dashed #4a443c;
   animation: spin 40s linear infinite;
 }
-.r2 { inset: 36px; border-style: solid; border-color: #2f3540; animation-direction: reverse; animation-duration: 28s; }
+.r2 { inset: 36px; border-style: solid; border-color: #3d3832; animation-direction: reverse; animation-duration: 28s; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .core {
   position: absolute;
@@ -1844,7 +1848,7 @@ const fontSamples = [
   font-family: var(--u-mono);
   background: var(--u-dark-2);
   border: 1px solid var(--u-dark-line);
-  color: #c9ced8;
+  color: #d3cdc2;
   animation: bob 4s ease-in-out infinite;
 }
 .sat.s1 { top: 6px; left: 50%; transform: translateX(-50%); }
@@ -1944,7 +1948,7 @@ const fontSamples = [
 .console {
   border-radius: 10px;
   background: var(--u-dark);
-  color: #e6e8ec;
+  color: #ece7de;
   border: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
   font-family: var(--vp-font-family-mono);
@@ -1958,7 +1962,7 @@ const fontSamples = [
   white-space: pre;
   overflow: hidden;
   line-height: 1.6;
-  color: #b9c9e0;
+  color: #dcc9b0;
 }
 .caret {
   display: inline-block;
@@ -1991,7 +1995,7 @@ const fontSamples = [
 .console-result td { padding-top: 2px; padding-bottom: 2px; }
 .console-result th { padding-bottom: 3px; }
 .console-result tbody tr:last-child td { padding-bottom: 6px; }
-.console-result th { color: #6b7280; font-weight: 500; }
+.console-result th { color: #8a8378; font-weight: 500; }
 .console-result tr { background: transparent !important; border: 0; }
 .console-result td:last-child, .console-result th:last-child { text-align: right; color: var(--u-signal-soft); }
 
@@ -2195,9 +2199,15 @@ const fontSamples = [
 
 /* Customize */
 .custom-demo { margin-top: 22px; display: flex; flex-direction: column; gap: 10px; }
-.palette { display: flex; align-items: center; justify-content: center; gap: 12px; }
+/* Labels and swatches as one block, centered, the label column as wide as the longest label */
+.palettes {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 10px 12px;
+}
 .palette-label {
-  flex: 0 0 76px;
   text-align: right;
   font-size: 10px;
   font-weight: 500;
@@ -2213,7 +2223,7 @@ const fontSamples = [
   transition: transform 0.2s;
 }
 .swatches span:hover { transform: scale(1.2); }
-.fonts { display: flex; gap: 6px; margin-top: 4px; }
+.fonts { display: flex; gap: 6px; margin-top: 12px; }
 
 /* Locales: a slim panel under Export, text beside the language chips */
 .card-locales { display: grid; gap: 20px; align-items: center; }
@@ -2390,10 +2400,10 @@ kbd {
   border-radius: 16px;
   background: var(--u-dark);
   border: 1px solid var(--u-dark);
-  color: #f3f4f6;
+  color: #f6f3ec;
   isolation: isolate;
 }
-/* Graph paper with a coral sunrise at the bottom edge */
+/* Graph paper with an amber sunrise at the bottom edge */
 .cta-glow {
   position: absolute;
   z-index: -1;
@@ -2410,7 +2420,7 @@ kbd {
 .cta-card .btn-brand:hover { background: #ffffff; box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.15); }
 /* Same wordmark as the hero: 0.26 of the hero title size */
 .cta-brand { font-size: clamp(14.56px, 2.184vw, 28.08px); letter-spacing: -0.03em; }
-.cta-brand .brand-word { color: #a9b0bc; }
+.cta-brand .brand-word { color: #b3aca0; }
 .cta-brand .brand-word b { color: #ffffff; }
 .cta h2 {
   position: relative;
@@ -2423,7 +2433,7 @@ kbd {
   border: 0;
   padding: 0;
 }
-.cta p { position: relative; margin: 22px auto 32px; max-width: 520px; font-size: 15px; line-height: 1.75; color: #a9b0bc; }
+.cta p { position: relative; margin: 22px auto 32px; max-width: 520px; font-size: 15px; line-height: 1.75; color: #b3aca0; }
 .cta .btn { position: relative; }
 
 /* ---------------------------------------------------------------- Reveal */
@@ -2447,18 +2457,18 @@ kbd {
 
 <style>
 .dark .landing {
-  --u-c1: #7fa3d6;
-  --u-signal: #ff7a52;
-  --u-panel: #12151b;
-  --u-card: #151820;
-  --u-card-solid: #1b1f27;
-  --u-border: #252a34;
+  --u-c1: #c9a07a;
+  --u-signal: #f0b964;
+  --u-panel: #1c1a17;
+  --u-card: #1b1916;
+  --u-card-solid: #211f1b;
+  --u-border: #2e2b26;
   --u-shadow: none;
   --u-lift: 0 18px 40px -24px rgba(0, 0, 0, 0.9);
   --u-grid: rgba(255, 255, 255, 0.05);
-  --u-dark: #1a1e26;
-  --u-dark-2: #232833;
-  --u-dark-line: #343b48;
+  --u-dark: #1f1c19;
+  --u-dark-2: #2a2622;
+  --u-dark-line: #3a352f;
 }
 .dark .landing .window { box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.03), 0 30px 60px -30px rgba(0, 0, 0, 0.9); }
 .dark .landing .card-private,
