@@ -176,6 +176,21 @@
   --vp-nav-bg-color: rgba(247, 246, 242, 0.82);
   --vp-nav-screen-bg-color: var(--ux-paper);
   --vp-button-brand-hover-bg: #3b3630;
+
+  /* Warm the VitePress defaults the docs use: info blocks, inline code,
+     warnings (amber, the signal) and danger (terracotta) */
+  --vp-c-gray-1: #dedbd2;
+  --vp-c-gray-2: #e5e2da;
+  --vp-c-gray-3: #eceae3;
+  --vp-c-gray-soft: rgba(150, 140, 120, 0.14);
+  --vp-c-warning-1: #8a5a1c;
+  --vp-c-warning-2: #a86f22;
+  --vp-c-warning-3: #c88a2e;
+  --vp-c-warning-soft: rgba(227, 165, 76, 0.16);
+  --vp-c-danger-1: #a63d2a;
+  --vp-c-danger-2: #b84a35;
+  --vp-c-danger-3: #c95b44;
+  --vp-c-danger-soft: rgba(201, 91, 68, 0.12);
 }
 
 .dark {
@@ -197,6 +212,19 @@
   --vp-button-brand-hover-text: #151412;
   --vp-button-brand-active-text: #151412;
   --vp-button-brand-hover-bg: #ffffff;
+
+  --vp-c-gray-1: #5a544b;
+  --vp-c-gray-2: #48433c;
+  --vp-c-gray-3: #36322d;
+  --vp-c-gray-soft: rgba(140, 128, 110, 0.16);
+  --vp-c-warning-1: #f0b964;
+  --vp-c-warning-2: #e3a54c;
+  --vp-c-warning-3: #c88a2e;
+  --vp-c-warning-soft: rgba(240, 185, 100, 0.16);
+  --vp-c-danger-1: #f08a72;
+  --vp-c-danger-2: #e07560;
+  --vp-c-danger-3: #c95b44;
+  --vp-c-danger-soft: rgba(224, 117, 96, 0.16);
 }
 
 body {
@@ -213,6 +241,8 @@ body {
   outline: 2px solid var(--ux-green);
   outline-offset: 4px;
 }
+/* The search bar highlights its own border, so its input needs no ring */
+.VPLocalSearchBox .search-input:focus-visible { outline: none; }
 
 /* Nav: frosted paper bar with a hairline, quiet links */
 .VPNav .VPNavBar,
