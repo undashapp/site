@@ -137,3 +137,105 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+
+/**
+ * Graphite theme: cool neutrals, slate-blue data ink, one coral signal,
+ * Geist with Geist Mono for labels and numbers
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --ux-paper: #f6f7f9;
+  --ux-panel: #eceff3;
+  --ux-ink: #14171c;
+  --ux-muted: #5b6270;
+  --ux-faint: #8f96a3;
+  --ux-line: #dfe3e9;
+  --ux-green: #34557f;
+  --ux-signal: #f0643c;
+  --ux-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --vp-font-family-base: 'Geist Variable', Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --vp-font-family-mono: 'Geist Mono Variable', 'Geist Mono', ui-monospace, Menlo, monospace;
+
+  --vp-c-bg: var(--ux-paper);
+  --vp-c-bg-alt: var(--ux-panel);
+  --vp-c-bg-elv: #fdfcf9;
+  --vp-c-bg-soft: var(--ux-panel);
+  --vp-c-text-1: var(--ux-ink);
+  --vp-c-text-2: var(--ux-muted);
+  --vp-c-text-3: var(--ux-faint);
+  --vp-c-divider: var(--ux-line);
+  --vp-c-gutter: var(--ux-line);
+  --vp-c-border: var(--ux-line);
+
+  --vp-c-brand-1: var(--ux-green);
+  --vp-c-brand-2: #27466d;
+  --vp-c-brand-3: var(--ux-ink);
+  --vp-c-brand-soft: rgba(52, 85, 127, 0.1);
+
+  --vp-nav-bg-color: rgba(246, 247, 249, 0.82);
+  --vp-nav-screen-bg-color: var(--ux-paper);
+  --vp-button-brand-hover-bg: #2a303a;
+}
+
+.dark {
+  --ux-paper: #0d0f13;
+  --ux-panel: #151820;
+  --ux-ink: #e9ebef;
+  --ux-muted: #9aa1ad;
+  --ux-faint: #6b7280;
+  --ux-line: #242933;
+  --ux-green: #92b2dc;
+  --ux-signal: #ff8a65;
+
+  --vp-c-bg-elv: #171a21;
+  --vp-c-brand-2: #b3cbea;
+  --vp-c-brand-3: #e9ebef;
+  --vp-c-brand-soft: rgba(146, 178, 220, 0.14);
+  --vp-nav-bg-color: rgba(13, 15, 19, 0.8);
+  --vp-button-brand-text: #0d0f13;
+  --vp-button-brand-hover-text: #0d0f13;
+  --vp-button-brand-active-text: #0d0f13;
+  --vp-button-brand-hover-bg: #ffffff;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--ux-signal) 30%, transparent);
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ux-green);
+  outline-offset: 4px;
+}
+
+/* Nav: frosted paper bar with a hairline, quiet links */
+.VPNav .VPNavBar,
+.VPNav .VPNavBar.has-sidebar,
+.VPNav .VPNavBar:not(.home) {
+  background: var(--vp-nav-bg-color) !important;
+  backdrop-filter: saturate(140%) blur(18px);
+  -webkit-backdrop-filter: saturate(140%) blur(18px);
+}
+.VPNavBar .divider-line { background: transparent !important; }
+.VPNavBar { border-bottom: 1px solid color-mix(in srgb, var(--ux-ink) 7%, transparent); }
+.VPNavBar .content-body { background: transparent !important; }
+.VPNavBarTitle .title { letter-spacing: -0.03em; font-weight: 600; }
+.VPNavBarMenuLink {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: var(--ux-muted) !important;
+}
+.VPNavBarMenuLink:hover,
+.VPNavBarMenuLink.active { color: var(--ux-ink) !important; }
+.VPNavBarTranslations .text,
+.VPNavBarExtra .text { color: var(--ux-muted); }
+.VPSocialLink { color: var(--ux-muted) !important; }
+.VPSocialLink:hover { color: var(--ux-ink) !important; }
+.VPSwitchAppearance { background-color: var(--ux-panel) !important; border-color: var(--ux-line) !important; }
+.VPFlyout .menu .VPMenu { border-radius: 10px; border: 1px solid var(--ux-line); box-shadow: 0 16px 32px -16px rgba(20, 23, 28, 0.3); }

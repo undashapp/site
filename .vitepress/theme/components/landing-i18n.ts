@@ -5,7 +5,7 @@ const en = {
     pill: 'Coming soon',
     tagline: 'One-click business intelligence dashboards.',
     taglineStrong: 'Private, fast and right in your browser.',
-    points: ['No backend', 'No uploads', 'No account'],
+    points: ['No Backend', 'No Uploads', 'No Account'],
     guide: { text: 'Get Started', link: '/guide/getting-started' },
     explore: { text: 'Explore Features', link: '#features' },
     follow: { text: 'Follow @undashapp', link: 'https://twitter.com/undashapp' },
@@ -22,8 +22,6 @@ const en = {
     ofRegions: (n: number) => `${n} of 4 regions`,
     byCategory: 'By category',
     byRegion: 'Revenue by region',
-    clickToFilter: 'click to filter',
-    filter: (name: string) => `Filter ${name}`,
     monthly: 'Monthly revenue',
     footer: 'Illustrative demo · Dashboards in the undash app look different',
     money: (k: number) => `$${(k / 1000).toFixed(2)}M`,
@@ -34,7 +32,15 @@ const en = {
     title: 'From Raw Table to Dashboard.',
     titleMuted: 'In One Click.',
     lead: 'Drop in a table and let AI propose a model, dimensions, measures and charts. Bring your own OpenAI or Anthropic key.',
-    tags: ['model', 'dimensions', 'measures', 'charts'],
+    proposal: {
+      title: 'AI proposal',
+      rows: [
+        { key: 'Model', values: ['sales'] },
+        { key: 'Dimensions', values: ['region', 'month'] },
+        { key: 'Measures', values: ['Σ revenue', 'avg price'] },
+        { key: 'Charts', values: ['bar', 'line', 'donut'] },
+      ],
+    },
     steps: [
       {
         title: 'Drop a File',
@@ -47,7 +53,7 @@ const en = {
       },
       {
         title: 'Dashboard Ready',
-        text: 'A whole dashboard, cross-filtered and ready to present.',
+        text: 'A whole dashboard, with filters and ready to present.',
       },
     ],
     footnote: '* AI features require your own OpenAI or Anthropic API key. Usage is billed by the provider and may incur additional costs.',
@@ -63,7 +69,7 @@ const en = {
     },
     engine: {
       title: 'Fast Query Engine',
-      text: 'Powered by DuckDB right in your browser. Analytical queries on millions of rows run in no time.',
+      text: 'Powered by DuckDB right in your browser. Analytical queries handle millions of rows with ease.',
     },
     import: {
       title: 'Effortless Import',
@@ -96,7 +102,7 @@ const en = {
       } as Record<string, string>,
     },
     filter: {
-      title: 'Instant Cross-Filtering',
+      title: 'Instant Filtering',
       text: 'Interactive controls filter every chart of a dashboard at once: category pickers, range sliders for numbers, dates and times, and boolean toggles. Pre-aggregation keeps it snappy.',
     },
     keys: {
@@ -175,8 +181,6 @@ const de: LandingMessages = {
     ofRegions: (n: number) => `${n} von 4 Regionen`,
     byCategory: 'Nach Kategorie',
     byRegion: 'Nach Region (Mio. €)',
-    clickToFilter: 'zum Filtern anklicken',
-    filter: (name: string) => `${name} filtern`,
     monthly: 'Monatlicher Umsatz',
     footer: 'Beispielansicht · Dashboards in der undash-App sehen anders aus',
     money: (k: number) => `${(k / 1000).toFixed(2).replace('.', ',')} Mio. €`,
@@ -187,7 +191,15 @@ const de: LandingMessages = {
     title: 'Von der Tabelle zum Dashboard.',
     titleMuted: 'Mit nur einem Klick.',
     lead: 'Tabelle hinzufügen, und die KI schlägt Modell, Dimensionen, Metriken und Diagramme vor. Mit Ihrem eigenen API-Schlüssel von OpenAI oder Anthropic.',
-    tags: ['Modell', 'Dimensionen', 'Metriken', 'Diagramme'],
+    proposal: {
+      title: 'KI-Vorschlag',
+      rows: [
+        { key: 'Modell', values: ['Umsatz'] },
+        { key: 'Dimensionen', values: ['Region', 'Monat'] },
+        { key: 'Metriken', values: ['Σ Umsatz', 'Ø Preis'] },
+        { key: 'Diagramme', values: ['Balken', 'Linie', 'Ring'] },
+      ],
+    },
     steps: [
       {
         title: 'Datei hinzufügen',
@@ -200,7 +212,7 @@ const de: LandingMessages = {
       },
       {
         title: 'Dashboard steht',
-        text: 'Ein vollständiges Dashboard mit Cross-Filtering, bereit für die Präsentation.',
+        text: 'Ein vollständiges Dashboard mit Filtern, bereit für die Präsentation.',
       },
     ],
     footnote: '* KI-Funktionen erfordern einen eigenen API-Schlüssel von OpenAI oder Anthropic. Die Nutzung wird vom Anbieter abgerechnet und kann zusätzliche Kosten verursachen.',
@@ -216,7 +228,7 @@ const de: LandingMessages = {
     },
     engine: {
       title: 'Blitzschnelle Abfragen',
-      text: 'Mit DuckDB direkt im Browser. Analytische Abfragen über Millionen von Zeilen sind im Nu erledigt.',
+      text: 'Mit DuckDB direkt im Browser. Analytische Abfragen bewältigen Millionen von Zeilen mühelos.',
     },
     import: {
       title: 'Import ohne Aufwand',
@@ -249,7 +261,7 @@ const de: LandingMessages = {
       },
     },
     filter: {
-      title: 'Cross-Filtering in Echtzeit',
+      title: 'Filtern in Echtzeit',
       text: 'Interaktive Steuerelemente filtern alle Diagramme eines Dashboards gleichzeitig: Kategorieauswahl, Schieberegler für Zahlen, Datum und Uhrzeit sowie Ja/Nein-Schalter. Dank Voraggregation reagiert alles ohne Verzögerung.',
     },
     keys: {
