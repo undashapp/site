@@ -9,7 +9,7 @@ export default defineConfig({
     ['meta', { name: "application-name", content: "undash"}],
     ['meta', { name: "msapplication-TileColor", content: "#333333"}],
     ['meta', { name: "msapplication-config", content: "/images/browserconfig.xml"}],
-    ['meta', { name: "theme-color", content: "#ffffff"}],
+    ['meta', { name: "theme-color", content: "#f7f6f2"}],
     ['link', { rel: "apple-touch-icon", sizes: "180x180", href: "/images/apple-touch-icon.png"}],
     ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/images/favicon-32x32.png"}],
     ['link', { rel: "icon", type: "image/png", sizes: "16x16", href: "/images/favicon-16x16.png"}],
