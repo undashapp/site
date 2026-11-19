@@ -524,7 +524,7 @@ const fontSamples = [
                 </div>
               </div>
             </div>
-            <div class="window-foot">{{ t.demo.footer }}</div>
+            <div class="window-foot" v-html="t.demo.footer"></div>
           </div>
         </div>
       </div>

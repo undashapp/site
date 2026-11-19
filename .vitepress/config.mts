@@ -50,6 +50,7 @@ export default defineConfig({
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    siteTitle: '<b>un</b>dash',
     logo: { light: '/images/light/logo.svg', dark: '/images/dark/logo.svg', alt: 'undash' },
 
     socialLinks: [{ icon: 'x', link: 'https://twitter.com/undashapp' }],

@@ -255,7 +255,9 @@ body {
 .VPNavBar .divider-line { background: transparent !important; }
 .VPNavBar { border-bottom: 1px solid color-mix(in srgb, var(--ux-ink) 7%, transparent); }
 .VPNavBar .content-body { background: transparent !important; }
-.VPNavBarTitle .title { letter-spacing: -0.03em; font-weight: 600; }
+.VPNavBarTitle .title { letter-spacing: -0.03em; }
+.VPNavBarTitle .title > span { font-weight: 400; }
+.VPNavBarTitle .title > span b { font-weight: 700; }
 .VPNavBarMenuLink {
   font-size: 13px !important;
   font-weight: 500 !important;
