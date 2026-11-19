@@ -245,6 +245,11 @@ const icons: Record<string, string[]> = {
     'M12 17v.01',
   ],
   check: ['M5 12l5 5l10 -10'],
+  devices: [
+    'M13 9a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-10z',
+    'M18 8v-3a1 1 0 0 0 -1 -1h-13a1 1 0 0 0 -1 1v12a1 1 0 0 0 1 1h9',
+    'M16 9h2',
+  ],
   sparkles: [
     'M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6',
   ],
@@ -842,8 +847,55 @@ const fontSamples = [
           </div>
         </article>
 
+        <!-- Offline -->
+        <article class="card card-offline reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.offline" :key="d" :d="d" /></svg>
+          </div>
+          <h3>{{ t.features.offline.title }}</h3>
+          <p v-html="t.features.offline.text"></p>
+          <div class="status-row" aria-hidden="true">
+            <span class="status"><i class="off"></i>{{ t.features.offline.offline }}</span>
+            <span class="status"><i class="ok"></i>{{ t.features.offline.working }}</span>
+          </div>
+        </article>
+
+        <!-- Devices -->
+        <article class="card card-devices span-2 reveal">
+          <div class="card-text">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.devices" :key="d" :d="d" /></svg>
+            </div>
+            <h3>{{ t.devices.title }}</h3>
+            <p v-html="t.devices.text"></p>
+          </div>
+          <ul class="device-list">
+            <li
+              v-for="(d, i) in deviceIcons"
+              :key="i"
+              class="device"
+            >
+              <span class="device-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path v-for="p in icons[d]" :key="p" :d="p" />
+                </svg>
+                <svg v-if="i === 1" class="device-pencil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path v-for="p in icons.pencil" :key="p" :d="p" />
+                </svg>
+              </span>
+              <span class="device-name">{{ t.devices.items[i] }}</span>
+              <span class="device-status" :title="t.devices.supported">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path v-for="p in icons.check" :key="p" :d="p" />
+                </svg>
+                <span class="sr-only">{{ t.devices.supported }}</span>
+              </span>
+            </li>
+          </ul>
+        </article>
+
         <!-- Filtering -->
-        <article class="card card-filter span-2 reveal">
+        <article class="card card-filter reveal">
           <div class="card-text">
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.filter" :key="d" :d="d" /></svg>
@@ -858,35 +910,8 @@ const fontSamples = [
           </div>
         </article>
 
-        <!-- Keyboard -->
-        <article class="card card-keys reveal">
-          <div class="card-text">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.keyboard" :key="d" :d="d" /></svg>
-            </div>
-            <h3>{{ t.features.keys.title }}</h3>
-            <p>{{ t.features.keys.text }}</p>
-          </div>
-          <div class="keys" aria-hidden="true">
-            <kbd class="k-h">h</kbd><kbd class="k-j">j</kbd><kbd class="k-k">k</kbd><kbd class="k-l">l</kbd>
-          </div>
-        </article>
-
-        <!-- Offline -->
-        <article class="card card-offline reveal">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.offline" :key="d" :d="d" /></svg>
-          </div>
-          <h3>{{ t.features.offline.title }}</h3>
-          <p v-html="t.features.offline.text"></p>
-          <div class="status-row" aria-hidden="true">
-            <span class="status"><i class="off"></i>{{ t.features.offline.offline }}</span>
-            <span class="status"><i class="ok"></i>{{ t.features.offline.working }}</span>
-          </div>
-        </article>
-
         <!-- Present -->
-        <article class="card card-present span-2 reveal">
+        <article class="card card-present reveal">
           <div class="card-text">
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.presentation" :key="d" :d="d" /></svg>
@@ -898,6 +923,20 @@ const fontSamples = [
             <div class="layout">
               <span class="l1"></span><span class="l2"></span><span class="l3"></span>
             </div>
+          </div>
+        </article>
+
+        <!-- Keyboard -->
+        <article class="card card-keys reveal">
+          <div class="card-text">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.keyboard" :key="d" :d="d" /></svg>
+            </div>
+            <h3>{{ t.features.keys.title }}</h3>
+            <p>{{ t.features.keys.text }}</p>
+          </div>
+          <div class="keys" aria-hidden="true">
+            <kbd class="k-h">h</kbd><kbd class="k-j">j</kbd><kbd class="k-k">k</kbd><kbd class="k-l">l</kbd>
           </div>
         </article>
 
@@ -970,39 +1009,6 @@ const fontSamples = [
           </div>
         </article>
 </div>
-    </section>
-
-    <!-- Devices -->
-    <section class="devices container reveal">
-      <div class="devices-card">
-        <div class="devices-text">
-          <h3>{{ t.devices.title }}</h3>
-          <p v-html="t.devices.text"></p>
-        </div>
-        <ul class="device-list">
-          <li
-            v-for="(d, i) in deviceIcons"
-            :key="i"
-            class="device"
-          >
-            <span class="device-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path v-for="p in icons[d]" :key="p" :d="p" />
-              </svg>
-              <svg v-if="i === 1" class="device-pencil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path v-for="p in icons.pencil" :key="p" :d="p" />
-              </svg>
-            </span>
-            <span class="device-name">{{ t.devices.items[i] }}</span>
-            <span class="device-status" :title="t.devices.supported">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <path v-for="p in icons.check" :key="p" :d="p" />
-              </svg>
-              <span class="sr-only">{{ t.devices.supported }}</span>
-            </span>
-          </li>
-        </ul>
-      </div>
     </section>
 
     <!-- CTA -->
@@ -1752,7 +1758,7 @@ const fontSamples = [
 
 /* ----------------------------------------------------------------- Bento */
 
-.features { margin-bottom: 120px; scroll-margin-top: 100px; }
+.features { margin-bottom: 32px; scroll-margin-top: 100px; }
 
 .bento {
   display: grid;
@@ -1774,6 +1780,9 @@ const fontSamples = [
   /* Make It Yours stands beside Export and Locales, over both their rows */
   .card-custom { grid-row: span 2; }
 }
+/* Text on top, demo pushed to the bottom of the card */
+.card-filter, .card-present { display: flex; flex-direction: column; }
+.card-filter .card-text, .card-present .card-text { flex: 1; }
 
 /* VitePress focuses the hash target of an in-page link (Explore Features
    scrolls to #features). Touch browsers draw a focus ring around it. */
@@ -1799,6 +1808,8 @@ const fontSamples = [
 }
 
 .span-2, .span-3 { display: grid; gap: 36px; align-items: center; }
+/* Icon and heading always start top-left, the demo beside them stays centered */
+.card-text { align-self: start; }
 @media (min-width: 700px) {
   .span-2 { grid-template-columns: 1fr 1fr; }
   .span-3 { grid-template-columns: 0.8fr 2fr; }
@@ -2064,7 +2075,8 @@ const fontSamples = [
 .kpi-text { font-size: 18px; font-weight: 500; fill: var(--vp-c-text-1); letter-spacing: -0.05em; }
 
 /* Filters */
-.controls-demo { display: flex; flex-direction: column; gap: 12px; margin-top: 22px; }
+.controls-demo { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 22px; }
+.controls-demo .range { width: min(160px, 100%); }
 .picker { display: flex; gap: 6px; }
 .picker span {
   font-size: 12px;
@@ -2322,26 +2334,11 @@ kbd {
 /* --------------------------------------------------------------- Devices */
 
 /* Pull up into the features bottom margin, matching the gap to the CTA */
-.devices { margin-top: -88px; margin-bottom: 32px; }
-.devices-card {
-  display: grid;
-  gap: 28px;
-  align-items: center;
-  padding: 32px;
-  border-radius: var(--u-radius);
-  background: var(--u-card);
-  border: 1px solid var(--u-border);
-  transition: border-color 220ms, box-shadow 220ms;
+@media (min-width: 700px) {
+  .card.card-devices { grid-template-columns: 1fr 1.1fr; }
 }
-.devices-card:hover {
-  border-color: color-mix(in srgb, var(--u-ink) 18%, var(--u-border));
-  box-shadow: var(--u-lift);
-}
-@media (min-width: 860px) {
-  .devices-card { grid-template-columns: 1fr 1.1fr; padding: 48px 56px; }
-}
-.devices-text h3 { margin: 0 0 10px; font-size: 26px; font-weight: 500; letter-spacing: -0.04em; }
-.devices-text p { margin: 0; font-size: 14px; line-height: 1.75; color: var(--u-muted); }
+/* Keep the row as tall as its content, so the tiles center on the text beside them */
+.card.card-devices { align-content: start; }
 
 .device-list {
   list-style: none;
@@ -2357,7 +2354,7 @@ kbd {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  padding: 22px 8px 16px;
+  padding: 22px 8px 10px;
   border-radius: 10px;
   background: var(--u-card-solid);
   border: 1px solid var(--u-border);
@@ -2393,9 +2390,8 @@ kbd {
 }
 .device-status svg { width: 11px; height: 11px; }
 @media (max-width: 480px) {
-  .devices-card { padding: 24px; }
   .device-list { gap: 8px; }
-  .device { padding: 18px 4px 14px; }
+  .device { padding: 18px 4px 8px; }
   .device-name { font-size: 12px; }
 }
 .sr-only {
