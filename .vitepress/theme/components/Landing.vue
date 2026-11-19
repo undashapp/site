@@ -2308,6 +2308,9 @@ const fontSamples = [
   gap: 10px;
   margin-top: 22px;
 }
+/* The keys sit in the middle of the space below the text */
+.card-keys { display: flex; flex-direction: column; }
+.card-keys .keys { flex: 1; align-items: center; justify-content: center; }
 kbd {
   display: grid;
   place-items: center;
