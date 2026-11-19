@@ -122,7 +122,7 @@ const en = {
     },
     export: {
       title: 'Export Everything',
-      text: 'Export charts and dashboards as vector graphics in PDF or SVG, or as PNG and JPEG images, on custom or standard paper sizes. Export data as CSV, Excel, JSON or Parquet.',
+      text: 'Export charts and dashboards as vector graphics in PDF or SVG, or as PNG and JPEG images, on custom or standard paper sizes. Export data as a CSV, Excel, JSON or Parquet file.',
       charts: 'Charts & dashboards',
       data: 'Data',
     },
@@ -146,7 +146,7 @@ const en = {
   },
   devices: {
     title: 'Desktop, Tablet and Phone',
-    text: `${brand} is built for larger screens. It works best on desktop and on tablets, where a stylus or pencil makes a precise pointer. On phones, a layout of its own puts a chart or dashboard above the controls, so you can explore and build on the go.`,
+    text: `${brand} is built for larger screens. It works best on desktop and on tablets, where a stylus or pencil makes a precise pointer. Even on a phone you can run the entire BI tool, with a layout of its own that puts the chart or dashboard above the controls.`,
     items: ['Desktop', 'Tablet + Pencil', 'Phone'],
     supported: 'Supported',
   },
@@ -282,7 +282,7 @@ const de: LandingMessages = {
     },
     export: {
       title: 'Alles exportieren',
-      text: 'Diagramme und Dashboards lassen sich als Vektorgrafik (PDF, SVG) oder als Bild (PNG, JPEG) exportieren, in eigenen oder gängigen Papierformaten. Daten exportieren Sie als CSV, Excel, JSON oder Parquet.',
+      text: 'Diagramme und Dashboards lassen sich als Vektorgrafik (PDF, SVG) oder als Bild (PNG, JPEG) exportieren, in eigenen oder gängigen Papierformaten. Daten exportieren Sie als CSV-, Excel-, JSON- oder Parquet-Datei.',
       charts: 'Diagramme & Dashboards',
       data: 'Daten',
     },
@@ -306,7 +306,7 @@ const de: LandingMessages = {
   },
   devices: {
     title: 'Desktop, Tablet und Smartphone',
-    text: `${brand} ist für große Bildschirme gemacht. Am besten läuft es auf dem Desktop und auf Tablets, wo ein Stift die Bedienung besonders präzise macht. Auf dem Smartphone zeigt ein eigenes Layout Diagramm oder Dashboard über den Bedienelementen, sodass Sie auch unterwegs auswerten und gestalten können.`,
+    text: `${brand} ist für große Bildschirme gemacht. Am besten läuft es auf dem Desktop und auf Tablets, wo ein Stift die Bedienung besonders präzise macht. Selbst auf dem Smartphone steht Ihnen das komplette BI-Tool zur Verfügung, mit einem eigenen Layout, das Diagramm oder Dashboard über den Bedienelementen zeigt.`,
     items: ['Desktop', 'Tablet + Stift', 'Smartphone'],
     supported: 'Unterstützt',
   },
