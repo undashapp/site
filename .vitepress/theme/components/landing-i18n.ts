@@ -23,7 +23,7 @@ const en = {
     byCategory: 'By category',
     byRegion: 'Revenue by region',
     monthly: 'Monthly revenue',
-    footer: 'Illustrative demo · Dashboards in the undash app look different',
+    footer: `Illustration only · Not an actual ${brand} dashboard`,
     money: (k: number) => `$${(k / 1000).toFixed(2)}M`,
     compact: (k: number) => `${(k / 1000).toFixed(1)}M`,
   },
@@ -69,7 +69,7 @@ const en = {
     },
     engine: {
       title: 'Fast Query Engine',
-      text: 'Powered by DuckDB right in your browser. Analytical queries handle millions of rows with ease.',
+      text: 'Powered by DuckDB right in your browser. The query engine handles queries over millions of rows with ease.',
     },
     import: {
       title: 'Effortless Import',
@@ -82,7 +82,7 @@ const en = {
     },
     charts: {
       title: '20+ Chart Types',
-      text: 'From bar, line and area charts to scatter, heatmap, density, streamgraph, radar, KPI and choropleth maps. Facet any chart into small multiples for a virtually endless range of visualizations.',
+      text: 'From bar, line and area charts to scatter, heatmap, density, streamgraph, radar, KPI, pivot tables and choropleth maps. Facet any chart into small multiples for a virtually endless range of visualizations.',
       names: {
         Bar: 'Bar',
         Lollipop: 'Lollipop',
@@ -98,6 +98,7 @@ const en = {
         Radar: 'Radar',
         Donut: 'Donut',
         KPI: 'KPI',
+        Pivot: 'Pivot Table',
         Choropleth: 'Choropleth',
       } as Record<string, string>,
     },
@@ -121,13 +122,13 @@ const en = {
     },
     export: {
       title: 'Export Everything',
-      text: 'Export charts and dashboards as vector graphics in PDF or SVG, or as PNG and JPEG images, on custom or standard paper sizes. Export data as CSV, Excel, JSON or Parquet.',
+      text: 'Export charts and dashboards as vector graphics in PDF or SVG, or as PNG and JPEG images, on custom or standard paper sizes. Export data as a CSV, Excel, JSON or Parquet file.',
       charts: 'Charts & dashboards',
       data: 'Data',
     },
     custom: {
       title: 'Make It Yours',
-      text: 'Three independent choices, freely combined: light or dark mode, one of dozens of dashboard themes, from Dracula and Nord to Solarized or your own, and a glass, flat or paper finish. On top, dozens of color palettes, categorical, sequential and diverging, and six fonts that work beautifully for data visualization.',
+      text: 'Combine light or dark mode, a dashboard theme and a finish as you like. Choose from dozens of themes such as <em>Dracula</em>, <em>Nord</em> and <em>Solarized</em>, or create your own, and pick a <em>glass</em>, <em>flat</em> or <em>paper</em> finish. Add dozens of <em>categorical</em>, <em>sequential</em> and <em>diverging</em> color palettes and six fonts that work beautifully for data visualization.',
       palettes: ['Categorical', 'Sequential', 'Diverging'],
     },
     locales: {
@@ -145,7 +146,7 @@ const en = {
   },
   devices: {
     title: 'Desktop, Tablet and Phone',
-    text: `${brand} is built for larger screens. It works best on desktop and on tablets, where a stylus or pencil makes a precise pointer. On phones, a layout of its own puts a chart or dashboard above the controls, so you can explore and build on the go.`,
+    text: `${brand} is built for larger screens. It works best on desktop and on tablets, where a stylus or pencil makes a precise pointer. But even on a phone, the entire BI tool is at your fingertips.`,
     items: ['Desktop', 'Tablet + Pencil', 'Phone'],
     supported: 'Supported',
   },
@@ -182,7 +183,7 @@ const de: LandingMessages = {
     byCategory: 'Nach Kategorie',
     byRegion: 'Nach Region (Mio. €)',
     monthly: 'Monatlicher Umsatz',
-    footer: 'Beispielansicht · Dashboards in der undash-App sehen anders aus',
+    footer: `Nur zur Veranschaulichung · Kein echtes ${brand}-Dashboard`,
     money: (k: number) => `${(k / 1000).toFixed(2).replace('.', ',')} Mio. €`,
     compact: (k: number) => (k / 1000).toFixed(1).replace('.', ','),
   },
@@ -228,7 +229,7 @@ const de: LandingMessages = {
     },
     engine: {
       title: 'Blitzschnelle Abfragen',
-      text: 'Mit DuckDB direkt im Browser. Analytische Abfragen bewältigen Millionen von Zeilen mühelos.',
+      text: 'Mit DuckDB direkt im Browser. Die Query-Engine verarbeitet Millionen von Zeilen mühelos.',
     },
     import: {
       title: 'Import ohne Aufwand',
@@ -237,11 +238,11 @@ const de: LandingMessages = {
     },
     sql: {
       title: 'Basiert auf SQL',
-      text: 'Jeder Datensatz ist eine gewöhnliche SQL-Abfrage. Verfeinern Sie Modelle mit Dimensionen, Metriken, Partitionen und Datumstransformationen, oder sehen Sie sich das SQL hinter jedem Diagramm an. Für Profis gibt es eine SQL-Konsole, die Ergebnisse schon beim Tippen anzeigt.',
+      text: 'Jeder Datensatz ist eine gewöhnliche SQL-Abfrage. Verfeinern Sie Modelle mit Dimensionen, Metriken, Partitionen und Datumstransformationen, oder sehen Sie sich das SQL hinter jedem Diagramm an. Für Profis gibt es eine SQL-Konsole, die Ergebnisse live beim Tippen anzeigt.',
     },
     charts: {
       title: '20+ Diagrammtypen',
-      text: 'Von Balken-, Linien- und Flächendiagrammen über Streudiagramme, Heatmaps, Dichtediagramme, Streamgraphs und Netzdiagramme bis hin zu Kennzahlen und Choroplethenkarten. Jedes Diagramm lässt sich zudem in Small Multiples aufteilen. So entsteht eine nahezu unbegrenzte Vielfalt an Visualisierungen.',
+      text: 'Von Balken-, Linien- und Flächendiagrammen über Streudiagramme, Heatmaps, Dichtediagramme, Streamgraphs und Netzdiagramme bis hin zu Kennzahlen, Pivot-Tabellen und Choroplethenkarten. Jedes Diagramm lässt sich zudem in Small Multiples aufteilen. So entsteht eine nahezu unbegrenzte Vielfalt an Visualisierungen.',
       names: {
         Bar: 'Balken',
         Lollipop: 'Lollipop',
@@ -257,6 +258,7 @@ const de: LandingMessages = {
         Radar: 'Netz',
         Donut: 'Donut',
         KPI: 'Kennzahl',
+        Pivot: 'Pivot-Tabelle',
         Choropleth: 'Karte',
       },
     },
@@ -280,13 +282,13 @@ const de: LandingMessages = {
     },
     export: {
       title: 'Alles exportieren',
-      text: 'Diagramme und Dashboards lassen sich als Vektorgrafik (PDF, SVG) oder als Bild (PNG, JPEG) exportieren, in eigenen oder gängigen Papierformaten. Daten exportieren Sie als CSV, Excel, JSON oder Parquet.',
+      text: 'Diagramme und Dashboards lassen sich als Vektorgrafik (PDF, SVG) oder als Bild (PNG, JPEG) exportieren, in eigenen oder gängigen Papierformaten. Daten exportieren Sie als CSV-, Excel-, JSON- oder Parquet-Datei.',
       charts: 'Diagramme & Dashboards',
       data: 'Daten',
     },
     custom: {
       title: 'Ganz nach Ihrem Geschmack',
-      text: 'Hell oder dunkel, ein Theme Ihrer Wahl und Glas-, Flat- oder Papier-Optik: drei Einstellungen, die sich beliebig kombinieren lassen. Zur Auswahl stehen Dutzende Dashboard-Themes, von Dracula über Nord bis Solarized, oder Sie gestalten Ihr eigenes. Dazu kommen Dutzende Farbpaletten, kategorial, sequenziell und divergierend, sowie sechs Schriftarten, die sich hervorragend für Datenvisualisierung eignen.',
+      text: 'Kombinieren Sie hellen oder dunklen Modus, ein Dashboard-Theme und eine Optik ganz nach Wunsch. Zur Wahl stehen Dutzende Themes wie <em>Dracula</em>, <em>Nord</em> und <em>Solarized</em> oder ein eigenes, dazu die Optiken <em>Glas</em>, <em>Flat</em> und <em>Papier</em>. Hinzu kommen Dutzende <em>kategoriale</em>, <em>sequenzielle</em> und <em>divergierende</em> Farbpaletten sowie sechs Schriftarten, die sich hervorragend für Datenvisualisierung eignen.',
       palettes: ['Kategorial', 'Sequenziell', 'Divergierend'],
     },
     locales: {
@@ -304,7 +306,7 @@ const de: LandingMessages = {
   },
   devices: {
     title: 'Desktop, Tablet und Smartphone',
-    text: `${brand} ist für große Bildschirme gemacht. Am besten läuft es auf dem Desktop und auf Tablets, wo ein Stift die Bedienung besonders präzise macht. Auf dem Smartphone zeigt ein eigenes Layout Diagramm oder Dashboard über den Bedienelementen, sodass Sie auch unterwegs auswerten und gestalten können.`,
+    text: `${brand} ist für große Bildschirme gemacht. Am besten läuft es auf dem Desktop und auf Tablets, wo ein Stift die Bedienung besonders präzise macht. Aber selbst auf dem Smartphone steht Ihnen das komplette BI-Tool zur Verfügung.`,
     items: ['Desktop', 'Tablet + Stift', 'Smartphone'],
     supported: 'Unterstützt',
   },

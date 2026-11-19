@@ -341,6 +341,7 @@ const chartGallery = [
   'Radar',
   'Donut',
   'KPI',
+  'Pivot',
   'Choropleth',
 ];
 
@@ -523,7 +524,7 @@ const fontSamples = [
                 </div>
               </div>
             </div>
-            <div class="window-foot">{{ t.demo.footer }}</div>
+            <div class="window-foot" v-html="t.demo.footer"></div>
           </div>
         </div>
       </div>
@@ -814,6 +815,18 @@ const fontSamples = [
                 <template v-else-if="name === 'KPI'">
                   <text x="30" y="27" text-anchor="middle" class="kpi-text">42k</text>
                 </template>
+                <template v-else-if="name === 'Pivot'">
+                  <rect x="6" y="4" width="48" height="8" rx="1.5" class="f1 o3" />
+                  <rect x="6" y="12" width="14" height="24" class="f1 o3" style="opacity: 0.15" />
+                  <rect x="6" y="4" width="48" height="32" rx="1.5" class="grid-poly" />
+                  <line v-for="y in [12, 20, 28]" :key="'h' + y" x1="6" x2="54" :y1="y" :y2="y" class="grid-poly" />
+                  <line v-for="x in [20, 31.33, 42.67]" :key="'v' + x" :x1="x" :x2="x" y1="4" y2="36" class="grid-poly" />
+                  <rect v-for="(w, i) in [5, 6, 5]" :key="'c' + i" :x="29.33 + i * 11.33 - w" y="7" :width="w" height="2" rx="1" class="f1" />
+                  <rect v-for="(w, i) in [8, 6, 9]" :key="'r' + i" x="8.5" :y="15 + i * 8" :width="w" height="2" rx="1" class="f1" />
+                  <template v-for="(row, j) in [[6, 4, 7], [5, 8, 3], [7, 5, 6]]" :key="'d' + j">
+                    <rect v-for="(w, i) in row" :key="i" :x="29.33 + i * 11.33 - w" :y="15 + j * 8" :width="w" height="2" rx="1" class="f2 o7" />
+                  </template>
+                </template>
                 <template v-else-if="name === 'Choropleth'">
                   <path
                     v-for="(region, i) in mapRegions"
@@ -941,7 +954,7 @@ const fontSamples = [
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.adjustments" :key="d" :d="d" /></svg>
           </div>
           <h3>{{ t.features.custom.title }}</h3>
-          <p>{{ t.features.custom.text }}</p>
+          <p v-html="t.features.custom.text"></p>
           <div class="custom-demo" aria-hidden="true">
             <div class="palettes">
               <template v-for="(colors, i) in palettes" :key="i">

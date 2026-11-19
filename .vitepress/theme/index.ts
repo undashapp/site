@@ -4,6 +4,7 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme-without-fonts'
 import Landing from './components/Landing.vue'
 import '@fontsource-variable/geist'
+import '@fontsource-variable/geist/wght-italic.css'
 import '@fontsource-variable/geist-mono'
 import './style.css'
 
