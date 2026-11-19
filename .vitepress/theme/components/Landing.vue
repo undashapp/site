@@ -2478,6 +2478,9 @@ kbd {
 .dark .landing .window { box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.03), 0 30px 60px -30px rgba(0, 0, 0, 0.9); }
 .dark .landing .card-private,
 .dark .landing .cta-card { border-color: var(--u-dark-line); }
+/* Data file icons: --u-dark nearly matches the card in dark mode, so invert them to paper */
+.dark .landing .export-group + .export-group .file { background: #e6dfd3; color: #262320; }
+.dark .landing .export-group + .export-group .file::before { background: rgba(38, 35, 32, 0.18); }
 
 .landing .logo-dark { display: none; }
 .dark .landing .logo-light { display: none; }
