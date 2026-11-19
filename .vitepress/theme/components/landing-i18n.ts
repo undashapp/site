@@ -238,7 +238,7 @@ const de: LandingMessages = {
     },
     sql: {
       title: 'Basiert auf SQL',
-      text: 'Jeder Datensatz ist eine gewöhnliche SQL-Abfrage. Verfeinern Sie Modelle mit Dimensionen, Metriken, Partitionen und Datumstransformationen, oder sehen Sie sich das SQL hinter jedem Diagramm an. Für Profis gibt es eine SQL-Konsole, die Ergebnisse schon beim Tippen anzeigt.',
+      text: 'Jeder Datensatz ist eine gewöhnliche SQL-Abfrage. Verfeinern Sie Modelle mit Dimensionen, Metriken, Partitionen und Datumstransformationen, oder sehen Sie sich das SQL hinter jedem Diagramm an. Für Profis gibt es eine SQL-Konsole, die Ergebnisse live beim Tippen anzeigt.',
     },
     charts: {
       title: '20+ Diagrammtypen',
