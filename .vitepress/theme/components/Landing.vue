@@ -954,7 +954,7 @@ const fontSamples = [
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path v-for="d in icons.adjustments" :key="d" :d="d" /></svg>
           </div>
           <h3>{{ t.features.custom.title }}</h3>
-          <p>{{ t.features.custom.text }}</p>
+          <p v-html="t.features.custom.text"></p>
           <div class="custom-demo" aria-hidden="true">
             <div class="palettes">
               <template v-for="(colors, i) in palettes" :key="i">

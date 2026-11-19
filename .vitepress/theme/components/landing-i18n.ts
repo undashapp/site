@@ -128,7 +128,7 @@ const en = {
     },
     custom: {
       title: 'Make It Yours',
-      text: 'Three independent choices, freely combined: light or dark mode, one of dozens of dashboard themes, from Dracula and Nord to Solarized or your own, and a glass, flat or paper finish. On top, dozens of color palettes, categorical, sequential and diverging, and six fonts that work beautifully for data visualization.',
+      text: 'Combine light or dark mode, a dashboard theme and a finish as you like. Choose from dozens of themes such as <em>Dracula</em>, <em>Nord</em> and <em>Solarized</em>, or create your own, and pick a <em>glass</em>, <em>flat</em> or <em>paper</em> finish. Add dozens of <em>categorical</em>, <em>sequential</em> and <em>diverging</em> color palettes and six fonts that work beautifully for data visualization.',
       palettes: ['Categorical', 'Sequential', 'Diverging'],
     },
     locales: {
@@ -146,7 +146,7 @@ const en = {
   },
   devices: {
     title: 'Desktop, Tablet and Phone',
-    text: `${brand} is built for larger screens. It works best on desktop and on tablets, where a stylus or pencil makes a precise pointer. Even on a phone you can run the entire BI tool, with a layout of its own that puts the chart or dashboard above the controls.`,
+    text: `${brand} is built for larger screens. It works best on desktop and on tablets, where a stylus or pencil makes a precise pointer. But even on a phone, the entire BI tool is at your fingertips.`,
     items: ['Desktop', 'Tablet + Pencil', 'Phone'],
     supported: 'Supported',
   },
@@ -288,7 +288,7 @@ const de: LandingMessages = {
     },
     custom: {
       title: 'Ganz nach Ihrem Geschmack',
-      text: 'Hell oder dunkel, ein Theme Ihrer Wahl und Glas-, Flat- oder Papier-Optik: drei Einstellungen, die sich beliebig kombinieren lassen. Zur Auswahl stehen Dutzende Dashboard-Themes, von Dracula über Nord bis Solarized, oder Sie gestalten Ihr eigenes. Dazu kommen Dutzende Farbpaletten, kategorial, sequenziell und divergierend, sowie sechs Schriftarten, die sich hervorragend für Datenvisualisierung eignen.',
+      text: 'Kombinieren Sie hellen oder dunklen Modus, ein Dashboard-Theme und eine Optik ganz nach Wunsch. Zur Wahl stehen Dutzende Themes wie <em>Dracula</em>, <em>Nord</em> und <em>Solarized</em> oder ein eigenes, dazu die Optiken <em>Glas</em>, <em>Flat</em> und <em>Papier</em>. Hinzu kommen Dutzende <em>kategoriale</em>, <em>sequenzielle</em> und <em>divergierende</em> Farbpaletten sowie sechs Schriftarten, die sich hervorragend für Datenvisualisierung eignen.',
       palettes: ['Kategorial', 'Sequenziell', 'Divergierend'],
     },
     locales: {
@@ -306,7 +306,7 @@ const de: LandingMessages = {
   },
   devices: {
     title: 'Desktop, Tablet und Smartphone',
-    text: `${brand} ist für große Bildschirme gemacht. Am besten läuft es auf dem Desktop und auf Tablets, wo ein Stift die Bedienung besonders präzise macht. Selbst auf dem Smartphone steht Ihnen das komplette BI-Tool zur Verfügung, mit einem eigenen Layout, das Diagramm oder Dashboard über den Bedienelementen zeigt.`,
+    text: `${brand} ist für große Bildschirme gemacht. Am besten läuft es auf dem Desktop und auf Tablets, wo ein Stift die Bedienung besonders präzise macht. Aber selbst auf dem Smartphone steht Ihnen das komplette BI-Tool zur Verfügung.`,
     items: ['Desktop', 'Tablet + Stift', 'Smartphone'],
     supported: 'Unterstützt',
   },
