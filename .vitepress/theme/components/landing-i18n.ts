@@ -69,7 +69,7 @@ const en = {
     },
     engine: {
       title: 'Fast Query Engine',
-      text: 'Powered by DuckDB right in your browser. Analytical queries handle millions of rows with ease.',
+      text: 'Powered by DuckDB right in your browser. The query engine handles queries over millions of rows with ease.',
     },
     import: {
       title: 'Effortless Import',
@@ -228,7 +228,7 @@ const de: LandingMessages = {
     },
     engine: {
       title: 'Blitzschnelle Abfragen',
-      text: 'Mit DuckDB direkt im Browser. Analytische Abfragen bewältigen Millionen von Zeilen mühelos.',
+      text: 'Mit DuckDB direkt im Browser. Die Query-Engine verarbeitet Millionen von Zeilen mühelos.',
     },
     import: {
       title: 'Import ohne Aufwand',
