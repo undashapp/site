@@ -1618,6 +1618,10 @@ const fontSamples = [
 .ai-panel {
   --cycle: 7s;
   width: 82%;
+  /* Rows share these columns, so the key column fits the longest label */
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 6px;
   /* Clear the step number badge in the top left corner */
   margin-top: 14px;
   padding: 8px 14px 6px;
@@ -1627,6 +1631,7 @@ const fontSamples = [
   box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--u-c1) 45%, transparent);
 }
 .ai-head {
+  grid-column: 1 / -1;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -1652,10 +1657,10 @@ const fontSamples = [
 @keyframes ai-finished { 0%, 41% { opacity: 0; transform: scale(0.4); } 46%, 88% { opacity: 1; transform: none; } 93%, 100% { opacity: 0; transform: none; } }
 
 .ai-row {
+  grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 74px 1fr;
+  grid-template-columns: subgrid;
   align-items: center;
-  gap: 8px;
   height: 25px;
 }
 .ai-row + .ai-row { border-top: 1px dashed color-mix(in srgb, var(--u-border) 80%, transparent); }

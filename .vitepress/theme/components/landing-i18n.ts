@@ -37,8 +37,8 @@ const en = {
       rows: [
         { key: 'Model', values: ['sales'] },
         { key: 'Dimensions', values: ['region', 'month'] },
-        { key: 'Measures', values: ['Σ revenue', 'avg price'] },
-        { key: 'Charts', values: ['bar', 'line', 'donut'] },
+        { key: 'Measures', values: ['Σ revenue', 'Ø price'] },
+        { key: 'Charts', values: ['bar', 'area', 'donut', 'column'] },
       ],
     },
     steps: [
@@ -197,7 +197,7 @@ const de: LandingMessages = {
         { key: 'Modell', values: ['Umsatz'] },
         { key: 'Dimensionen', values: ['Region', 'Monat'] },
         { key: 'Metriken', values: ['Σ Umsatz', 'Ø Preis'] },
-        { key: 'Diagramme', values: ['Balken', 'Linie', 'Ring'] },
+        { key: 'Diagramme', values: ['Balken', 'Fläche', 'Donut'] },
       ],
     },
     steps: [
