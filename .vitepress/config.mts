@@ -53,6 +53,6 @@ export default defineConfig({
     siteTitle: '<b>un</b>dash',
     logo: { light: '/images/light/logo.svg', dark: '/images/dark/logo.svg', alt: 'undash' },
 
-    socialLinks: [{ icon: 'x', link: 'https://twitter.com/undashapp' }],
+    socialLinks: [{ icon: 'x', link: 'https://x.com/undashapp' }],
   },
 });

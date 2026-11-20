@@ -1042,7 +1042,7 @@ const fontSamples = [
         <p v-html="t.cta.text"></p>
         <a
           class="btn btn-brand"
-          href="https://twitter.com/undashapp"
+          href="https://x.com/undashapp"
           target="_blank"
           rel="noopener"
           >{{ t.cta.button }}</a

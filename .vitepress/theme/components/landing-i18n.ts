@@ -8,7 +8,7 @@ const en = {
     points: ['No Backend', 'No Uploads', 'No Account'],
     guide: { text: 'Get Started', link: '/guide/getting-started' },
     explore: { text: 'Explore Features', link: '#features' },
-    follow: { text: 'Follow @undashapp', link: 'https://twitter.com/undashapp' },
+    follow: { text: 'Follow @undashapp', link: 'https://x.com/undashapp' },
   },
   demo: {
     title: 'Sales · Dashboard',
@@ -170,7 +170,7 @@ const de: LandingMessages = {
     points: ['Kein Backend', 'Keine Uploads', 'Kein Konto'],
     guide: { text: 'Erste Schritte', link: '/de/guide/getting-started' },
     explore: { text: 'Funktionen entdecken', link: '#features' },
-    follow: { text: '@undashapp folgen', link: 'https://twitter.com/undashapp' },
+    follow: { text: '@undashapp folgen', link: 'https://x.com/undashapp' },
   },
   demo: {
     title: 'Vertrieb · Dashboard',
