@@ -2359,8 +2359,8 @@ kbd {
 @media (min-width: 700px) {
   .card.card-devices { grid-template-columns: 1fr 1.1fr; }
 }
-/* Keep the row as tall as its content, so the tiles center on the text beside them */
-.card.card-devices { align-content: start; }
+/* Let the row fill the card, so the tiles center vertically in the panel */
+.card.card-devices .device-list { align-self: center; }
 
 .device-list {
   list-style: none;
