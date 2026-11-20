@@ -82,7 +82,7 @@ const en = {
     },
     charts: {
       title: '20+ Chart Types',
-      text: 'From bar, line and area charts to scatter, heatmap, density, streamgraph, radar, KPI, pivot tables and choropleth maps. Facet any chart into small multiples for a virtually endless range of visualizations.',
+      text: 'From bar, line and area charts to scatter, histogram, heatmap, density, streamgraph, radar, KPI, pivot tables and choropleth maps. Facet any chart into small multiples for a virtually endless range of visualizations.',
       names: {
         Bar: 'Bar',
         Lollipop: 'Lollipop',
@@ -90,8 +90,10 @@ const en = {
         Area: 'Area',
         Scatter: 'Scatter',
         ConnectedScatter: 'Conn. Scatter',
+        Tick: 'Tick',
         Balloon: 'Balloon',
         Heatmap: 'Heatmap',
+        Histogram: 'Histogram',
         Density: 'Density',
         Density2D: '2D Density',
         Streamgraph: 'Streamgraph',
@@ -242,7 +244,7 @@ const de: LandingMessages = {
     },
     charts: {
       title: '20+ Diagrammtypen',
-      text: 'Von Balken-, Linien- und Flächendiagrammen über Streudiagramme, Heatmaps, Dichtediagramme, Streamgraphs und Netzdiagramme bis hin zu Kennzahlen, Pivot-Tabellen und Choroplethenkarten. Jedes Diagramm lässt sich zudem in Small Multiples aufteilen. So entsteht eine nahezu unbegrenzte Vielfalt an Visualisierungen.',
+      text: 'Von Balken-, Linien- und Flächendiagrammen über Streudiagramme, Histogramme, Heatmaps, Dichtediagramme, Streamgraphs und Netzdiagramme bis hin zu Kennzahlen, Pivot-Tabellen und Choroplethenkarten. Jedes Diagramm lässt sich zudem in Small Multiples aufteilen. So entsteht eine nahezu unbegrenzte Vielfalt an Visualisierungen.',
       names: {
         Bar: 'Balken',
         Lollipop: 'Lollipop',
@@ -250,8 +252,10 @@ const de: LandingMessages = {
         Area: 'Fläche',
         Scatter: 'Streuung',
         ConnectedScatter: 'Streupfad',
+        Tick: 'Strich',
         Balloon: 'Ballon',
         Heatmap: 'Heatmap',
+        Histogram: 'Histogramm',
         Density: 'Dichte',
         Density2D: '2D-Dichte',
         Streamgraph: 'Streamgraph',
