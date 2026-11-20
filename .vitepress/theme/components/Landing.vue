@@ -338,8 +338,10 @@ const chartGallery = [
   'Area',
   'Scatter',
   'ConnectedScatter',
+  'Tick',
   'Balloon',
   'Heatmap',
+  'Histogram',
   'Density',
   'Density2D',
   'Streamgraph',
@@ -776,6 +778,23 @@ const fontSamples = [
                 <template v-else-if="name === 'ConnectedScatter'">
                   <path d="M8 32 L16 24 L26 28 L30 16 L42 20 L38 9 L52 6" class="s1 stem" />
                   <circle v-for="(p, i) in [[8,32],[16,24],[26,28],[30,16],[42,20],[38,9],[52,6]]" :key="i" :cx="p[0]" :cy="p[1]" r="2.6" :class="i === 6 ? 'f3' : 'f1'" />
+                </template>
+                <template v-else-if="name === 'Tick'">
+                  <template v-for="(row, j) in [[8, 13, 17, 20, 26, 34], [18, 24, 29, 31, 38, 45], [28, 35, 40, 43, 47, 53]]" :key="j">
+                    <rect v-for="x in row" :key="x" :x="x - 0.8" :y="6 + j * 11" width="1.6" height="7" rx="0.8" class="f1 o7" />
+                  </template>
+                </template>
+                <template v-else-if="name === 'Histogram'">
+                  <rect
+                    v-for="(h, i) in [5, 11, 19, 28, 32, 25, 15, 8]"
+                    :key="i"
+                    :x="6 + i * 6"
+                    :y="36 - h"
+                    width="5.4"
+                    :height="h"
+                    rx="0.8"
+                    class="f1"
+                  />
                 </template>
                 <template v-else-if="name === 'Heatmap'">
                   <rect
