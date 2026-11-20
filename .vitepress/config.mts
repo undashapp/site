@@ -172,6 +172,6 @@ export default defineConfig({
 
     outline: { level: [2, 3] },
 
-    socialLinks: [{ icon: 'x', link: 'https://twitter.com/undashapp' }],
+    socialLinks: [{ icon: 'x', link: 'https://x.com/undashapp' }],
   },
 });
